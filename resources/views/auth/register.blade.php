@@ -38,16 +38,25 @@
                          required autocomplete="new-password"/>
             </div>
 
-            <!-- Confirm Password -->
-            <div class="mt-3">
-                <x-label for="password_confirmation" :value="__('Confirm Password')"/>
+{{--            <!-- Confirm Password -->--}}
+{{--            <div class="mt-3">--}}
+{{--                <x-label for="password_confirmation" :value="__('Confirm Password')"/>--}}
 
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                         type="password"
-                         name="password_confirmation" required/>
-            </div>
-            <!-- Country-->
+{{--                <x-input id="password_confirmation" class="block mt-1 w-full"--}}
+{{--                         type="password"--}}
+{{--                         name="password_confirmation" required/>--}}
+{{--            </div>--}}
+
+            {{--phone--}}
             <div class="mt-3">
+                <x-label for="phone" :value="__('phone')"/>
+
+                <x-input id="phone" class="block mt-1 w-full" type="tel" name="name" required
+                         autofocus/>
+            </div>
+
+            <!-- Country-->
+
                 <div class="mt-3">
                     <x-input-label for="name" :value="__('country')"/>
                     <x-input-select class="block mt-1 w-full" :options="$countries" name="country"/>
@@ -64,6 +73,8 @@
                         {{ __('إنشاء حساب') }}
                     </x-button>
                 </div>
+
+
         </form>
     </x-auth-card>
 </x-guest-layout>

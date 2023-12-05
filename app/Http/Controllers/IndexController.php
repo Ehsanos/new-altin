@@ -9,6 +9,7 @@ use App\Models\Product;
 use App\Models\Setting;
 use App\Models\Slider;
 use App\Models\Statics;
+use App\Models\Themes;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -32,8 +33,10 @@ class IndexController extends Controller
         $prodcuts = Product::where('is_active', true)->latest()->limit(50)->get();
         $statics = Statics::all();
         $news = Post::latest()->limit(6)->get();
+        $style=Themes::where('key','main')->first();
+
 //        dd($slider);
-        return view('pages.index', compact('slider', 'settings', 'prodcuts', 'catigories', 'statics', 'news'));
+        return view('pages.index', compact('slider', 'settings', 'prodcuts', 'catigories', 'statics', 'news','style'));
     }
 
     public function change_lang($lang)
@@ -52,9 +55,11 @@ class IndexController extends Controller
         $settings = Setting::first();
 
 //        dd($settings->address);
+        $style=Themes::where('key','about')->first();
+
         $slider = Slider::where('discrption', '=', 'about')->get();
 
-        return view('pages.about', compact('slider','settings'));
+        return view('pages.about', compact('slider','settings','style'));
     }
 
     public function store(Request $request)

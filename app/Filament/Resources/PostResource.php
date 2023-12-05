@@ -41,7 +41,7 @@ class PostResource extends Resource
 
                 Forms\Components\Card::make()->schema([
                     Forms\Components\TextInput::make('video')->nullable(),
-                    SpatieMediaLibraryFileUpload::make('img')->collection('posts')->label('الصورة'),
+                    SpatieMediaLibraryFileUpload::make('img')->collection('posts')->label('الصورة')->multiple(),
 
                 ])->columns(2),
 
@@ -49,32 +49,32 @@ class PostResource extends Resource
                 Forms\Components\Section::make('منشور')->schema([
                     Wizard::make()->schema([
                         Wizard\Step::make('AR')->schema([Forms\Components\Card::make()->schema([
-                            Forms\Components\TextInput::make('tilte')->required()->label('عنوان عربي'),
-                            Forms\Components\Textarea::make('body')->required()->label('منشور العربي'),
+                            Forms\Components\RichEditor::make('tilte')->required()->label('عنوان عربي'),
+                            Forms\Components\RichEditor::make('body')->required()->label('منشور العربي'),
 
                         ])->columns(2)]),
                         Wizard\Step::make('EN')->schema([Forms\Components\Card::make()->schema([
-                            Forms\Components\TextInput::make('tilte_en')->nullable()->label('ENعنوان'),
-                            Forms\Components\Textarea::make('body_en')->nullable()->label('منشورEN'),
+                            Forms\Components\RichEditor::make('tilte_en')->nullable()->label('ENعنوان'),
+                            Forms\Components\RichEditor::make('body_en')->nullable()->label('منشورEN'),
 
                         ])->columns(2)]),
                         Wizard\Step::make('TR')->schema([Forms\Components\Card::make()->schema([
 
-                            Forms\Components\TextInput::make('tilte_tr')->nullable()->label('TRعنوان'),
-                            Forms\Components\Textarea::make('body_tr')->nullable()->label('TRمنشور'),
+                            Forms\Components\RichEditor::make('tilte_tr')->nullable()->label('TRعنوان'),
+                            Forms\Components\RichEditor::make('body_tr')->nullable()->label('TRمنشور'),
                         ])->columns(2),
                         ]),
                         Wizard\Step::make('ES')->schema([Forms\Components\Card::make()->schema([
 
-                            Forms\Components\TextInput::make('tilte_du')->nullable()->label('DUعنوان'),
+                            Forms\Components\RichEditor::make('tilte_du')->nullable()->label('DUعنوان'),
 
-                            Forms\Components\Textarea::make('body_du')->nullable()->label('DUمنشور'),
+                            Forms\Components\RichEditor::make('body_du')->nullable()->label('DUمنشور'),
 
                         ])->columns(2),
                         ]),
                         Wizard\Step::make('DU')->schema([Forms\Components\Card::make()->schema([
-                            Forms\Components\TextInput::make('tilte_es')->nullable()->label('عنوانES'),
-                            Forms\Components\Textarea::make('body_es')->nullable()->label('منشورES'),
+                            Forms\Components\RichEditor::make('tilte_es')->nullable()->label('عنوانES'),
+                            Forms\Components\RichEditor::make('body_es')->nullable()->label('منشورES'),
                         ])->columns(2),
                         ]),
                     ])->skippable()
@@ -91,8 +91,8 @@ class PostResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('tilte')->label('عنوان المنشور')->searchable(),
-                Tables\Columns\TextColumn::make('body')->words(5)->label('المنشور')->searchable(),
+                Tables\Columns\TextColumn::make('tilte')->label('عنوان المنشور')->searchable()->html(),
+                Tables\Columns\TextColumn::make('body')->words(5)->label('المنشور')->searchable()->html(),
                 SpatieMediaLibraryImageColumn::make('الصورة')->collection('posts')->label('صورة المنشور'),
                 Tables\Columns\TagsColumn::make('tags.name')->label('كلمات مفتاحية')->searchable()
             ])

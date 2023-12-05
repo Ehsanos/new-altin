@@ -51,8 +51,8 @@
         </div>
     </header>
 
-    <section class="d-flex flex-column justify-content-center align-items-center products-1 py-2">
-        <div class="container">
+    <section class="d-flex flex-column justify-content-center align-items-center products-1 py-2"@if($style) style="background-color:{{$style->primary}}" @endif >
+        <div class="container" >
             <div class="row">
                 <div class="col-12 col-lg-3">
                     <div class="row">

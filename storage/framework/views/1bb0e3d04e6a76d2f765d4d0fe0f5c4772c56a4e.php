@@ -94,33 +94,35 @@
             </div>
         </div>
         
-        <section class="d-flex flex-column justify-content-center align-items-center pb-5 sections-s">
-            <div class="container-fluid">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-lg-10">
-                        <div id="relative_products" class="owl-carousel">
 
-                            <?php $__currentLoopData = $allproducts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <div class="px-3 product-item"><a class="text-decoration-none"
-                                                                  href="<?php echo e(route('langs.product_details',[$product])); ?>">
-                                        <div class="card cards-shadown cards-hover my-5 w-100" data-aos="flip-left"
-                                             data-aos-duration="950">
-                                            <div class="card-header"><img class="img-fluid rounded-img"
-                                                                          src="<?php echo e($product->getFirstMediaUrl('products')); ?>">
-                                            </div>
-                                            <div class="card-body">
-                                                <p class="card-text sub-text-color"><?php echo e(getTrans($product,'name')); ?></p>
-                                                
-                                            </div>
+
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div id="relative_products" class="owl-carousel tag-div ">
+
+                        <?php $__currentLoopData = $allproducts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <div class="product-item">
+                                <a class="text-decoration-none"
+                                                              href="<?php echo e(route('langs.product_details',[$product])); ?>">
+                                    <div class="card cards-shadown cards-hover my-5 d-flex flex-column w-75" data-aos="flip-left"
+                                         data-aos-duration="950">
+                                        <div class="card-header"><img class="img-fluid rounded-img"
+                                                                      src="<?php echo e($product->getFirstMediaUrl('products')); ?>">
                                         </div>
-                                    </a></div>
-                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        <div class="card-body">
+                                            <p class="card-text sub-text-color"><?php echo e(getTrans($product,'name')); ?></p>
+                                            
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
-                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 
 
         <div class=" mt-2 container">

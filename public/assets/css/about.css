@@ -106,7 +106,10 @@
 .tag-div{
     border-radius: 5px;
     color:darkgoldenrod;
-    background-color: black;
+    background-color: #dec8ab;
+    /*height: 150px;*/
+    width: 95%;
+    margin: auto;
 }
 
 .floatbb{

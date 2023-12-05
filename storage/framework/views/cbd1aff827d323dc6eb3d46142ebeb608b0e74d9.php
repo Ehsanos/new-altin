@@ -27,6 +27,8 @@
         <div class="column-labels">
             <label class="product-image"><?php echo e(lang('img_prodduct')); ?></label>
             <label class="product-details"><?php echo e(lang('name')); ?></label>
+            <label class="product-details"><?php echo e(lang('code')); ?></label>
+            <label class="product-details"><?php echo e(lang('packing')); ?></label>
             <label class="product-price"><?php echo e(lang('price_one')); ?></label>
             <label class="product-quantity"><?php echo e(lang('Quantity')); ?></label>
             <label class="product-removal"><?php echo e(lang('')); ?></label>
@@ -44,7 +46,16 @@
                 </div>
                 <div class="product-details">
                     <div class="product-title"><?php echo e(getTrans($item->products,'name')); ?></div>
-                    
+
+                </div>
+
+                <div class="product-details">
+                    <div class="product-title"><?php echo e($item->products->code); ?></div>
+
+                </div>
+                <div class="product-details">
+                    <div class="product-title"><?php echo e($item->products->pakcing); ?></div>
+
                 </div>
                 <div class="product-price"><?php echo e($item->products->price); ?></div>
 

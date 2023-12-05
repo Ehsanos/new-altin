@@ -1,6 +1,6 @@
 <?php $__env->startSection('content'); ?>
 
-    <main>
+    <main <?php if($style): ?> style="background-color:<?php echo e($style->primary); ?>" <?php endif; ?>>
         
         <?php if(Session::has('message')): ?>
 
@@ -8,17 +8,17 @@
                 <div class="alert alert-success"><?php echo e(Session::get('message')); ?></div>
             </div>
         <?php endif; ?>
-        <header>
+        <header class="mt-1">
             <div class="top-content">
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <?php $__currentLoopData = $slider; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $slide): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <li data-target="#myCarousel" data-slide-to="<?php echo e($loop->index); ?>"
-                                <?php if($loop->first): ?> class="active" <?php endif; ?>></li>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                        
-                        
-                    </ol>
+
+
+
+
+
+
+
+
                     <div class="carousel-inner">
 
                         <?php $__currentLoopData = $slider; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $slide): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -74,11 +74,11 @@
 
 
         
-        <section class="d-flex flex-column justify-content-center align-items-center pb-5 sections-s">
+        <section class="d-flex flex-column justify-content-center align-items-center  sections-s">
             <div class="container-fluid">
                 <div class="row justify-content-center">
                     <div class="col-12 col-lg-10">
-                        <div id="sections" class="owl-carousel py-4">
+                        <div id="sections" class="owl-carousel">
 
                             <?php $__currentLoopData = $prodcuts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <div class="px-3 product-item"><a class="text-decoration-none"
@@ -88,7 +88,7 @@
                                             <div class="card-header"><img class="img-fluid rounded-img"
                                                                           src="<?php echo e($product->getFirstMediaUrl('products')); ?>">
                                             </div>
-                                            <div class="card-body">
+                                            <div class="card-body after">
                                                 <p class="card-text sub-text-color"><?php echo e(getTrans($product,'name')); ?></p>
                                                 
                                             </div>
@@ -113,8 +113,8 @@
 
                             <?php $__currentLoopData = $catigories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <div class="px-3 product-item"><a class="text-decoration-none"
-                                                                  href="<?php echo e(route('langs.products')); ?>">
-                                        <div class="card cards-shadown cards-hover my-5 w-100" data-aos="flip-left"
+                                                                  href="<?php echo e(route('langs.fofo',$cat)); ?>">
+                                        <div class="card cards-shadown cards-hover  w-100" data-aos="flip-left"
                                              data-aos-duration="950">
                                             <div class="card-header"><img class="rounded-img"
                                                                           src="<?php echo e($cat->getFirstMediaUrl('categories')); ?>">
@@ -180,7 +180,7 @@
                                                                           src="<?php echo e($new->getFirstMediaUrl('posts')); ?>">
                                             </div>
                                             <div class="card-body">
-                                                <p class="card-text sub-text-color"><?php echo e(getTrans($new,'tilte')); ?></p>
+                                                <p class="card-text sub-text-color"><?php echo getTrans($new,'tilte'); ?></p>
                                                 
                                             </div>
                                         </div>

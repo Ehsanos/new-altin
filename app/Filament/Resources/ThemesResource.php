@@ -29,19 +29,30 @@ class ThemesResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('key')->required(),
-               Forms\Components\ColorPicker::make('primary')->required(),
-                Forms\Components\ColorPicker::make('secondary')->required(),
-                Forms\Components\ColorPicker::make('success')->required(),
-                Forms\Components\ColorPicker::make('info')->required(),
-                Forms\Components\ColorPicker::make('warning')->required(),
-                Forms\Components\ColorPicker::make('danger')->required(),
-                Forms\Components\ColorPicker::make('light')->required(),
-               Forms\Components\ColorPicker::make('head_color')->required(),
-               Forms\Components\ColorPicker::make('paragraph_color')->required(),
-                Forms\Components\ColorPicker::make('link_color')->required(),
-                Forms\Components\ColorPicker::make('hover_color')->required(),
-               Forms\Components\TextInput::make('font_family')->required(),
+                Forms\Components\Radio::make('key')->options(
+                    [
+                        'main' => "الرئيسية",
+                        'product' => "المنتجات",
+                        'agents' => "الوكلاء",
+                        'news' => "الأخبار",
+                        'about' => "من نحن",
+                        'catalogs' => "الكتالوج",
+                        'policy' => "الخصوصية",
+//                        'delegtes' => "المندوبون",
+                    ]
+                )->required()->label(' الصفحة'),
+               Forms\Components\ColorPicker::make('primary')->required()->label('لون الخلفية'),
+                Forms\Components\ColorPicker::make('secondary')->default('1'),
+                Forms\Components\ColorPicker::make('success')->default('1'),
+                Forms\Components\ColorPicker::make('info')->default('1'),
+                Forms\Components\ColorPicker::make('warning')->default('1'),
+                Forms\Components\ColorPicker::make('danger')->default('1'),
+                Forms\Components\ColorPicker::make('light')->default('1'),
+               Forms\Components\ColorPicker::make('head_color')->default('1'),
+               Forms\Components\ColorPicker::make('paragraph_color')->default('1'),
+                Forms\Components\ColorPicker::make('link_color')->default('1'),
+                Forms\Components\ColorPicker::make('hover_color')->default('1'),
+               Forms\Components\TextInput::make('font_family')->default('1'),
             ]);
     }
 
@@ -50,10 +61,10 @@ class ThemesResource extends Resource
         return $table
             ->columns([
 
-                Tables\Columns\TextColumn::make('key')->label('اسم الثيم'),
+                Tables\Columns\TextColumn::make('key')->label('الصفحة '),
                 Tables\Columns\ColorColumn::make('primary')->label('اللون الرئيسي'),
-                Tables\Columns\ColorColumn::make('secondary')->label('اللون الثانوي'),
-                Tables\Columns\TextColumn::make('font_family')->label('نوع الخط'),
+//                Tables\Columns\ColorColumn::make('secondary')->label('اللون الثانوي'),
+//                Tables\Columns\TextColumn::make('font_family')->label('نوع الخط'),
 
             ])
             ->filters([

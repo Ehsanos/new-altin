@@ -28,6 +28,8 @@
         <div class="column-labels">
             <label class="product-image">{{lang('img_prodduct')}}</label>
             <label class="product-details">{{lang('name')}}</label>
+            <label class="product-details">{{lang('code')}}</label>
+            <label class="product-details">{{lang('packing')}}</label>
             <label class="product-price">{{lang('price_one')}}</label>
             <label class="product-quantity">{{lang('Quantity')}}</label>
             <label class="product-removal">{{lang('')}}</label>
@@ -45,7 +47,16 @@
                 </div>
                 <div class="product-details">
                     <div class="product-title">{{getTrans($item->products,'name')}}</div>
-                    {{--            <p class="product-description">The best dog bones of all time. Holy crap. Your dog will be begging for these things! I got curious once and ate one myself. I'm a fan.</p>--}}
+
+                </div>
+
+                <div class="product-details">
+                    <div class="product-title">{{$item->products->code}}</div>
+
+                </div>
+                <div class="product-details">
+                    <div class="product-title">{{$item->products->pakcing}}</div>
+
                 </div>
                 <div class="product-price">{{$item->products->price}}</div>
 

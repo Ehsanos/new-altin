@@ -23,7 +23,7 @@ class RegisteredUserController extends Controller
     public function create()
     {
         $countries = Country::all();
-//        dd($countries);
+//        dd($countries[0]->name_en);
         return view('auth.register', compact('countries'));
     }
 

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
-
+use Filament\Models\Contracts\FilamentUser;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -15,10 +15,11 @@ use Spatie\Permission\Models\Role;
 use Spatie\Permission\Traits\HasRoles;
 
 
+
 use Spatie\Image\Manipulations;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-class User extends  Authenticatable implements HasMedia , MustVerifyEmail
+class User extends  Authenticatable implements HasMedia , MustVerifyEmail ,FilamentUser
 {
     use InteractsWithMedia;
     use HasApiTokens, HasFactory, Notifiable, HasRoles;
@@ -50,6 +51,10 @@ class User extends  Authenticatable implements HasMedia , MustVerifyEmail
     ];
 
 
+    public function canAccessFilament(): bool
+    {
+        return str_ends_with($this->type, 'admin') && $this->hasVerifiedEmail();
+    }
 
     public function orders()
     {

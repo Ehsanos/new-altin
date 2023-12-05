@@ -2,19 +2,31 @@
 
 
 
-    <main>
+    <main <?php if($style): ?> style="background-color:<?php echo e($style->primary); ?>" <?php endif; ?>>
         <section class="d-flex flex-column justify-content-center align-items-center products-1 py-2">
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <div class="text-center"><img class="img-fluid" src="<?php echo e($post->getFirstMediaUrl('posts')); ?>">
+                        <div class="text-center d-flex justify-content-center">
+                            <?php $__currentLoopData = $post->getMedia("*"); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
+                                <img class="img-thumbnail" style="height: 250px; width: 100%;object-fit: cover"
+                                     src="<?php echo e($index->getUrl()); ?>">
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </div>
                     </div>
+
+                    <?php if($post->video): ?>
+                        <iframe width="100%" height="315" class="m-auto mt-1 mt-md-4" src="<?php echo e($post->video); ?>"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                    <?php endif; ?>
                     <div class="col">
-                        <h1 class="text-dark"><?php echo e(getTrans($post,'tilte')); ?></h1>
+                        <p class="text-dark"><?php echo getTrans($post,'tilte'); ?></p>
                         <p class="text-dark"><span
                                 style="font-weight: normal !important; font-style: normal !important; color: rgb(122, 122, 122);">
-                             <?php echo e(getTrans($post,'body')); ?>
+                             <?php echo getTrans($post,'body'); ?>
 
                             </span><br><br></p>
                     </div>

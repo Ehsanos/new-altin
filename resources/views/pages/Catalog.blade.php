@@ -48,7 +48,7 @@
     </header>
 
 
-    <section class="d-flex flex-column justify-content-center align-items-center products-1 py-2">
+    <section class="d-flex flex-column justify-content-center align-items-center products-1 py-2" @if($style) style="background-color:{{$style->primary}}" @endif>
         <div class="container">
             <div class="container">
                 {{--                <div class="col-12 col-lg-3">--}}

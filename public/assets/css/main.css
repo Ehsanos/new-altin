@@ -11,6 +11,11 @@
   border: none;
 }
 
+
+.tags-slider{
+
+ background-color: #8e8362;
+}
 .btn-sign:hover {
   background-color: #c3ae5b;
   color: #33270f;
@@ -48,7 +53,7 @@ body {
 
 .sections-s {
   background: #e8e8e8;
-  height: 100vh;
+  height: 70vh;
 }
 
 #main-slider.min-vh-50 {
@@ -210,11 +215,11 @@ body {
 }
 
 .products {
-  height: 100vh;
+  height: 90vh;
 }
 
 .sec-news {
-  height: 100vh;
+  height: 90vh;
 }
 
 .card-header {
@@ -332,5 +337,17 @@ body {
 .div-hr-w {
   height: 3px;
   background-color: #e1e1e1;
+}
+
+.policy{
+
+    height: 75vh;
+    width: 98%;
+    margin: auto;
+    background-color: #ecd96b;
+}
+.policy p{
+    color:#33270f;
+
 }
 

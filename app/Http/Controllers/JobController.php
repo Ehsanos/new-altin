@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Job;
 use App\Http\Requests\StoreJobRequest;
 use App\Http\Requests\UpdateJobRequest;
+use App\Models\Setting;
 use App\Models\Slider;
+use App\Models\Themes;
 
 class JobController extends Controller
 {
@@ -17,8 +19,14 @@ class JobController extends Controller
     public function index()
     {
         $slider = Slider::where('discrption', '=', 'jobs')->get();
+        $setting=Setting::all()->first();
 
-        return view('pages.jobs',compact('slider'));
+//        dd($setting);
+        $style=Themes::where('key','policy')->first();
+
+//        dd($style);
+
+        return view('pages.jobs',compact('slider','setting','style'));
     }
 
     /**

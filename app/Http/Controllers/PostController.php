@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\Slider;
 use App\Models\Tag;
+use App\Models\Themes;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -21,8 +22,8 @@ class PostController extends Controller
 
         $posts = Post::all();
         $slider = Slider::where('type', '=', 'news')->get();
-
-        return view('pages.main-news', compact('posts', 'slider','tags'));
+        $style=Themes::where('key','news')->first();
+        return view('pages.main-news', compact('posts', 'slider','tags','style'));
     }
 
     /**
@@ -55,8 +56,8 @@ class PostController extends Controller
     public function show(Post $post)
     {
 
-
-        return view('pages.news', compact('post'));
+        $style=Themes::where('key','news')->first();
+        return view('pages.news', compact('post','style'));
     }
 
     /**

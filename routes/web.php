@@ -50,6 +50,9 @@ Route::name('langs.')->middleware('locale')->group(function () {
     Route::post('/createOrder', [OrderController::class, 'create'])->name('create_order')->middleware('verified');
     Route::post('/setimg', [UserController::class, 'addimg'])->name('setImg');
     Route::get('/cat/{data}',[CategoryController::class,'show'])->name('category');
+    Route::get('/allcat/{cat}',[CategoryController::class,'show'])->name('fofo');
+    Route::get('/policy',[JobController::class,'index'])->name('policy');
+
 
     Route::get('/test', [IndexController::class, 'test']);
 

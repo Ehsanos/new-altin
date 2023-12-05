@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
 
-    <main>
+    <main @if($style) style="background-color:{{$style->primary}}" @endif>
         {{--   <h1 class="bg-danger">{{Auth()->user()->name ?? 'none'}} </h1>--}}
         @if(Session::has('message'))
 
@@ -9,17 +9,17 @@
                 <div class="alert alert-success">{{ Session::get('message') }}</div>
             </div>
         @endif
-        <header>
+        <header class="mt-1">
             <div class="top-content">
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        @foreach($slider as $slide)
-                            <li data-target="#myCarousel" data-slide-to="{{$loop->index}}"
-                                @if($loop->first) class="active" @endif></li>
-                        @endforeach
-                        {{--                        <li data-target="#myCarousel" data-slide-to="1"></li>--}}
-                        {{--                        <li data-target="#myCarousel" data-slide-to="2"></li>--}}
-                    </ol>
+{{--                    <ol class="carousel-indicators">--}}
+{{--                        @foreach($slider as $slide)--}}
+{{--                            <li data-target="#myCarousel" data-slide-to="{{$loop->index}}"--}}
+{{--                                @if($loop->first) class="active" @endif></li>--}}
+{{--                        @endforeach--}}
+{{--                        --}}{{--                        <li data-target="#myCarousel" data-slide-to="1"></li>--}}
+{{--                        --}}{{--                        <li data-target="#myCarousel" data-slide-to="2"></li>--}}
+{{--                    </ol>--}}
                     <div class="carousel-inner">
 
                         @foreach($slider as $slide)
@@ -75,11 +75,11 @@
 
 
         {{--Products slider section--}}
-        <section class="d-flex flex-column justify-content-center align-items-center pb-5 sections-s">
+        <section class="d-flex flex-column justify-content-center align-items-center  sections-s">
             <div class="container-fluid">
                 <div class="row justify-content-center">
                     <div class="col-12 col-lg-10">
-                        <div id="sections" class="owl-carousel py-4">
+                        <div id="sections" class="owl-carousel">
 
                             @foreach($prodcuts as $product)
                                 <div class="px-3 product-item"><a class="text-decoration-none"
@@ -114,8 +114,8 @@
 
                             @foreach($catigories as $cat)
                                 <div class="px-3 product-item"><a class="text-decoration-none"
-                                                                  href="{{route('langs.products')}}">
-                                        <div class="card cards-shadown cards-hover my-5 w-100" data-aos="flip-left"
+                                                                  href="{{route('langs.fofo',$cat)}}">
+                                        <div class="card cards-shadown cards-hover  w-100" data-aos="flip-left"
                                              data-aos-duration="950">
                                             <div class="card-header"><img class="rounded-img"
                                                                           src="{{$cat->getFirstMediaUrl('categories')}}">
@@ -181,7 +181,7 @@
                                                                           src="{{$new->getFirstMediaUrl('posts')}}">
                                             </div>
                                             <div class="card-body">
-                                                <p class="card-text sub-text-color">{{getTrans($new,'tilte')}}</p>
+                                                <p class="card-text sub-text-color">{!!getTrans($new,'tilte')!!}</p>
                                                 {{--                                        <p class="card-text cardbody-sub-text">{{getTrans($new,'body')}}</p>--}}
                                             </div>
                                         </div>

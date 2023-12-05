@@ -74,9 +74,9 @@ class SettingResource extends Resource
 
                                 Forms\Components\Card::make()->schema([
                                     Forms\Components\TextInput::make('name_ar')->nullable()->label('اسم الموقع عربي'),
-                                    Forms\Components\Textarea::make('address_ar')->nullable()->label('عنوان الموقع يالعربي'),
-                                    Forms\Components\Textarea::make('description_ar')->nullable()->label('وصف الموقع بالعربي'),
-                                ])->columns(3),
+                                    Forms\Components\Textarea::make('address')->nullable()->label('عنوان الموقع بالعربي'),
+                                    Forms\Components\RichEditor::make('description')->nullable()->label('سياسية الخصوصية بالعربي'),
+                                ]),
 
 
                             ])
@@ -88,45 +88,47 @@ class SettingResource extends Resource
 
                                         Forms\Components\TextInput::make('name_en')->nullable()->label('اسم الموقع EN'),
                                         Forms\Components\Textarea::make('address_en')->nullable()->label('عنوان الموقع EN'),
-                                        Forms\Components\Textarea::make('description_en')->nullable()->label('وصف الموقع EN'),
+                                        Forms\Components\RichEditor::make('description_en')->nullable()->label('سياسة الخصوصية EN'),
 
-                                    ])->columns(3),
+                                    ]),
 
                                 ]),
                             Tabs\Tab::make('TR')
                                 ->schema([
                                     Forms\Components\Card::make()->schema([
+                                        Forms\Components\Textarea::make('name_tr')->nullable()->label('اسم الموقع TR'),
                                         Forms\Components\Textarea::make('address_tr')->nullable()->label('عنوان الموقع TR'),
-                                        Forms\Components\Textarea::make('description_tr')->nullable()->label('وصف الموقع TR'),
-
-                                    ])->columns(3),
-
-                                ]),
-                            Tabs\Tab::make('ES')
-                                ->schema([
-                                    Forms\Components\Card::make()->schema([
-
-
-                                        Forms\Components\TextInput::make('name_es')->nullable()->label('اسم الموقع ES'),
-                                        Forms\Components\Textarea::make('address_es')->nullable()->label('عنوان الموقع ES'),
-                                        Forms\Components\Textarea::make('description_es')->nullable()->label('وصف الموقع ES'),
-
+                                        Forms\Components\Textarea::make('description_tr')->nullable()->label('سياسة الخصوصية TR'),
 
                                     ])->columns(3),
 
                                 ]),
 
-                            Tabs\Tab::make('DU')->schema([
-                                Forms\Components\Card::make()->schema([
-
-                                    Forms\Components\TextInput::make('name_du')->nullable()->label('اسم الموقع DU'),
-                                    Forms\Components\Textarea::make('address_du')->nullable()->label('عنوان الموقع DU'),
-                                    Forms\Components\Textarea::make('description_du')->nullable()->label('وصف الموقع DU'),
-
-
-                                ])->columns(3),
-
-                            ])
+//                            Tabs\Tab::make('ES')
+//                                ->schema([
+//                                    Forms\Components\Card::make()->schema([
+//
+//
+//                                        Forms\Components\TextInput::make('name_es')->nullable()->label('اسم الموقع ES'),
+//                                        Forms\Components\Textarea::make('address_es')->nullable()->label('عنوان الموقع ES'),
+//                                        Forms\Components\Textarea::make('description_es')->nullable()->label('وصف الموقع ES'),
+//
+//
+//                                    ])->columns(3),
+//
+//                                ]),
+//
+//                            Tabs\Tab::make('DU')->schema([
+//                                Forms\Components\Card::make()->schema([
+//
+//                                    Forms\Components\TextInput::make('name_du')->nullable()->label('اسم الموقع DU'),
+//                                    Forms\Components\Textarea::make('address_du')->nullable()->label('عنوان الموقع DU'),
+//                                    Forms\Components\Textarea::make('description_du')->nullable()->label('وصف الموقع DU'),
+//
+//
+//                                ])->columns(3),
+//
+//                            ])
                         ])
 
 

@@ -47,7 +47,7 @@
     </header>
 
 
-    <section class="d-flex flex-column justify-content-center align-items-center products-1 py-2">
+    <section class="d-flex flex-column justify-content-center align-items-center products-1 py-2" <?php if($style): ?> style="background-color:<?php echo e($style->primary); ?>" <?php endif; ?>>
         <div class="container">
             <div class="container">
                 

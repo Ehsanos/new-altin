@@ -47,11 +47,13 @@ class CategoryController extends Controller
      * @param \App\Models\Category $category
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Category $cat)
     {
-//        $departments = Department::whereId($id)->get();
-        $products = Product::where('department_id', $id)->get();
-        dd($products);
+
+
+       $allProductsInOnCat= $cat->products();
+
+       dd($allProductsInOnCat->where('id','=','3'));
 
     }
 

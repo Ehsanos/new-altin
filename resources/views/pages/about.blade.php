@@ -46,7 +46,7 @@
         </div>
     </header>
 
-    <section class="contact-page-sec mt-5">
+    <section class="contact-page-sec mt-5" @if($style) style="background-color:{{$style->primary}}" @endif>
         <div class="container">
             <div class="row">
                 <div class="col-md-4">

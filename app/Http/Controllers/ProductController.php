@@ -8,6 +8,7 @@ use App\Models\Department;
 use App\Models\Product;
 use App\Models\Slider;
 use App\Models\Tag;
+use App\Models\Themes;
 use http\Env\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -46,9 +47,10 @@ class ProductController extends Controller
         $tags = Tag::where('type','product')->get();
         $lang=App()->getLocale();
 
+        $style=Themes::where('key','product')->first();
 
         return view('pages.products', ["cats" => $cats, "departments" => $departments,
-            "products" => $products, "tags" => $tags, "slider" => $slider,"lang"=>$lang]);
+            "products" => $products, "tags" => $tags, "slider" => $slider,"lang"=>$lang ,"style"=>$style]);
 
     }
 

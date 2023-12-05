@@ -1,16 +1,17 @@
 $('#main-slider').owlCarousel({
     center: true,
     items:1,
-     dots:true,
+     dots:false,
     loop:true,
     margin:10,
     autoplay:true,
     rtl:true,
    animateOut: 'slideOutDown',
+    autoplayTimeout:3000,
 });
 $('#products').owlCarousel({
     center: false,
-
+    autoplayTimeout:3000,
     loop:true,
     margin:0,
     autoplay:true,
@@ -36,6 +37,7 @@ $('#products').owlCarousel({
 
 $('#sections').owlCarousel({
     center: false,
+    autoplayTimeout:3000,
 
     loop:true,
     margin:10,
@@ -68,6 +70,7 @@ $('#relative_products').owlCarousel({
     margin:10,
     autoplay:true,
     rtl:true,
+    autoplayTimeout:5000,
     mouseDrag:true,
     responsive:{
         0:{
@@ -91,6 +94,7 @@ $('#relative_products').owlCarousel({
 
 
 $('#news').owlCarousel({
+    autoplayTimeout:3000,
 
    center: false,
     loop:true,

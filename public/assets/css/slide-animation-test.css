@@ -8,7 +8,8 @@ body {
 .top-content {
     width: 100%;
     padding: 0;
-    /*height: 100vh;*/
+    height: 80vh;
+    object-fit: cover;
 }
 
 .top-content .carousel {
@@ -40,11 +41,13 @@ body {
     height: 100vh;
     min-height: 400px;
     object-fit: cover;
+    /*background-color: black;*/
 }
 
 .top-content .carousel-item img {
-    /*height: 100vh;*/
-    object-fit: cover;
+    height: 100vh;
+    /*height: 100%;*/
+    object-fit: contain;
 }
 
 @media (max-width: 575px) {

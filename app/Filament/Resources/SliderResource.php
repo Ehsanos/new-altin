@@ -49,7 +49,7 @@ class SliderResource extends Resource
                         'delegtes' => "المندوبون",
                         'agents' => "ألوكلاء",
                         'about' => "من نحن",
-                        'jobs' => "الوظائف",
+                        'jobs' => "الخصوصية",
                         'news' => "الأخبار",
                         'catalogs' => "الكتالوج",
                     ])->required()->label('قسم :'),
