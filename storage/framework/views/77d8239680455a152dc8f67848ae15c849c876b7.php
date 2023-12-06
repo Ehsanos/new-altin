@@ -110,7 +110,7 @@
                             <form action="<?php echo e(route('langs.search')); ?>">
                             <i class="fas fa-search float-left search-icon"></i>
                             <input class="float-left float-sm-right custom-search-input" type="search" name=""
-                                   placeholder="Type to filter by address">
+                                   placeholder="">
                             </form>
                         </div>
                     </li>
@@ -129,15 +129,15 @@
                                     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('counter', [])->html();
-} elseif ($_instance->childHasBeenRendered('B4Z4I5O')) {
-    $componentId = $_instance->getRenderedChildComponentId('B4Z4I5O');
-    $componentTag = $_instance->getRenderedChildComponentTagName('B4Z4I5O');
+} elseif ($_instance->childHasBeenRendered('LvWDnpB')) {
+    $componentId = $_instance->getRenderedChildComponentId('LvWDnpB');
+    $componentTag = $_instance->getRenderedChildComponentTagName('LvWDnpB');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('B4Z4I5O');
+    $_instance->preserveRenderedChild('LvWDnpB');
 } else {
     $response = \Livewire\Livewire::mount('counter', []);
     $html = $response->html();
-    $_instance->logRenderedChild('B4Z4I5O', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('LvWDnpB', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

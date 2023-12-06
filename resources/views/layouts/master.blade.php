@@ -109,7 +109,7 @@
                             <form action="{{route('langs.search')}}">
                             <i class="fas fa-search float-left search-icon"></i>
                             <input class="float-left float-sm-right custom-search-input" type="search" name=""
-                                   placeholder="Type to filter by address">
+                                   placeholder="">
                             </form>
                         </div>
                     </li>

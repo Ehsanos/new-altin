@@ -26,9 +26,9 @@
     <div class="shopping-cart">
 
         <div class="column-labels">
-            <label class="product-image">{{lang('img_prodduct')}}</label>
-            <label class="product-details">{{lang('name')}}</label>
             <label class="product-details">{{lang('code')}}</label>
+            <label class="product-image">{{lang('img_product')}}</label>
+            <label class="product-details">{{lang('name')}}</label>
             <label class="product-details">{{lang('packing')}}</label>
             <label class="product-price">{{lang('price_one')}}</label>
             <label class="product-quantity">{{lang('Quantity')}}</label>
@@ -40,6 +40,11 @@
 
 
             <div class="product">
+                <div class="product-details">
+                    <div class="product-title">{{$item->products->code}}</div>
+
+                </div>
+
                 <div class="product-image">
                     <a href="{{route('langs.product_details',$item->products->id)}}">
                         <img src="{{$item->products->getFirstMediaUrl('products')}}">
@@ -50,10 +55,6 @@
 
                 </div>
 
-                <div class="product-details">
-                    <div class="product-title">{{$item->products->code}}</div>
-
-                </div>
                 <div class="product-details">
                     <div class="product-title">{{$item->products->pakcing}}</div>
 
@@ -80,7 +81,6 @@
                 <div class="product-removal">
                     <a class="remove-product fa fa-trash py-2 text-decoration-none"
                        href="{{route('langs.delCart',$item->id)}}">
-                        {{lang('remove')}}
                     </a>
                 </div>
                 <div class="product-line-price">{{$item->price}}</div>
@@ -106,7 +106,6 @@
         @endif
     </div>
     </form>
-<a class="bg-danger" href="{{route('send_email')}}" > Test Emails</a>
 @else
     <div class="container d-flex align-items-center justify-content-center">
         <img height="80%" width="60%" src="{{asset('assets/img/empty-cart.gif')}}">

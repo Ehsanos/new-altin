@@ -25,9 +25,9 @@
     <div class="shopping-cart">
 
         <div class="column-labels">
-            <label class="product-image"><?php echo e(lang('img_prodduct')); ?></label>
-            <label class="product-details"><?php echo e(lang('name')); ?></label>
             <label class="product-details"><?php echo e(lang('code')); ?></label>
+            <label class="product-image"><?php echo e(lang('img_product')); ?></label>
+            <label class="product-details"><?php echo e(lang('name')); ?></label>
             <label class="product-details"><?php echo e(lang('packing')); ?></label>
             <label class="product-price"><?php echo e(lang('price_one')); ?></label>
             <label class="product-quantity"><?php echo e(lang('Quantity')); ?></label>
@@ -39,6 +39,11 @@
 
 
             <div class="product">
+                <div class="product-details">
+                    <div class="product-title"><?php echo e($item->products->code); ?></div>
+
+                </div>
+
                 <div class="product-image">
                     <a href="<?php echo e(route('langs.product_details',$item->products->id)); ?>">
                         <img src="<?php echo e($item->products->getFirstMediaUrl('products')); ?>">
@@ -49,10 +54,6 @@
 
                 </div>
 
-                <div class="product-details">
-                    <div class="product-title"><?php echo e($item->products->code); ?></div>
-
-                </div>
                 <div class="product-details">
                     <div class="product-title"><?php echo e($item->products->pakcing); ?></div>
 
@@ -79,8 +80,6 @@
                 <div class="product-removal">
                     <a class="remove-product fa fa-trash py-2 text-decoration-none"
                        href="<?php echo e(route('langs.delCart',$item->id)); ?>">
-                        <?php echo e(lang('remove')); ?>
-
                     </a>
                 </div>
                 <div class="product-line-price"><?php echo e($item->price); ?></div>
@@ -106,7 +105,6 @@
         <?php endif; ?>
     </div>
     </form>
-<a class="bg-danger" href="<?php echo e(route('send_email')); ?>" > Test Emails</a>
 <?php else: ?>
     <div class="container d-flex align-items-center justify-content-center">
         <img height="80%" width="60%" src="<?php echo e(asset('assets/img/empty-cart.gif')); ?>">

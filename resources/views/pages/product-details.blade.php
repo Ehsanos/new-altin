@@ -129,7 +129,7 @@
             @foreach($product->tags as $tag)
 
 
-                <a href="#" class="badge badge-dark tag-div py-2 px-2 mb-1">{{$tag->name}}</a>
+                <a href="#" class="badge badge-dark tags-div py-2 px-2 mb-1">{{$tag->name}}</a>
 
 
             @endforeach

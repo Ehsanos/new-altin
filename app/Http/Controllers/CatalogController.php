@@ -20,6 +20,7 @@ class CatalogController extends Controller
         $catalogs=Catalog::all();
         $slider = Slider::where('type', '=', 'catalogs')->get();
         $tags=Tag::where('type','catalog')->get();
+//        dd($catalogs);
         $style=Themes::where('key','catalogs')->first();
 
 

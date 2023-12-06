@@ -111,6 +111,13 @@
     width: 95%;
     margin: auto;
 }
+.tags-div{
+    border-radius: 5px;
+    color:darkgoldenrod;
+    background-color: #231f16;
+    /*height: 150px;*/
+    margin: auto;
+}
 
 .floatbb{
     position:fixed;
