@@ -71,9 +71,32 @@
                             href="<?php echo e(route('langs.index')); ?>"><?php echo e(lang('home')); ?></a></li>
 
 
-                    <li class="nav-item main-link"><a
-                            class="nav-link dropdown font-weight-bolder  <?php if(\Request::route()->getName() =='langs.products'): ?> active <?php endif; ?>"
-                            href="<?php echo e(route('langs.products')); ?>"><?php echo e(lang('product')); ?></a></li>
+
+
+                    <li class="nav-item dropdown nav-item main-link">
+                        <a class="nav-link dropdown-toggle nav-link dropdown font-weight-bolder  <?php if(\Request::route()->getName() =='langs.products'): ?> active <?php endif; ?>" href="<?php echo e(route('langs.products')); ?>" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+                            <?php echo e(lang('product')); ?>
+
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                            <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <li class="d-flex"><a class="dropdown-item" href="#">Action</a></li>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+                        </ul>
+                    </li>
+
+
+
+
+
+
+
+
+
+
+
+
                     <li class="nav-item main-link"><a
                             class="nav-link font-weight-bolder <?php if(\Request::route()->getName() =='langs.catalog'): ?> active <?php endif; ?>"
                             href="<?php echo e(route('langs.catalog')); ?>"><?php echo e(lang('services')); ?></a></li>
@@ -129,15 +152,15 @@
                                     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('counter', [])->html();
-} elseif ($_instance->childHasBeenRendered('LvWDnpB')) {
-    $componentId = $_instance->getRenderedChildComponentId('LvWDnpB');
-    $componentTag = $_instance->getRenderedChildComponentTagName('LvWDnpB');
+} elseif ($_instance->childHasBeenRendered('eaIw7Gq')) {
+    $componentId = $_instance->getRenderedChildComponentId('eaIw7Gq');
+    $componentTag = $_instance->getRenderedChildComponentTagName('eaIw7Gq');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('LvWDnpB');
+    $_instance->preserveRenderedChild('eaIw7Gq');
 } else {
     $response = \Livewire\Livewire::mount('counter', []);
     $html = $response->html();
-    $_instance->logRenderedChild('LvWDnpB', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('eaIw7Gq', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
@@ -232,7 +255,7 @@ echo $html;
                         <h3 class="font-weight-bold text-center text-lg-right fs-6 text-dark"><?php echo e(lang('about')); ?></h3>
                         <ul class="list-unstyled text-center text-lg-right">
                             <li><a href="<?php echo e(route('langs.about')); ?>"><?php echo e(lang('we_are')); ?></a></li>
-                            <li><a href="#"><?php echo e(lang('policy')); ?></a></li>
+                            <li><a href="<?php echo e(route('langs.policy')); ?>"><?php echo e(lang('policy')); ?></a></li>
                             <li><a href="<?php echo e(route('langs.about')); ?>"><?php echo e(lang('call_us')); ?></a></li>
                         </ul>
                     </div>

@@ -56,8 +56,8 @@
                             </div>
                             <div class="contact-info-text">
                                 <h2><?php echo e(lang('address')); ?></h2>
-                                <span><?php echo e(getTrans($settings,'address')); ?> </span>
-                                <span><?php echo e(getTrans($settings,'description')); ?></span>
+                                <span><?php echo getTrans($settings,'address'); ?> </span>
+                                <span><?php echo getTrans($settings,'phone'); ?></span>
                             </div>
                         </div>
                     </div>

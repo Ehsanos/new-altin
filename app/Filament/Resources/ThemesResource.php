@@ -42,17 +42,17 @@ class ThemesResource extends Resource
                     ]
                 )->required()->label(' الصفحة'),
                Forms\Components\ColorPicker::make('primary')->required()->label('لون الخلفية'),
-                Forms\Components\ColorPicker::make('secondary')->default('1'),
-                Forms\Components\ColorPicker::make('success')->default('1'),
-                Forms\Components\ColorPicker::make('info')->default('1'),
-                Forms\Components\ColorPicker::make('warning')->default('1'),
-                Forms\Components\ColorPicker::make('danger')->default('1'),
-                Forms\Components\ColorPicker::make('light')->default('1'),
-               Forms\Components\ColorPicker::make('head_color')->default('1'),
-               Forms\Components\ColorPicker::make('paragraph_color')->default('1'),
-                Forms\Components\ColorPicker::make('link_color')->default('1'),
-                Forms\Components\ColorPicker::make('hover_color')->default('1'),
-               Forms\Components\TextInput::make('font_family')->default('1'),
+                Forms\Components\ColorPicker::make('secondary')->default('1')->hidden(),
+                Forms\Components\ColorPicker::make('success')->default('1')->hidden(),
+                Forms\Components\ColorPicker::make('info')->default('1')->hidden(),
+                Forms\Components\ColorPicker::make('warning')->default('1')->hidden(),
+                Forms\Components\ColorPicker::make('danger')->default('1')->hidden(),
+                Forms\Components\ColorPicker::make('light')->default('1')->hidden(),
+               Forms\Components\ColorPicker::make('head_color')->default('1')->hidden(),
+               Forms\Components\ColorPicker::make('paragraph_color')->default('1')->hidden(),
+                Forms\Components\ColorPicker::make('link_color')->default('1')->hidden(),
+                Forms\Components\ColorPicker::make('hover_color')->default('1')->hidden(),
+               Forms\Components\TextInput::make('font_family')->default('1')->hidden(),
             ]);
     }
 

@@ -129,7 +129,7 @@
             <?php $__currentLoopData = $product->tags; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
 
-                <a href="#" class="badge badge-dark tag-div py-2 px-2 mb-1"><?php echo e($tag->name); ?></a>
+                <a href="#" class="badge badge-dark tags-div py-2 px-2 mb-1"><?php echo e($tag->name); ?></a>
 
 
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

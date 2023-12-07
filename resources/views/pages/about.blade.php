@@ -57,8 +57,8 @@
                             </div>
                             <div class="contact-info-text">
                                 <h2>{{lang('address')}}</h2>
-                                <span>{{getTrans($settings,'address')}} </span>
-                                <span>{{getTrans($settings,'description')}}</span>
+                                <span>{!!getTrans($settings,'address')!!} </span>
+                                <span>{!!getTrans($settings,'phone')!!}</span>
                             </div>
                         </div>
                     </div>

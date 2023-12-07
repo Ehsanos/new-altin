@@ -51,10 +51,11 @@ class CategoryController extends Controller
     {
 
 
-       $allProductsInOnCat= $cat->products();
+       $allProductsInOnCat= $cat->products()->get();
 
-       dd($allProductsInOnCat->where('id','=','3'));
+//       dd($allProductsInOnCat);
 
+        return view('pages.products-in-cat',["products"=>$allProductsInOnCat]);
     }
 
     /**

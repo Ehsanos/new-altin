@@ -70,9 +70,31 @@
                             href="{{route('langs.index')}}">{{lang('home')}}</a></li>
 
 
-                    <li class="nav-item main-link"><a
-                            class="nav-link dropdown font-weight-bolder  @if (\Request::route()->getName() =='langs.products') active @endif"
-                            href="{{route('langs.products')}}">{{lang('product')}}</a></li>
+
+
+                    <li class="nav-item dropdown nav-item main-link">
+                        <a class="nav-link dropdown-toggle nav-link dropdown font-weight-bolder  @if (\Request::route()->getName() =='langs.products') active @endif" href="{{route('langs.products')}}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+                            {{lang('product')}}
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                            @foreach($products as $product)
+                            <li class="d-flex"><a class="dropdown-item" href="#">Action</a></li>
+                            @endforeach
+
+                        </ul>
+                    </li>
+
+
+
+
+{{--                    test--}}
+
+{{--                    test--}}
+
+
+{{--                    <li class="nav-item main-link"><a--}}
+{{--                            class="nav-link dropdown font-weight-bolder  @if (\Request::route()->getName() =='langs.products') active @endif"--}}
+{{--                            href="{{route('langs.products')}}">{{lang('product')}}</a></li>--}}
                     <li class="nav-item main-link"><a
                             class="nav-link font-weight-bolder @if (\Request::route()->getName() =='langs.catalog') active @endif"
                             href="{{route('langs.catalog')}}">{{lang('services')}}</a></li>
@@ -217,7 +239,7 @@
                         <h3 class="font-weight-bold text-center text-lg-right fs-6 text-dark">{{lang('about')}}</h3>
                         <ul class="list-unstyled text-center text-lg-right">
                             <li><a href="{{route('langs.about')}}">{{lang('we_are')}}</a></li>
-                            <li><a href="#">{{lang('policy')}}</a></li>
+                            <li><a href="{{route('langs.policy')}}">{{lang('policy')}}</a></li>
                             <li><a href="{{route('langs.about')}}">{{lang('call_us')}}</a></li>
                         </ul>
                     </div>

@@ -95,7 +95,8 @@ class ProductController extends Controller
 
     //     dd($imgs);
 
-        $allproducts=Product::with('media')->get();
+//        $allproducts=Product::with('media')->get();
+        $allproducts=Product::with('media')->where('department_id',$product->department_id)->get();
 
 //        dd($allproducts);
 
