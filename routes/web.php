@@ -3,6 +3,7 @@
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ShareController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
@@ -52,6 +53,7 @@ Route::name('langs.')->middleware('locale')->group(function () {
     Route::get('/cat/{data}',[CategoryController::class,'show'])->name('category');
     Route::get('/allcat/{cat}',[CategoryController::class,'show'])->name('fofo');
     Route::get('/policy',[JobController::class,'index'])->name('policy');
+//    Route::get('/share/{id}',[ShareController::class,'share'])->name('share');
 
 
     Route::get('/test', [IndexController::class, 'test']);

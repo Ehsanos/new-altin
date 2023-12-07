@@ -345,9 +345,13 @@ body {
     height: 75vh;
     width: 98%;
     margin: auto;
-    background-color: #ecd96b;
+    /*background-color: #ecd96b;*/
 }
 
+.title-policy{
+    color: #33270f;;
+
+}
 .policy p {
     color: #33270f;
 

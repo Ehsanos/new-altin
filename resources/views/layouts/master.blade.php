@@ -301,6 +301,8 @@
 <script src="{{asset('assets/js/Off-Canvas-Sidebar-Drawer-Navbar-off-canvas-sidebar.js')}}"></script>
 <script src="{{asset('assets/js/details-product.js')}}"></script>
 <script src="{{asset('assets/js/slide-animation-test.js')}}"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+<script src="{{ asset('js/share.js') }}"></script>
 </body>
 
 </html>

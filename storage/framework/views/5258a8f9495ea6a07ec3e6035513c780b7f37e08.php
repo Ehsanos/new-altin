@@ -45,8 +45,8 @@
 
 
 
-        <div class="container policy" <?php if($style): ?> style="background-color:<?php echo e($style->primary); ?>" <?php endif; ?>>
-            <h1 class=""><?php echo e(lang('policy')); ?></h1>
+        <div class="container policy mt-2 mt-md-4 mt-lg-5" <?php if($style): ?> style="background-color:<?php echo e($style->primary); ?>" <?php endif; ?>>
+            <h1 class="title-policy "><?php echo e(lang('policy')); ?></h1>
 
             <p >
              <?php echo getTrans($setting,'description'); ?>

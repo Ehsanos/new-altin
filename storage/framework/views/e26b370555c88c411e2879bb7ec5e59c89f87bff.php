@@ -23,7 +23,7 @@
 
                         <?php $__currentLoopData = $slider; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $slide): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <div class="carousel-item <?php if($loop->first): ?>active <?php endif; ?>">
-                                <a <?php if($slide->cats): ?> href="<?php echo e(route('langs.category',$slide->cats)); ?>" <?php else: ?> href="<?php echo e($slide->url); ?>" <?php endif; ?> >
+                                <a <?php if($slide->cats): ?> href="<?php echo e(route('langs.fofo',$slide->cats)); ?>" <?php else: ?> href="<?php echo e($slide->url); ?>" <?php endif; ?> >
                                     <div class="h-75 w-100"
                                          style="background: url('<?php echo e($slide->getFirstMediaUrl('slider')); ?>') center / cover no-repeat;">
 

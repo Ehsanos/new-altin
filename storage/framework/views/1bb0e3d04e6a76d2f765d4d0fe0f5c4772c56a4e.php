@@ -74,20 +74,17 @@
 
                     <div class="social-links">
                         <p><?php echo e(lang('share')); ?>: </p>
-                        <a href="https://facebook.com">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=http://127.0.0.1:8000/details/<?php echo e($id); ?>}">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="https://twitter.com">
+                        <a href="https://twitter.com/intent/tweet?text=Share+title&url=http://127.0.0.1:8000/details/<?php echo e($id); ?>">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="https://instagram.com">
-                            <i class="fab fa-instagram"></i>
+                        <a href="https://t.me/share/url?url=http://127.0.0.1:8000/details/<?php echo e($id); ?>">
+                            <i class="fab fa-telegram"></i>
                         </a>
-                        <a href="https://wa.me/999404187">
+                        <a href="https://wa.me/?text=http://127.0.0.1:8000/details/<?php echo e($id); ?>">
                             <i class="fab fa-whatsapp"></i>
-                        </a>
-                        <a href="https://pinterest.com">
-                            <i class="fab fa-pinterest"></i>
                         </a>
                     </div>
                 </div>

@@ -40,7 +40,7 @@ class SliderResource extends Resource
         return $form
             ->schema([
                 SpatieMediaLibraryFileUpload::make('img')->collection('slider')->label('الصورة')->required(),
-                Forms\Components\Select::make('cats')->options(Department::all()->pluck('name', 'id'))->nullable()->label('من فئة'),
+                Forms\Components\Select::make('cats')->options(Category::all()->pluck('name', 'id'))->nullable()->label('من فئة'),
                 Forms\Components\TextInput::make('url')->label('منتج محدد'),
                 Forms\Components\Card::make()->schema([
                     Forms\Components\Radio::make('type')->options([

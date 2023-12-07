@@ -24,7 +24,7 @@
 
                         @foreach($slider as $slide)
                             <div class="carousel-item @if($loop->first)active @endif">
-                                <a @if($slide->cats) href="{{route('langs.category',$slide->cats)}}" @else href="{{$slide->url}}" @endif >
+                                <a @if($slide->cats) href="{{route('langs.fofo',$slide->cats)}}" @else href="{{$slide->url}}" @endif >
                                     <div class="h-75 w-100"
                                          style="background: url('{{$slide->getFirstMediaUrl('slider')}}') center / cover no-repeat;">
 

@@ -165,6 +165,10 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Mews\Captcha\CaptchaServiceProvider::class,
         Elibyy\TCPDF\ServiceProvider::class,
+        Biscolab\ReCaptcha\ReCaptchaServiceProvider::class,
+        Jorenvh\Share\Providers\ShareServiceProvider::class,
+
+
 
 
         /*
@@ -188,7 +192,11 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // ...
         'Captcha' => Mews\Captcha\Facades\Captcha::class,
-        'PDF' => Elibyy\TCPDF\Facades\TCPDF::class
+        'PDF' => Elibyy\TCPDF\Facades\TCPDF::class,
+        'ReCaptcha' => Biscolab\ReCaptcha\Facades\ReCaptcha::class,
+        'Share' => Jorenvh\Share\ShareFacade::class,
+
+
 
 
 

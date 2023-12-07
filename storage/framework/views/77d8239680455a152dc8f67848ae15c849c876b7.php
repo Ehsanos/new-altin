@@ -152,15 +152,15 @@
                                     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('counter', [])->html();
-} elseif ($_instance->childHasBeenRendered('eaIw7Gq')) {
-    $componentId = $_instance->getRenderedChildComponentId('eaIw7Gq');
-    $componentTag = $_instance->getRenderedChildComponentTagName('eaIw7Gq');
+} elseif ($_instance->childHasBeenRendered('00Kobiu')) {
+    $componentId = $_instance->getRenderedChildComponentId('00Kobiu');
+    $componentTag = $_instance->getRenderedChildComponentTagName('00Kobiu');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('eaIw7Gq');
+    $_instance->preserveRenderedChild('00Kobiu');
 } else {
     $response = \Livewire\Livewire::mount('counter', []);
     $html = $response->html();
-    $_instance->logRenderedChild('eaIw7Gq', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('00Kobiu', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
@@ -318,6 +318,8 @@ echo $html;
 <script src="<?php echo e(asset('assets/js/Off-Canvas-Sidebar-Drawer-Navbar-off-canvas-sidebar.js')); ?>"></script>
 <script src="<?php echo e(asset('assets/js/details-product.js')); ?>"></script>
 <script src="<?php echo e(asset('assets/js/slide-animation-test.js')); ?>"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+<script src="<?php echo e(asset('js/share.js')); ?>"></script>
 </body>
 
 </html>

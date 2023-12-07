@@ -100,7 +100,7 @@ class ProductController extends Controller
 
 //        dd($allproducts);
 
-        return view('pages.product-details', compact('product', 'imgs','allproducts'));
+        return view('pages.product-details', compact('product', 'imgs','allproducts','id'));
     }
 
     public function download($id)
