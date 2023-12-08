@@ -123,7 +123,7 @@
 
 
         <div class=" mt-2 container">
-            @foreach($product->tags as $tag)
+            @foreach($tags as $tag)
 
 
                 <a href="#" class="badge badge-dark tags-div py-2 px-2 mb-1">{{$tag->name}}</a>

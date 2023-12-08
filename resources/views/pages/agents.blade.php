@@ -81,9 +81,9 @@
 
     </div>
 
-    <div class=" mt-2">
-        <a href="#" class="badge badge-dark tags-div py-2 px-2">Dark</a>
-        <a href="#" class="badge badge-dark tags-div py-2 px-2">Dark</a>
+{{--    <div class=" mt-2">--}}
+{{--        <a href="#" class="badge badge-dark tags-div py-2 px-2">Dark</a>--}}
+{{--        <a href="#" class="badge badge-dark tags-div py-2 px-2">Dark</a>--}}
 
 
 
@@ -91,7 +91,7 @@
 
 
 
-    </div>
+{{--    </div>--}}
 
 </div>
 

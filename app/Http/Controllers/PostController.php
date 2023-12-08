@@ -18,7 +18,7 @@ class PostController extends Controller
     public function index()
     {
         $tags = Tag::where('type', 'post')->get();
-        //dd($tags->name);
+//        dd($tags[0]->name);
 
         $posts = Post::all();
         $slider = Slider::where('type', '=', 'news')->get();
@@ -57,7 +57,11 @@ class PostController extends Controller
     {
 
         $style=Themes::where('key','news')->first();
-        return view('pages.news', compact('post','style'));
+
+        $tags=$post->tags()->get();
+
+//        dd($tags);
+        return view('pages.news', compact('post','style','tags'));
     }
 
     /**

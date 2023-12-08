@@ -71,14 +71,15 @@
 
 
             </div>
-            <div class=" mt-2 container">
+
+
+            <div class=" mt-2">
+{{--                @dd($tags[0]->name[0]->ar)--}}
+
                 @foreach($tags as $tag)
-
-
-                    <a href="#" class="badge badge-dark tag-div py-2 px-2 mb-1">{{$tag->name['ar']}}</a>
-
-
+                    <a href="#" class="badge badge-dark tags-div py-2 px-2">{{$tag->name['ar']}}</a>
                 @endforeach
+
             </div>
 
         </section>

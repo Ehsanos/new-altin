@@ -32,7 +32,7 @@
                     </div>
                 </div>
                 <div class=" mt-2">
-                    @foreach($post->tags as $tag)
+                    @foreach($tags as $tag)
                         <a href="#" class="badge badge-dark tags-div py-2 px-2">{{$tag->name}}</a>
                     @endforeach
 

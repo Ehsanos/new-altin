@@ -103,12 +103,13 @@
                     </div>
                 </div>
             </div>
-            <div class=" mt-2">
-                <?php $__currentLoopData = $tags; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <a href="#" class="badge badge-dark tag-div py-2 px-2"><?php echo e($tag->name); ?></a>
 
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-            </div>
+        </div>
+        <div class=" mt-2">
+            <?php $__currentLoopData = $tags; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <a href="#" class="badge badge-dark tags-div py-2 px-2"><?php echo e($tag->name); ?></a>
+
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>
     </section>
 
