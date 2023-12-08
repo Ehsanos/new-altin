@@ -75,7 +75,7 @@
 
             <!-- Email Address -->
             <div>
-                <?php echo e(lang('email')); ?>
+                <?php echo e(__('words.email')); ?>
 
                 <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.label','data' => ['for' => 'email']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
@@ -112,7 +112,7 @@
 
             <!-- Password -->
             <div class="mt-4">
-                <?php echo e(lang('password')); ?>
+                <?php echo e(__('words.password')); ?>
 
                 <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.label','data' => ['for' => 'password']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
@@ -151,14 +151,14 @@
             <div class="block mt-4">
                 <label for="remember_me" class="inline-flex items-center">
                     <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                    <span class="ml-2 text-sm text-gray-600"><?php echo e(__('تذكرني')); ?></span>
+                    <span class="ml-2 text-sm text-gray-600"><?php echo e(__('words.remember')); ?></span>
                 </label>
             </div>
 
             <div class="flex items-center justify-end mt-4 ">
                 <?php if(Route::has('password.request')): ?>
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="<?php echo e(route('password.request')); ?>">
-                        <?php echo e(__('نسيت كلمة المرور؟')); ?>
+                        <?php echo e(__('words.forgetpassword')); ?>
 
                     </a>
                 <?php endif; ?>

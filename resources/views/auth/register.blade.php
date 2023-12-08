@@ -15,7 +15,7 @@
 
         <!-- Name -->
             <div>
-                <x-label for="name" :value="__('Name')"/>
+                <x-label for="name" :value="__('words.name')"/>
 
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required
                          autofocus/>
@@ -23,14 +23,14 @@
 
             <!-- Email Address -->
             <div class="mt-3">
-                <x-label for="email" :value="__('Email')"/>
+                <x-label for="email" :value="__('words.email')"/>
 
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required/>
             </div>
 
             <!-- Password -->
             <div class="mt-3">
-                <x-label for="password" :value="__('Password')"/>
+                <x-label for="password" :value="__('words.password')"/>
 
                 <x-input id="password" class="block mt-1 w-full"
                          type="password"
@@ -48,17 +48,18 @@
 {{--            </div>--}}
 
             {{--phone--}}
+
+
             <div class="mt-3">
-                <x-label for="phone" :value="__('phone')"/>
+                <x-label for="phone" :value="__('words.phone')"/>
 
                 <x-input id="phone" class="block mt-1 w-full" type="tel" name="name" required
                          autofocus/>
             </div>
 
             <!-- Country-->
-
                 <div class="mt-3">
-                    <x-input-label for="name" :value="__('country')"/>
+                    <x-input-label for="name" :value="__('words.country')"/>
                     <x-input-select class="block mt-1 w-full" :options="$countries" name="country"/>
 
                 </div>
@@ -67,11 +68,11 @@
 
                 <div class="flex items-center justify-end mt-4">
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                        {{ __('لدي حساب ') }}
+                        {{__('words.have')}}
                     </a>
 
                     <x-button class="ml-4">
-                        {{ __('إنشاء حساب') }}
+                        {{ __('words.create') }}
                     </x-button>
                 </div>
 
