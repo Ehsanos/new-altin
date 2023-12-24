@@ -7,11 +7,11 @@ $('#main-slider').owlCarousel({
     autoplay:true,
     rtl:true,
    animateOut: 'slideOutDown',
-    autoplayTimeout:3000,
+    autoplayTimeout:4000,
 });
 $('#products').owlCarousel({
     center: false,
-    autoplayTimeout:3000,
+    autoplayTimeout:7000,
     loop:true,
     margin:0,
     autoplay:true,
@@ -37,7 +37,7 @@ $('#products').owlCarousel({
 
 $('#sections').owlCarousel({
     center: false,
-    autoplayTimeout:3000,
+    autoplayTimeout:7000,
 
     loop:true,
     margin:10,
@@ -70,7 +70,7 @@ $('#relative_products').owlCarousel({
     margin:10,
     autoplay:true,
     rtl:true,
-    autoplayTimeout:5000,
+    autoplayTimeout:7000,
     mouseDrag:true,
     responsive:{
         0:{
@@ -84,7 +84,7 @@ $('#relative_products').owlCarousel({
              dots:true,
         },
         1024:{
-            items:6,
+            items:4,
              dots:true,
         },
 
@@ -94,22 +94,22 @@ $('#relative_products').owlCarousel({
 
 
 $('#news').owlCarousel({
-    autoplayTimeout:3000,
+    autoplayTimeout:6000,
 
    center: false,
     loop:true,
-    margin:0,
+    margin:3,
     autoplay:true,
     rtl:true,
      dots:true,
     mouseDrag:true,
     responsive:{
         0:{
-            items:2,
+            items:1,
              center: false,
         },
         600:{
-            items:3,
+            items:2,
         },
 
     }

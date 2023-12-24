@@ -229,6 +229,8 @@
                                 <div class="mb-3">
                                     <button class="btn btn-primary btn-sign" type="submit">{{lang('send')}}</button>
                                 </div>
+                                <div>{!!htmlFormSnippet()!!}</div>
+
                             </form>
 
                         </div>

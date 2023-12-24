@@ -43,24 +43,25 @@ class ProductController extends Controller
         }
 
 
+        $tags = Tag::where('type', 'product')->get();
+        $lang = App()->getLocale();
 
-        $tags = Tag::where('type','product')->get();
-        $lang=App()->getLocale();
-
-        $style=Themes::where('key','product')->first();
+        $style = Themes::where('key', 'product')->first();
 
         return view('pages.products', ["cats" => $cats, "departments" => $departments,
-            "products" => $products, "tags" => $tags, "slider" => $slider,"lang"=>$lang ,"style"=>$style]);
+            "products" => $products, "tags" => $tags, "slider" => $slider, "lang" => $lang, "style" => $style]);
 
     }
 
 
-    public function profile(){
+    public function profile()
+    {
         if (auth()->check())
-        return view('pages.profile');
+            return view('pages.profile');
         else return redirect('login');
 
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -93,16 +94,16 @@ class ProductController extends Controller
         $product = Product::with('media')->findOrfail($id);
         $imgs = Product::with('media')->findOrfail($id)->getMedia("*");
 
-    //     dd($imgs);
+        //     dd($imgs);
 
 //        $allproducts=Product::with('media')->get();
-        $allproducts=Product::with('media')->where('department_id',$product->department_id)->get();
+        $allproducts = Product::with('media')->where('department_id', $product->department_id)->get();
 
 //        dd($allproducts);
 
-        $tags=$product->tags()->get();
+        $tags = $product->tags()->get();
 
-        return view('pages.product-details', compact('product', 'imgs','allproducts','id','tags'));
+        return view('pages.product-details', compact('product', 'imgs', 'allproducts', 'id', 'tags'));
     }
 
     public function download($id)
@@ -124,8 +125,11 @@ class ProductController extends Controller
     }
 
 
-    public function search(Request $request)
+    public function search(Request $request ,$catId = null, $depId = null)
     {
+        $cats = Category::where('is_active', true)->get();
+        $departments = Department::when($catId, fn($q) => $q->whereCategoryId($catId))->whereIsActive(true)->get();
+
         if ($request->search != " ") {
             $products = Product::where('name', 'LIKE', '%' . $request->search . '%')
                 ->orWhere('name_en', 'LIKE', '%' . $request->search . '%')
@@ -138,7 +142,7 @@ class ProductController extends Controller
                 ->orWhere('description_du', 'LIKE', '%' . $request->search . '%')
                 ->orWhere('description_es', 'LIKE', '%' . $request->search . '%')
                 ->where('is_active', 'true')->get();
-            return view('pages.product-search', compact('products'));
+            return view('pages.product-search2', compact('products','departments','cats'));
 
         } else {
             $products = Product::where('is_active', true)->get();

@@ -6,7 +6,7 @@
                 <div class="alert alert-success"><?php echo e(Session::get('message')); ?></div>
             </div>
         <?php endif; ?>
-        <div class="top-content">
+        <div class="top-content-slider">
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <?php $__currentLoopData = $slider; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $slide): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -21,10 +21,10 @@
                     <?php $__currentLoopData = $slider; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $slide): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <div class="carousel-item <?php if($loop->first): ?>active <?php endif; ?>">
 
-                            <div class="h-100 w-100 img-div"
+                            <div class="top-content-slider w-100 img-div"
                                  style="background: url('<?php echo e($slide->getFirstMediaUrl('slider')); ?>') center / cover no-repeat;">
 
-                                <div class="h-100 w-100 ">
+                                <div class="top-content-slider w-100 ">
                                     <div class="slide_style_right">
                                         <div class="row justify-content-center align-items-center">
                                             <div class="col-12 text-center align-self-center slide-text">
@@ -40,9 +40,10 @@
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                 </div>
-                <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev"><span
+                <a class="carousel-control-prev h-50" href="#myCarousel" role="button" data-slide="prev"><span
                         class="carousel-control-prev-icon" aria-hidden="true"></span><span
-                        class="sr-only">Previous</span></a><a class="carousel-control-next" href="#myCarousel"
+                        class="sr-only">Previous</span></a>
+                <a class="carousel-control-next h-50" href="#myCarousel"
                                                               role="button" data-slide="next"><span
                         class="carousel-control-next-icon" aria-hidden="true"></span><span
                         class="sr-only">Next</span></a>
@@ -125,11 +126,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" >
                     <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
 
-                        <div class="col-12 col-md-6 col-lg-4 mb-2">
+                        <div class="col-12 col-md-6 col-lg-4 mb-2 ">
                             <a class="text-decoration-none" href="<?php echo e(route('langs.product_details',[$product])); ?>">
                                 <div class="p-2 card product-main">
                                     <div class="text-center">
@@ -148,11 +149,12 @@
                             </a>
                         </div>
 
+
+
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
             </div>
         </div>
-        
 
 
         </div>

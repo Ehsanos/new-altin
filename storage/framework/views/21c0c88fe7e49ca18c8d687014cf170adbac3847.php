@@ -172,7 +172,7 @@
 <?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
 <?php endif; ?>
 <?php $component->withAttributes(['class' => 'ml-3']); ?>
-                    <?php echo e(__('دخول')); ?>
+                    <?php echo e(__('words.login')); ?>
 
                  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
@@ -184,7 +184,7 @@
 
             </div>
         </form>
-        <a class="underline text-sm text-gray-600 hover:text-gray-900" href="<?php echo e(route('register')); ?>">ليس لدي حساب</a>
+        <a class="underline text-sm text-gray-600 hover:text-gray-900" href="<?php echo e(route('register')); ?>"><?php echo e(__('words.donthave')); ?></a>
      <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>

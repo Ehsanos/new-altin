@@ -51,7 +51,7 @@
                     <h2 class="product-title">{{getTrans($product,'name')}}</h2>
 
                     <div class="product-price">
-                        <p>{{lang('price')}} <span class="new-price">{{$product->price}} $</span></p>
+                        <p>{{lang('code')}} <span class="new-price">{{$product->code}}</span></p>
                     </div>
 
                     <div class="product-detail">
@@ -102,7 +102,7 @@
                             <div class="product-item">
                                 <a class="text-decoration-none"
                                                               href="{{route('langs.product_details',[$product])}}">
-                                    <div class="card cards-shadown cards-hover my-5 d-flex flex-column w-75" data-aos="flip-left"
+                                    <div class="card cards-shadown cards-hover  d-flex flex-column w-75" data-aos="flip-left"
                                          data-aos-duration="950">
                                         <div class="card-header"><img class="img-fluid rounded-img"
                                                                       src="{{$product->getFirstMediaUrl('products')}}">

@@ -47,15 +47,18 @@ class CategoryController extends Controller
      * @param \App\Models\Category $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $cat)
+    public function show(Category $cat ,$catId=null)
     {
+        $cats = Category::where('is_active', true)->get();
+
+        $departments = Department::when($catId, fn($q) => $q->whereCategoryId($catId))->whereIsActive(true)->get();
 
 
        $allProductsInOnCat= $cat->products()->get();
 
 //       dd($allProductsInOnCat);
 
-        return view('pages.products-in-cat',["products"=>$allProductsInOnCat]);
+        return view('pages.products-in-cat2',["products"=>$allProductsInOnCat ,"cats"=>$cats,"departments"=>$departments]);
     }
 
     /**

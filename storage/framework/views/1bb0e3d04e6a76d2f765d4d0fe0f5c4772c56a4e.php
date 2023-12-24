@@ -51,7 +51,7 @@
                     <h2 class="product-title"><?php echo e(getTrans($product,'name')); ?></h2>
 
                     <div class="product-price">
-                        <p><?php echo e(lang('price')); ?> <span class="new-price"><?php echo e($product->price); ?> $</span></p>
+                        <p><?php echo e(lang('code')); ?> <span class="new-price"><?php echo e($product->code); ?></span></p>
                     </div>
 
                     <div class="product-detail">
@@ -102,7 +102,7 @@
                             <div class="product-item">
                                 <a class="text-decoration-none"
                                                               href="<?php echo e(route('langs.product_details',[$product])); ?>">
-                                    <div class="card cards-shadown cards-hover my-5 d-flex flex-column w-75" data-aos="flip-left"
+                                    <div class="card cards-shadown cards-hover  d-flex flex-column w-75" data-aos="flip-left"
                                          data-aos-duration="950">
                                         <div class="card-header"><img class="img-fluid rounded-img"
                                                                       src="<?php echo e($product->getFirstMediaUrl('products')); ?>">

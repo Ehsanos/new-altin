@@ -228,6 +228,8 @@
                                 <div class="mb-3">
                                     <button class="btn btn-primary btn-sign" type="submit"><?php echo e(lang('send')); ?></button>
                                 </div>
+                                <div><?php echo htmlFormSnippet(); ?></div>
+
                             </form>
 
                         </div>

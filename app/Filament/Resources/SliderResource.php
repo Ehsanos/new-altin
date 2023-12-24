@@ -46,8 +46,8 @@ class SliderResource extends Resource
                     Forms\Components\Radio::make('type')->options([
                         'main' => "الرئيسية",
                         'product' => "المنتجات",
-                        'delegtes' => "المندوبون",
-                        'agents' => "ألوكلاء",
+//                        'delegtes' => "المندوبون",
+                        'agents' => "الوكلاء",
                         'about' => "من نحن",
                         'jobs' => "الخصوصية",
                         'news' => "الأخبار",

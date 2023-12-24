@@ -57,7 +57,9 @@ class IndexController extends Controller
 //        dd($settings->address);
         $style=Themes::where('key','about')->first();
 
-        $slider = Slider::where('discrption', '=', 'about')->get();
+        $slider = Slider::where('type', '=', 'about')->get();
+
+//        dd($slider);
 
         return view('pages.about', compact('slider','settings','style'));
     }

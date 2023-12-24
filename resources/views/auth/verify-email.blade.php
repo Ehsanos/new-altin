@@ -7,7 +7,7 @@
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">
-            {{ __('شكرا لتسجيلك في موقعنا الرجاء التحقق من بريدك الالكتروني حتى تستطيع الاستفادة من كامل مزايا الموقع') }}
+            {{ __('words.thanks') }}
         </div>
 
         @if (session('status') == 'verification-link-sent')

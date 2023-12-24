@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Home - Brand</title>
+    <title>Altin Mix 34</title>
 
     <?php if(app()->getLocale()=='ar'): ?>
         <link rel="stylesheet" href="<?php echo e(asset('assets/bootstrap/css/bootstrap.min.css')); ?>">
@@ -155,15 +155,15 @@
                                     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('counter', [])->html();
-} elseif ($_instance->childHasBeenRendered('nmP4bFZ')) {
-    $componentId = $_instance->getRenderedChildComponentId('nmP4bFZ');
-    $componentTag = $_instance->getRenderedChildComponentTagName('nmP4bFZ');
+} elseif ($_instance->childHasBeenRendered('qTTh5Q2')) {
+    $componentId = $_instance->getRenderedChildComponentId('qTTh5Q2');
+    $componentTag = $_instance->getRenderedChildComponentTagName('qTTh5Q2');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('nmP4bFZ');
+    $_instance->preserveRenderedChild('qTTh5Q2');
 } else {
     $response = \Livewire\Livewire::mount('counter', []);
     $html = $response->html();
-    $_instance->logRenderedChild('nmP4bFZ', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('qTTh5Q2', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
@@ -186,6 +186,7 @@ echo $html;
                 <?php else: ?>
                     <div>
                         <a class="btn shadow btn-sign" href="<?php echo e(route('login')); ?>" role="button"><?php echo e(lang('login')); ?></a>
+                        <a class="btn shadow btn-sign" href="<?php echo e(route('register')); ?>" role="button"><?php echo e(lang('register')); ?></a>
 
                     </div>
 

@@ -118,7 +118,7 @@ class ProductResource extends Resource
                 ]),
 
 
-                SpatieTagsInput::make('tags')->type('product')->label('كلمات مفتاحية'),
+//                SpatieTagsInput::make('tags')->type('product')->label('كلمات مفتاحية'),
 //                Forms\Components\TagsInput::make('tags')->label('كلمات مفتاحية انجليزي'),
 
             ]);
@@ -140,7 +140,7 @@ class ProductResource extends Resource
                 Tables\Columns\TextColumn::make('pakcing')->label('التعبئة')->searchable(),
 
 
-                Tables\Columns\TagsColumn::make('tags.name')->label('كلمات مفتاحية')->searchable(),
+//                Tables\Columns\TagsColumn::make('tags.name')->label('كلمات مفتاحية')->searchable(),
 
 
             ])

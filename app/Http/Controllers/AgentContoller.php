@@ -17,12 +17,11 @@ class AgentContoller extends Controller
      */
     public function index()
     {
-        $agents=Agent::where('type','agent')->get();
-        $slider = Slider::where('discrption', '=', 'agent')->get();
+        $agents = Agent::where('type', 'agent')->get();
+        $slider = Slider::where('type', 'agents')->get();
 
-
-
-        return view('pages.agents',compact('agents','slider'));
+//        dd($slider);
+        return view('pages.agents', compact('agents', 'slider'));
     }
 
     /**
@@ -38,7 +37,7 @@ class AgentContoller extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -49,7 +48,7 @@ class AgentContoller extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -60,7 +59,7 @@ class AgentContoller extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -71,8 +70,8 @@ class AgentContoller extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -83,7 +82,7 @@ class AgentContoller extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

@@ -1,8 +1,8 @@
 @extends('layouts.master')
 @section('content')
 
-<header class="h-100">
-    <div class="top-content">
+
+    <div class="top-content-slider">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 @foreach($slider as $slide)
@@ -17,10 +17,10 @@
                 @foreach($slider as $slide)
                     <div class="carousel-item @if($loop->first)active @endif">
 
-                        <div class="h-100 w-100 img-div"
+                        <div class="top-content-slider w-100 img-div"
                              style="background: url('{{$slide->getFirstMediaUrl('slider')}}') center / cover no-repeat;">
 
-                            <div class="h-100 w-100 ">
+                            <div class="top-content-slider w-100 ">
                                 <div class="slide_style_right">
                                     <div class="row justify-content-center align-items-center">
                                         <div class="col-12 text-center align-self-center slide-text">
@@ -36,15 +36,16 @@
                 @endforeach
 
             </div>
-            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev"><span
+            <a class="carousel-control-prev h-50" href="#myCarousel" role="button" data-slide="prev"><span
                     class="carousel-control-prev-icon" aria-hidden="true"></span><span
-                    class="sr-only">Previous</span></a><a class="carousel-control-next" href="#myCarousel"
+                    class="sr-only">Previous</span></a>
+            <a class="carousel-control-next h-50" href="#myCarousel"
                                                           role="button" data-slide="next"><span
                     class="carousel-control-next-icon" aria-hidden="true"></span><span
                     class="sr-only">Next</span></a>
         </div>
     </div>
-</header>
+
 
 <div class="container mt-5">
 

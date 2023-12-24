@@ -19,6 +19,7 @@
     width: 100%;
     box-shadow: none;
     transition: 1s ease;
+
 }
 .agent:hover {
     transform: scale(1.1);

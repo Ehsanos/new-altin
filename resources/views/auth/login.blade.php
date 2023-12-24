@@ -50,12 +50,12 @@
                 @endif
 
                 <x-button class="ml-3">
-                    {{ __('دخول') }}
+                    {{ __('words.login') }}
                 </x-button>
 
 
             </div>
         </form>
-        <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{route('register')}}">ليس لدي حساب</a>
+        <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{route('register')}}">{{__('words.donthave')}}</a>
     </x-auth-card>
 </x-guest-layout>
