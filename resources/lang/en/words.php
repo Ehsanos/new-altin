@@ -18,5 +18,8 @@ return [
     'thanks' => 'Thank you for registering on our website. Please check your email so that you can benefit from the full benefits of the website.'
     ,
     'Confirm Password' => 'Confirm Password',
+    'addTocart'=>'Added To Cart Successfully',
+    'delete_done'=>'Deletet Done',
+    'order_sent'=>'Order Sent Successfully'
 
 ];

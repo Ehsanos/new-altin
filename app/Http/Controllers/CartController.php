@@ -62,7 +62,7 @@ class CartController extends Controller
 
             return redirect()->back()->with([
                 'type' => 'Success',
-                'message' => 'تم إضافة المنتج للسلة بنجاح'
+                'message' => __('words.addTocart')
             ]);
 
 
@@ -138,6 +138,6 @@ class CartController extends Controller
     {
 //        dd('inside delet');
         Cart::destroy($id);
-        return redirect('cart')->with('flash_message', 'تم الحذف');
+        return redirect('cart')->with('flash_message',__('words.delete_done'));
     }
 }

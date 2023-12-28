@@ -96,14 +96,29 @@
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-12">
-                    <div id="relative_products" class="owl-carousel tag-div ">
+                    <div id="relative_products" class="owl-carousel tag-div " >
 
                         <?php $__currentLoopData = $allproducts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <div class="product-item">
+                            <div class="product-item" >
+
                                 <a class="text-decoration-none"
                                                               href="<?php echo e(route('langs.product_details',[$product])); ?>">
                                     <div class="card cards-shadown cards-hover  d-flex flex-column w-75" data-aos="flip-left"
-                                         data-aos-duration="950">
+                                         data-aos-duration="950" onmouseover="showsmall(this)" onmouseleave="hide2(this)">
+                                        <div class="adding-hidden" id="add">
+                                            <form action="<?php echo e(route('langs.addToCart')); ?>" method="post">
+                                                <?php echo csrf_field(); ?>
+
+
+                                                <input hidden value="<?php echo e($product->id); ?>" name="product">
+                                                <input hidden type="number" min="0" value="1" name="num">
+                                                <button type="submit" class="btn">
+                                                    <i class="fas fa-plus-circle icn"></i>
+                                                </button>
+                                            </form>
+
+                                        </div>
+
                                         <div class="card-header"><img class="img-fluid rounded-img"
                                                                       src="<?php echo e($product->getFirstMediaUrl('products')); ?>">
                                         </div>

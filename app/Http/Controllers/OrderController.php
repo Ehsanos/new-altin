@@ -80,7 +80,7 @@ class OrderController extends Controller
             $delet = Cart::where('user_id', auth()->user()->id)->delete();
             return redirect()->route('langs.index')->with(
                 ['type' => 'success',
-                    'message' => 'تم ارسال الطلب بنجاح'
+                    'message' =>__('words.order_sent')
 
                 ]
             );

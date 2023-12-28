@@ -82,7 +82,22 @@
                         <div id="sections" class="owl-carousel">
 
                             @foreach($prodcuts as $product)
-                                <div class="px-3 product-item"><a class="text-decoration-none"
+                                <div class="px-3 product-item" onmouseover="show(this)" onmouseleave="hide(this)">
+                                    <div class="adding-hidden" id="add">
+                                        <form action="{{route('langs.addToCart')}}" method="post">
+                                            @csrf
+
+
+                                            <input hidden value="{{$product->id}}" name="product">
+                                            <input hidden type="number" min="0" value="1" name="num">
+                                            <button type="submit" class="btn">
+                                                <i class="fas fa-plus-circle icn"></i>
+                                            </button>
+                                        </form>
+
+                                    </div>
+
+                                    <a class="text-decoration-none"
                                                                   href="{{route('langs.product_details',[$product])}}">
                                         <div class="card cards-shadown cards-hover my-5 w-100" data-aos="flip-left"
                                              data-aos-duration="950">

@@ -57,6 +57,7 @@
 
         <form method="POST" action="<?php echo e(route('register')); ?>">
         <?php echo csrf_field(); ?>
+        <?php echo e(__('words.have')); ?>
 
         <!-- Name -->
             <div>

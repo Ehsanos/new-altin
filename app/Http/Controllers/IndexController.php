@@ -44,6 +44,9 @@ class IndexController extends Controller
         if (in_array($lang, ['ar', 'es', 'en', 'du', 'tr'])) {
             session()->forget('lang');
             session()->put('lang', $lang);
+        }else{
+            session()->forget('lang');
+            session()->put('lang', 'en');
         }
 
         return back();

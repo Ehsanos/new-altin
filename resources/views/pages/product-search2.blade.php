@@ -80,7 +80,20 @@
                     @foreach($products as $product )
 
 
-                        <div class="col-12 col-md-6 col-lg-4 mb-2 ">
+                        <div class="col-12 col-md-6 col-lg-4 mb-2" onmouseover="show(this)" onmouseleave="hide(this)">
+                            <div class="adding-hidden" id="add">
+                                <form action="{{route('langs.addToCart')}}" method="post">
+                                    @csrf
+
+
+                                    <input hidden value="{{$product->id}}" name="product">
+                                    <input hidden type="number" min="0" value="1" name="num">
+                                    <button type="submit" class="btn">
+                                        <i class="fas fa-plus-circle icn"></i>
+                                    </button>
+                                </form>
+
+                            </div>
                             <a class="text-decoration-none" href="{{route('langs.product_details',[$product])}}">
                                 <div class="p-2 card product-main">
                                     <div class="text-center">

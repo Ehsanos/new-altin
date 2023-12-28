@@ -17,6 +17,8 @@
     
     <link rel="stylesheet" href="<?php echo e(asset('assets/css/agent.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('assets/css/about.css')); ?>">
+    <link rel="icon" href="<?php echo asset('assets/img/Altinmix.svg'); ?>"/>
+
 
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Raleway:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
@@ -54,6 +56,7 @@
 <?php
     $setting=App\Models\Setting::first();
     $products=App\Models\Product::where('is_active',true)->get();
+    $cats=App\Models\Category::where('is_active',true)->get();
 
 ?>
 
@@ -67,38 +70,18 @@
                     class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item flex-column justify-content-start align-items-center main-link"><a
+                    <li class="nav-item flex-column justify-content-start align-items-center main-link" id="nav1"><a
                             class="nav-link font-weight-bolder  <?php if(\Request::route()->getName() =='langs.index'): ?> active <?php endif; ?>"
                             href="<?php echo e(route('langs.index')); ?>"><?php echo e(lang('home')); ?></a></li>
 
 
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-
-                    
-                    
-
-
-
-
-                    
-
-                    
-
-
-                    <li class="nav-item main-link"><a
+                    <li class="nav-item main-link" id="nav-product"><a
                             class="nav-link dropdown font-weight-bolder  <?php if(\Request::route()->getName() =='langs.products'): ?> active <?php endif; ?>"
                             href="<?php echo e(route('langs.products')); ?>"><?php echo e(lang('product')); ?></a></li>
-                    <li class="nav-item main-link"><a
+                    <li class="nav-item main-link" id="nav2"><a
                             class="nav-link font-weight-bolder <?php if(\Request::route()->getName() =='langs.catalog'): ?> active <?php endif; ?>"
                             href="<?php echo e(route('langs.catalog')); ?>"><?php echo e(lang('services')); ?></a></li>
-                    <li class="nav-item main-link"><a
+                    <li class="nav-item main-link" id="nav3"><a
                             class="nav-link font-weight-bolder <?php if(\Request::route()->getName() =='langs.agents'): ?> active <?php endif; ?>"
                             href="<?php echo e(route('langs.agents')); ?>"><?php echo e(lang('agents')); ?></a></li>
                     
@@ -107,10 +90,10 @@
                     
                     
                     
-                    <li class="nav-item main-link"><a
+                    <li class="nav-item main-link" id="nav4"><a
                             class="nav-link font-weight-bolder <?php if(\Request::route()->getName() =='langs.news'): ?> active <?php endif; ?>"
                             href="<?php echo e(route('langs.news')); ?>"><?php echo e(lang('news')); ?></a></li>
-                    <li class="nav-item main-link"><a
+                    <li class="nav-item main-link" id="nav5"><a
                             class="nav-link text-nowrap font-weight-bolder <?php if(\Request::route()->getName() =='langs.about'): ?> active <?php endif; ?>"
                             href="<?php echo e(route('langs.about')); ?>"><?php echo e(lang('we_are')); ?></a></li>
                     <li class="nav-item d-none d-lg-block mx-2">
@@ -155,15 +138,15 @@
                                     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('counter', [])->html();
-} elseif ($_instance->childHasBeenRendered('qTTh5Q2')) {
-    $componentId = $_instance->getRenderedChildComponentId('qTTh5Q2');
-    $componentTag = $_instance->getRenderedChildComponentTagName('qTTh5Q2');
+} elseif ($_instance->childHasBeenRendered('Ncs1wI3')) {
+    $componentId = $_instance->getRenderedChildComponentId('Ncs1wI3');
+    $componentTag = $_instance->getRenderedChildComponentTagName('Ncs1wI3');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('qTTh5Q2');
+    $_instance->preserveRenderedChild('Ncs1wI3');
 } else {
     $response = \Livewire\Livewire::mount('counter', []);
     $html = $response->html();
-    $_instance->logRenderedChild('qTTh5Q2', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('Ncs1wI3', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
@@ -186,7 +169,8 @@ echo $html;
                 <?php else: ?>
                     <div>
                         <a class="btn shadow btn-sign" href="<?php echo e(route('login')); ?>" role="button"><?php echo e(lang('login')); ?></a>
-                        <a class="btn shadow btn-sign" href="<?php echo e(route('register')); ?>" role="button"><?php echo e(lang('register')); ?></a>
+                        <a class="btn shadow btn-sign" href="<?php echo e(route('register')); ?>"
+                           role="button"><?php echo e(lang('register')); ?></a>
 
                     </div>
 
@@ -217,6 +201,28 @@ echo $html;
         </div>
     </nav>
 
+    <div class="products-div p-3" id="products_div">
+        
+        <?php $__currentLoopData = $cats; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <a href="<?php echo e(route('langs.fofo',$cat)); ?>" class="product-show-div">
+                <li class="m-1 list-products">
+
+                    <?php echo e(getTrans($cat,'name')); ?>
+
+
+                </li>
+            </a>
+
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+    </div>
+    <div class="products-div" id="products_div">
+
+        <?php $__currentLoopData = $cats; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <li class="m-1 list-products"><?php echo e($cat->id); ?></li>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+    </div>
 
     <?php echo $__env->yieldContent('content'); ?>;
 

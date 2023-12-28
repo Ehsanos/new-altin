@@ -130,16 +130,34 @@
                     <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
 
-                        <div class="col-12 col-md-6 col-lg-4 mb-2 ">
+                        <div class="col-12 col-md-6 col-lg-4 mb-2 " onmouseover="show(this)" onmouseleave="hide(this)">
+                            <div class="adding-hidden" id="add">
+                                <form action="<?php echo e(route('langs.addToCart')); ?>" method="post">
+                                    <?php echo csrf_field(); ?>
+
+
+                                        <input hidden value="<?php echo e($product->id); ?>" name="product">
+                                        <input hidden type="number" min="0" value="1" name="num">
+                                        <button type="submit" class="btn">
+                                           <i class="fas fa-plus-circle icn"></i>
+                                        </button>
+                                </form>
+
+                            </div>
                             <a class="text-decoration-none" href="<?php echo e(route('langs.product_details',[$product])); ?>">
-                                <div class="p-2 card product-main">
+                                <div class="p-2 card product-main position-relative">
                                     <div class="text-center">
                                         <h5 class="text-truncate font-weight-bolder"><?php echo e(getTrans($product,'name')); ?></h5>
                                     </div>
                                     <div class="div-hr-w"></div>
                                     <div>
-                                        <div class="text-center card-img p-2"><img class="img-fluid"
+                                        <div class="text-center card-img p-2 "><img class="img-fluid"
                                                                                    src="<?php echo e($product->getFirstMediaUrl('products')); ?>">
+
+
+
+
+
                                         </div>
                                         <div class="px-3">
                                             <p class="text-dark font-weight-bold"><?php echo e($product->department->name ?? 'None'); ?></p>

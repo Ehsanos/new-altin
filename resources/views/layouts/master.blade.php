@@ -17,6 +17,8 @@
     {{--    <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}">--}}
     <link rel="stylesheet" href="{{asset('assets/css/agent.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/about.css')}}">
+    <link rel="icon" href="{!! asset('assets/img/Altinmix.svg') !!}"/>
+
 
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Raleway:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
@@ -53,6 +55,7 @@
 @php
     $setting=App\Models\Setting::first();
     $products=App\Models\Product::where('is_active',true)->get();
+    $cats=App\Models\Category::where('is_active',true)->get();
 
 @endphp
 
@@ -66,38 +69,18 @@
                     class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item flex-column justify-content-start align-items-center main-link"><a
+                    <li class="nav-item flex-column justify-content-start align-items-center main-link" id="nav1"><a
                             class="nav-link font-weight-bolder  @if (\Request::route()->getName() =='langs.index') active @endif"
                             href="{{route('langs.index')}}">{{lang('home')}}</a></li>
 
 
-                    {{--                    <li class="nav-item dropdown nav-item main-link">--}}
-                    {{--                        <a class="nav-link dropdown-toggle nav-link dropdown font-weight-bolder  @if (\Request::route()->getName() =='langs.products') active @endif" href="{{route('langs.products')}}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">--}}
-                    {{--                            {{lang('product')}}--}}
-                    {{--                        </a>--}}
-                    {{--                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown" >--}}
-                    {{--                            @foreach($products as $product)--}}
-                    {{--                            <li class="d-flex"><a class="dropdown-item" href="#">Action</a></li>--}}
-                    {{--                            @endforeach--}}
-
-                    {{--                        </ul>--}}
-                    {{--                    </li>--}}
-
-
-
-
-                    {{--                    test--}}
-
-                    {{--                    test--}}
-
-
-                    <li class="nav-item main-link"><a
+                    <li class="nav-item main-link" id="nav-product"><a
                             class="nav-link dropdown font-weight-bolder  @if (\Request::route()->getName() =='langs.products') active @endif"
                             href="{{route('langs.products')}}">{{lang('product')}}</a></li>
-                    <li class="nav-item main-link"><a
+                    <li class="nav-item main-link" id="nav2"><a
                             class="nav-link font-weight-bolder @if (\Request::route()->getName() =='langs.catalog') active @endif"
                             href="{{route('langs.catalog')}}">{{lang('services')}}</a></li>
-                    <li class="nav-item main-link"><a
+                    <li class="nav-item main-link" id="nav3"><a
                             class="nav-link font-weight-bolder @if (\Request::route()->getName() =='langs.agents') active @endif"
                             href="{{route('langs.agents')}}">{{lang('agents')}}</a></li>
                     {{--                    <li class="nav-item main-link"><a--}}
@@ -106,10 +89,10 @@
                     {{--                    <li class="nav-item main-link"><a--}}
                     {{--                            class="nav-link font-weight-bolder @if (\Request::route()->getName() =='langs.jobs') active @endif"--}}
                     {{--                            href="{{route('langs.jobs')}}">{{lang('jobs')}}</a></li>--}}
-                    <li class="nav-item main-link"><a
+                    <li class="nav-item main-link" id="nav4"><a
                             class="nav-link font-weight-bolder @if (\Request::route()->getName() =='langs.news') active @endif"
                             href="{{route('langs.news')}}">{{lang('news')}}</a></li>
-                    <li class="nav-item main-link"><a
+                    <li class="nav-item main-link" id="nav5"><a
                             class="nav-link text-nowrap font-weight-bolder @if (\Request::route()->getName() =='langs.about') active @endif"
                             href="{{route('langs.about')}}">{{lang('we_are')}}</a></li>
                     <li class="nav-item d-none d-lg-block mx-2">
@@ -171,7 +154,8 @@
                 @else
                     <div>
                         <a class="btn shadow btn-sign" href="{{route('login')}}" role="button">{{lang('login')}}</a>
-                        <a class="btn shadow btn-sign" href="{{route('register')}}" role="button">{{lang('register')}}</a>
+                        <a class="btn shadow btn-sign" href="{{route('register')}}"
+                           role="button">{{lang('register')}}</a>
 
                     </div>
 
@@ -202,6 +186,27 @@
         </div>
     </nav>
 
+    <div class="products-div p-3" id="products_div">
+        {{--<span><i class="fas fa-window-close" id="close"></i></span>--}}
+        @foreach($cats as $cat)
+            <a href="{{route('langs.fofo',$cat)}}" class="product-show-div">
+                <li class="m-1 list-products">
+
+                    {{getTrans($cat,'name')}}
+
+                </li>
+            </a>
+
+        @endforeach
+
+    </div>
+    <div class="products-div" id="products_div">
+
+        @foreach($cats as $cat)
+            <li class="m-1 list-products">{{$cat->id}}</li>
+        @endforeach
+
+    </div>
 
     @yield('content');
 
