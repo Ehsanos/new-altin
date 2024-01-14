@@ -53,7 +53,7 @@ Route::name('langs.')->middleware('locale')->group(function () {
     Route::get('/cat/{data}',[CategoryController::class,'show'])->name('category');
     Route::get('/allcat/{cat}',[CategoryController::class,'show'])->name('fofo');
     Route::get('/policy',[JobController::class,'index'])->name('policy');
-//    Route::get('/share/{id}',[ShareController::class,'share'])->name('share');
+    Route::get('/share/{id}',[ShareController::class,'share'])->name('share');
 
 
     Route::get('/test', [IndexController::class, 'test']);
