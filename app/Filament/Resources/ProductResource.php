@@ -6,6 +6,8 @@ use App\Filament\Resources\ProductResource\Pages;
 use App\Filament\Resources\ProductResource\RelationManagers;
 use App\Models\Category;
 use App\Models\Department;
+//use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
+
 use App\Models\Product;
 use App\Models\Tag;
 use Filament\Forms;
@@ -17,6 +19,7 @@ use Filament\Tables;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
 use RalphJSmit\Filament\SEO\SEO;
 use Filament\Forms\Components\SpatieTagsInput;
 use Filament\Tables\Actions\ReplicateAction;
@@ -62,7 +65,8 @@ class ProductResource extends Resource
                             Forms\Components\Card::make()->schema([
                                 Forms\Components\TextInput::make('name')->label('اسم المنتج بالعربي')->default('AltinMix34')->required(),
                                 Forms\Components\TextInput::make('marke_ar')->label('علامة المنتج بالعربي')->default('AltinMix34')->required(),
-                                Forms\Components\RichEditor::make('description')->label('توصيف المنتج بالعربي')->default('AltinMix34'),
+                              TinyEditor::make('description')->label('توصيف المنتج بالعربي')
+                                    ->default('AltinMix34'),
 
 
                             ]),
@@ -70,14 +74,14 @@ class ProductResource extends Resource
                         Forms\Components\Wizard\Step::make("EN")->schema([Forms\Components\Card::make()->schema([
                             Forms\Components\TextInput::make('name_en')->label('اسم EN')->default('AltinMix34'),
                             Forms\Components\TextInput::make('marke_en')->label('ماركة EN')->default('AltinMix34'),
-                            Forms\Components\RichEditor::make('description')->label('توصيف EN')->default('AltinMix34'),
+                            TinyEditor::make('description_en')->label('توصيف EN')->default('AltinMix34'),
 
 
                         ])]),
                         Forms\Components\Wizard\Step::make("TR")->schema([Forms\Components\Card::make()->schema([
                             Forms\Components\TextInput::make('name_tr')->label('اسم TR')->default('AltinMix34'),
                             Forms\Components\TextInput::make('marke_tr')->label('ماركة TR')->default('AltinMix34'),
-                            Forms\Components\RichEditor::make('description_tr')->label('وصف TR')->default('AltinMix34'),
+                            TinyEditor::make('description_tr')->label('وصف TR')->default('AltinMix34'),
 
 
                         ])]),
@@ -133,7 +137,7 @@ class ProductResource extends Resource
                 Tables\Columns\TextColumn::make('name')->label('اسم المنتج')->searchable(),
                 Tables\Columns\TextColumn::make('department.name')->label('القسم')->searchable(),
                 Tables\Columns\IconColumn::make('is_active')->boolean()->label('متوفر'),
-                Tables\Columns\TextColumn::make('description')->words(5)->label('وصف')->searchable(),
+//                Tables\Columns\TextColumn::make('description')->words(5)->label('وصف')->searchable(),
                 SpatieMediaLibraryImageColumn::make('الصورة')->collection('products')->label('صورة المنتج'),
                 Tables\Columns\ColorColumn::make('color')->copyable()
                     ->copyMessage('تم نسخ رقم اللون')->label('لون المنج'),
@@ -172,4 +176,5 @@ class ProductResource extends Resource
             'edit' => Pages\EditProduct::route('/{record}/edit'),
         ];
     }
+
 }

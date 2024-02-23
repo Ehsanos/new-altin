@@ -52,9 +52,9 @@
     </header>
 
     <section class="d-flex flex-column justify-content-center align-items-center products-1 py-2"<?php if($style): ?> style="background-color:<?php echo e($style->primary); ?>" <?php endif; ?> >
-        <div class="container" >
+        <div class="container-fluid" >
             <div class="row">
-                <div class="col-12 col-lg-3">
+                <div class="col-12 col-lg-2">
                     <div class="row">
                         <div class="col-12 m-0">
                             <div
@@ -115,7 +115,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-9">
+            <div class="col-12 col-lg-10">
                 <div class="row p-3">
                     <div class="col p-0">
                         <div class="d-flex flex-row justify-content-end align-items-center bg-gray">
@@ -130,7 +130,7 @@
                     <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
 
-                        <div class="col-12 col-md-6 col-lg-4 mb-2 " onmouseover="show(this)" onmouseleave="hide(this)">
+                        <div class="col-12 col-md-6 col-lg-3 mb-2 " onmouseover="show(this)" onmouseleave="hide(this)">
                             <div class="adding-hidden" id="add">
                                 <form action="<?php echo e(route('langs.addToCart')); ?>" method="post">
                                     <?php echo csrf_field(); ?>

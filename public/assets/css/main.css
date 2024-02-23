@@ -473,11 +473,10 @@ body {
 
 .adding-show {
 
-
-    background-color: #33270f;
+    /*background-color: #efe9ca;*/
     position: absolute;
     margin: auto;
-    top: 20%;
+    top: 50%;
     left: 20%;
     display: flex;
     align-items: center;
