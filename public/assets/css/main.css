@@ -54,7 +54,8 @@ body {
 
 .sections-s {
     background: #e8e8e8;
-    height: 70vh;
+    /*height: 60vh;*/
+    margin-top:150px;
 }
 
 #main-slider.min-vh-50 {
@@ -179,7 +180,7 @@ body {
     border: none;
     border-radius: 15px;
     background-color: rgba(255, 255, 255, 0);
-    width: 150px;
+    width: 130px;
 }
 
 .card-text.sub-text-color {
@@ -216,7 +217,7 @@ body {
 }
 
 .products {
-    height: 90vh;
+    height: 80vh;
 }
 
 .sec-news {

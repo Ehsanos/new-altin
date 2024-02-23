@@ -90,7 +90,7 @@
                                     </div>
                                     <div class="product-desc px-3">
                                         <h5 class="text-dark m-0 py-1">{{getTrans($catalog,'name')}}</h5>
-                                        <p class="text-dark m-0 py-2">{{getTrans($catalog,'description')}}</p>
+                                        <p class="text-dark m-0 py-2">{!!getTrans($catalog,'description')!!}</p>
                                     </div>
                                     <div class="product-btn px-3 py-2"><a type="button"
                                                                           class="text-decoration-none products-details"

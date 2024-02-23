@@ -22,6 +22,7 @@ use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\TimePicker;
 use Filament\Forms\Components\RichEditor;
+use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
 
 
 class CatalogResource extends Resource
@@ -58,32 +59,34 @@ class CatalogResource extends Resource
                 Forms\Components\Section::make('وصف')->schema([
 
                     Forms\Components\Wizard::make()->schema([
-                        Forms\Components\Wizard\Step::make('AR')->schema([Forms\Components\Card::make()->schema([
+                        Forms\Components\Wizard\Step::make('AR')->schema([
+                            Forms\Components\Card::make()->schema([
                             Forms\Components\TextInput::make('name')->nullable()->label('الاسم')->required(),
-                            TextArea::make('description')->label('وصف')->required(),
+                            TinyEditor::make('description')->label('وصف')->required(),
                         ])->columns(2),
                         ]),
 
                         Forms\Components\Wizard\Step::make('En')->schema([
                             Forms\Components\Card::make()->schema([
                                 Forms\Components\TextInput::make('name_en')->nullable()->label('ENالاسم'),
-                                TextArea::make('description_en')->label('وصف EN'),
+                                TinyEditor::make('description_en')->label('وصف EN'),
                             ])->columns(2)]),
-                        Forms\Components\Wizard\Step::make('TR')->schema([Forms\Components\Card::make()->schema([
+                        Forms\Components\Wizard\Step::make('TR')->schema([
+                            Forms\Components\Card::make()->schema([
                             Forms\Components\TextInput::make('name_tr')->nullable()->label('TRالاسم'),
-                            TextArea::make('description_tr')->label('TR وصف '),
+                            TinyEditor::make('description_tr')->label('TR وصف '),
                         ])->columns(2),
                         ]),
-                        Forms\Components\Wizard\Step::make('DU')->schema([Forms\Components\Card::make()->schema([
-                            Forms\Components\TextInput::make('name_du')->nullable()->label('DUالاسم'),
-                            TextArea::make('description_du')->label('وصفDU '),
-                        ])->columns(2),
-                        ]),
-                        Forms\Components\Wizard\Step::make('ES')->schema([Forms\Components\Card::make()->schema([
-                            Forms\Components\TextInput::make('name_es')->nullable()->label('ESالاسم'),
-                            TextArea::make('description_ES')->label('وصفES '),
-                        ])->columns(2),
-                        ]),
+//                        Forms\Components\Wizard\Step::make('DU')->schema([Forms\Components\Card::make()->schema([
+//                            Forms\Components\TextInput::make('name_du')->nullable()->label('DUالاسم'),
+//                            TextArea::make('description_du')->label('وصفDU '),
+//                        ])->columns(2),
+//                        ]),
+//                        Forms\Components\Wizard\Step::make('ES')->schema([Forms\Components\Card::make()->schema([
+//                            Forms\Components\TextInput::make('name_es')->nullable()->label('ESالاسم'),
+//                            TextArea::make('description_ES')->label('وصفES '),
+//                        ])->columns(2),
+//                        ]),
 
                     ])->skippable()
 

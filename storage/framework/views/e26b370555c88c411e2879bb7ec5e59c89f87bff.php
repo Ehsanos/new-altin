@@ -74,9 +74,9 @@
 
 
         
-        <section class="d-flex flex-column justify-content-center align-items-center  sections-s">
+        <section class="d-flex flex-column justify-content-center align-items-center mt-5   sections-s">
             <div class="container-fluid">
-                <div class="row justify-content-center">
+                <div class="row justify-content-center  py-0">
                     <div class="col-12 col-lg-10">
                         <div id="sections" class="owl-carousel">
 
@@ -98,7 +98,46 @@
 
                                     <a class="text-decoration-none"
                                                                   href="<?php echo e(route('langs.product_details',[$product])); ?>">
-                                        <div class="card cards-shadown cards-hover my-5 w-100" data-aos="flip-left"
+                                        <div class="card cards-shadown cards-hover w-100" data-aos="flip-left"
+                                             data-aos-duration="950">
+                                            <div class="card-header"><img class="img-fluid rounded-img"
+                                                                          src="<?php echo e($product->getFirstMediaUrl('products')); ?>">
+                                            </div>
+                                            <div class="card-body after">
+                                                <p class="card-text sub-text-color"><?php echo e(getTrans($product,'name')); ?></p>
+                                                
+                                            </div>
+                                        </div>
+                                    </a></div>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center  py-0">
+                    <div class="col-12 col-lg-10">
+                        <div id="sections-2" class="owl-carousel">
+
+                            <?php $__currentLoopData = $prodcuts->sortBy('name'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <div class="px-2 product-item my-3" onmouseover="show(this)" onmouseleave="hide(this)">
+                                    <div class="adding-hidden" id="add">
+                                        <form action="<?php echo e(route('langs.addToCart')); ?>" method="post">
+                                            <?php echo csrf_field(); ?>
+
+
+                                            <input hidden value="<?php echo e($product->id); ?>" name="product">
+                                            <input hidden type="number" min="0" value="1" name="num">
+                                            <button type="submit" class="btn">
+                                                <i class="fas fa-plus-circle icn"></i>
+                                            </button>
+                                        </form>
+
+                                    </div>
+
+                                    <a class="text-decoration-none"
+                                                                  href="<?php echo e(route('langs.product_details',[$product])); ?>">
+                                        <div class="card cards-shadown cards-hover my-3 w-100" data-aos="flip-left"
                                              data-aos-duration="950">
                                             <div class="card-header"><img class="img-fluid rounded-img"
                                                                           src="<?php echo e($product->getFirstMediaUrl('products')); ?>">

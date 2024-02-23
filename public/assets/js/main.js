@@ -63,6 +63,34 @@ $('#sections').owlCarousel({
     }
 });
 
+$('#sections-2').owlCarousel({
+    center: false,
+    autoplayTimeout: 6000,
+
+    loop: true,
+    margin: 10,
+    autoplay: true,
+    rtl: true,
+    mouseDrag: true,
+    responsive: {
+        0: {
+            items: 2,
+            center: false,
+            dots: true,
+
+        },
+        600: {
+            items: 3,
+            dots: true,
+        },
+        1024: {
+            items: 4,
+            dots: true,
+        },
+
+    }
+});
+
 $('#relative_products').owlCarousel({
     center: false,
 
@@ -174,11 +202,7 @@ nav.addEventListener('mouseleave', () => {
 
 })
 
-// close.addEventListener('click', (eo) => {
-//
-//     products_div.classList.remove("products-show")
-//     products_div.classList.add("products-div")
-// })
+
 
 products_div.addEventListener('mouseleave',()=>{
     products_div.classList.remove("products-show")
