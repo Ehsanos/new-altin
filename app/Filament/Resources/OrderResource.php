@@ -47,7 +47,15 @@ class OrderResource extends Resource
                 ]),
 
 
-                Forms\Components\TextInput::make('total')->label('القيمة الاجمالية')->disabled(),
+                Forms\Components\TextInput::make('total')->label('القيمة قبل الحسم')->dehydrated(false)
+                    ->extraInputAttributes(['readonly'=>'readonly']),
+                Forms\Components\TextInput::make('discount')->label(' %حسم بنسبة')->default(0)->afterStateUpdated(
+                    function ($get,$set,$state){
+                        $total=$get('total')-($state/100*$get('total'));
+                        $set('result',$total);
+                    }
+                )->reactive(),
+                Forms\Components\TextInput::make('result')->label('القيمة بعد الحسم'),
             Forms\Components\Section::make('محتويات الطلب')->schema([
                 Forms\Components\Repeater::make('products')->relationship('items')->schema([
                     Forms\Components\TextInput::make('product_name')->label('المنتج'),

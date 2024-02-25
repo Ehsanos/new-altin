@@ -45,50 +45,55 @@
 
     <section class="contact-page-sec mt-5" <?php if($style): ?> style="background-color:<?php echo e($style->primary); ?>" <?php endif; ?>>
         <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="contact-info">
-                        <div class="contact-info-item">
-                            <div class="contact-info-icon">
-                                <i class="fas fa-map-marked"></i>
-                            </div>
-                            <div class="contact-info-text">
-                                <h2><?php echo e(lang('address')); ?></h2>
-                                <span><?php echo getTrans($settings,'address'); ?> </span>
-                                <span><?php echo getTrans($settings,'phone'); ?></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="contact-info">
-                        <div class="contact-info-item">
-                            <div class="contact-info-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-info-text">
-                                <h2><?php echo e(lang('email')); ?></h2>
-                                <span><?php echo e($settings->email); ?></span>
-                                <span><?php echo e($settings->email2); ?></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="contact-info">
-                        <div class="contact-info-item">
-                            <div class="contact-info-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="contact-info-text">
-                                <h2><?php echo e(lang('openTime')); ?></h2>
-                                <span>Mon - Thu  9:00 am - 4.00 pm</span>
-                                <span>Thu - Mon  10.00 pm - 5.00 pm</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+
+
+            <?php echo getTrans($settings,'about'); ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <div class="row">
                 <div class="col-12">
                     <div class="contact-page-form" method="post">
@@ -136,6 +141,47 @@
             </div>
         </div>
     </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <?php $__env->stopSection(); ?>

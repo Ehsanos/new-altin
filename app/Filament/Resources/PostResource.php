@@ -15,6 +15,7 @@ use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Forms\Components\Wizard;
+use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
 
 
 class PostResource extends Resource
@@ -41,7 +42,7 @@ class PostResource extends Resource
 
                 Forms\Components\Card::make()->schema([
                     Forms\Components\TextInput::make('video')->nullable(),
-                    SpatieMediaLibraryFileUpload::make('img')->collection('posts')->label('الصورة')->multiple(),
+                    SpatieMediaLibraryFileUpload::make('img')->collection('posts')->label('الصورة'),
 
                 ])->columns(2),
 
@@ -49,34 +50,25 @@ class PostResource extends Resource
                 Forms\Components\Section::make('منشور')->schema([
                     Wizard::make()->schema([
                         Wizard\Step::make('AR')->schema([Forms\Components\Card::make()->schema([
-                            Forms\Components\RichEditor::make('tilte')->required()->label('عنوان عربي'),
-                            Forms\Components\RichEditor::make('body')->required()->label('منشور العربي'),
+                           TinyEditor::make('tilte')->required()->label('عنوان عربي'),
+                            TinyEditor::make('body')->required()->label('منشور العربي'),
 
-                        ])->columns(2)]),
+                        ])
+                        ]),
                         Wizard\Step::make('EN')->schema([Forms\Components\Card::make()->schema([
-                            Forms\Components\RichEditor::make('tilte_en')->nullable()->label('ENعنوان'),
-                            Forms\Components\RichEditor::make('body_en')->nullable()->label('منشورEN'),
+                            TinyEditor::make('tilte_en')->nullable()->label('ENعنوان'),
+                            TinyEditor::make('body_en')->nullable()->label('منشورEN'),
 
-                        ])->columns(2)]),
+                        ])
+                        ]),
                         Wizard\Step::make('TR')->schema([Forms\Components\Card::make()->schema([
 
-                            Forms\Components\RichEditor::make('tilte_tr')->nullable()->label('TRعنوان'),
-                            Forms\Components\RichEditor::make('body_tr')->nullable()->label('TRمنشور'),
-                        ])->columns(2),
+                            TinyEditor::make('tilte_tr')->nullable()->label('TRعنوان'),
+                            TinyEditor::make('body_tr')->nullable()->label('TRمنشور'),
                         ]),
-                        Wizard\Step::make('ES')->schema([Forms\Components\Card::make()->schema([
-
-                            Forms\Components\RichEditor::make('tilte_du')->nullable()->label('DUعنوان'),
-
-                            Forms\Components\RichEditor::make('body_du')->nullable()->label('DUمنشور'),
-
-                        ])->columns(2),
                         ]),
-                        Wizard\Step::make('DU')->schema([Forms\Components\Card::make()->schema([
-                            Forms\Components\RichEditor::make('tilte_es')->nullable()->label('عنوانES'),
-                            Forms\Components\RichEditor::make('body_es')->nullable()->label('منشورES'),
-                        ])->columns(2),
-                        ]),
+
+
                     ])->skippable()
 
                 ]),

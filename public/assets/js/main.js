@@ -35,6 +35,32 @@ $('#products').owlCarousel({
     }
 });
 
+$('#sections-slider').owlCarousel({
+    center: false,
+    autoplayTimeout: 7000,
+    loop: true,
+    margin: 0,
+    autoplay: true,
+    rtl: true,
+    dots: true,
+    mouseDrag: true,
+    responsive: {
+        0: {
+            items: 2,
+            center: false,
+        },
+        600: {
+            items: 3
+        },
+        1024: {
+            items: 4
+        },
+        1366: {
+            items: 4
+        }
+    }
+});
+
 $('#sections').owlCarousel({
     center: false,
     autoplayTimeout: 7000,

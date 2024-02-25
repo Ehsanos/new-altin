@@ -52,7 +52,7 @@ class OrderController extends Controller
                 $items = Item::create([
                     'order_id' => $order->id,
                     'product_id' => $item->products->id,
-                    'product_name' => $item->products->name,
+                    'product_name' => $item->products->code,
                     'quantity' => $item->quantity,
                     'total' => $item->price,
                     'price' => $price_now,

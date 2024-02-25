@@ -14,27 +14,27 @@ return new class extends Migration {
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
-            $table->string('name_ar')->nullable();
-            $table->string('address_ar')->nullable();
+            $table->longText('name_ar')->nullable();
+            $table->longText('address_ar')->nullable();
             $table->longText('description_ar')->nullable();
 
 
-            $table->string('name_en')->nullable();
-            $table->string('address_en')->nullable();
+            $table->longText('name_en')->nullable();
+            $table->longText('address_en')->nullable();
             $table->longText('description_en')->nullable();
 
-            $table->string('name_tr')->nullable();
+            $table->longText('name_tr')->nullable();
             $table->longText('description_tr')->nullable();
-            $table->string('address_tr')->nullable();
+            $table->longText('address_tr')->nullable();
 
 
-            $table->string('name_es')->nullable();
-            $table->string('address_es')->nullable();
+            $table->longText('name_es')->nullable();
+            $table->longText('address_es')->nullable();
             $table->longText('description_es')->nullable();
 
 
-            $table->string('name_du')->nullable();
-            $table->string('address_du')->nullable();
+            $table->longText('name_du')->nullable();
+            $table->longText('address_du')->nullable();
             $table->longText('description_du')->nullable();
 
 
@@ -50,16 +50,16 @@ return new class extends Migration {
             $table->longText('facebook')->nullable();
             $table->longText('twitter')->nullable();
             $table->longText('map')->nullable();
-            $table->string('instagram')->nullable();
+            $table->longText('instagram')->nullable();
             $table->longText('youtube')->nullable();
 
 
 
             $table->longText('email')->nullable();
-            $table->longText('email2')->nullable();
-            $table->longText('email3')->nullable();
+            $table->longText('policy')->nullable();
+            $table->longText('policy_en')->nullable();
 
-            $table->longText('chat_bot')->nullable();
+            $table->longText('policy_tr')->nullable();
             $table->longText('google_analysis')->nullable();
 
 

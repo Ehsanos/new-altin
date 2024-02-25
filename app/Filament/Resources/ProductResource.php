@@ -134,17 +134,17 @@ class ProductResource extends Resource
             ->columns([
 
 
+                SpatieMediaLibraryImageColumn::make('الصورة')->collection('products')->label('صورة المنتج'),
                 Tables\Columns\TextColumn::make('name')->label('اسم المنتج')->searchable(),
                 Tables\Columns\TextColumn::make('department.name')->label('القسم')->searchable(),
                 Tables\Columns\IconColumn::make('is_active')->boolean()->label('متوفر'),
-//                Tables\Columns\TextColumn::make('description')->words(5)->label('وصف')->searchable(),
-                SpatieMediaLibraryImageColumn::make('الصورة')->collection('products')->label('صورة المنتج'),
                 Tables\Columns\ColorColumn::make('color')->copyable()
                     ->copyMessage('تم نسخ رقم اللون')->label('لون المنج'),
                 Tables\Columns\TextColumn::make('pakcing')->label('التعبئة')->searchable(),
 
 
 //                Tables\Columns\TagsColumn::make('tags.name')->label('كلمات مفتاحية')->searchable(),
+                Tables\Columns\TextColumn::make('code')->words(5)->label('كود المنتج')->searchable(),
 
 
             ])

@@ -8,7 +8,7 @@ body {
 .top-content {
     width: 100%;
     padding: 0;
-    height: 80vh;
+    height: 50vh;
     object-fit: cover;
 }
 .top-content-slider {

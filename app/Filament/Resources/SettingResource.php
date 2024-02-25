@@ -16,6 +16,7 @@ use Filament\Forms\Components\Tabs;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
 use RalphJSmit\Filament\SEO\SEO;
 
 class SettingResource extends Resource
@@ -51,10 +52,10 @@ class SettingResource extends Resource
                         Forms\Components\TextInput::make('facebook')->nullable(),
                         Forms\Components\TextInput::make('twitter')->nullable(),
                         Forms\Components\TextInput::make('email')->nullable()->email(),
-                        Forms\Components\TextInput::make('email2')->nullable()->email(),
-                        Forms\Components\TextInput::make('email3')->nullable()->email(),
+//                        Forms\Components\TextInput::make('email2')->nullable()->email(),
+//                        Forms\Components\TextInput::make('email3')->nullable()->email(),
                         Forms\Components\TextInput::make('youtube')->nullable(),
-                        Forms\Components\TextInput::make('chat_bot')->nullable(),
+//                        Forms\Components\TextInput::make('chat_bot')->nullable(),
                         Forms\Components\TextInput::make('map')->nullable(),
                         Forms\Components\TextInput::make('instagram')->nullable(),
 
@@ -65,7 +66,7 @@ class SettingResource extends Resource
 
 
 
-                Forms\Components\Section::make('لغة الموقع')->schema([
+                Forms\Components\Section::make('معلومات التواصل')->schema([
 
 
                     Forms\Components\Tabs::make('Heading')
@@ -73,9 +74,10 @@ class SettingResource extends Resource
                             Tabs\Tab::make('AR')->schema([
 
                                 Forms\Components\Card::make()->schema([
-                                    Forms\Components\TextInput::make('name_ar')->nullable()->label('اسم الموقع عربي'),
-                                    Forms\Components\Textarea::make('address')->nullable()->label('عنوان الموقع بالعربي'),
-                                    Forms\Components\RichEditor::make('description')->nullable()->label('سياسية الخصوصية بالعربي'),
+//                                    Forms\Components\TextInput::make('name_ar')->nullable()->label('اسم الموقع عربي'),
+                                   TinyEditor::make('address')->nullable()->label('معلومات التواصل عربي'),
+                                    TinyEditor::make('description')->nullable()->label('سياسية الخصوصية بالعربي'),
+                                    TinyEditor::make('about')->nullable()->label('تعريف بالشركة بالعربي'),
                                 ]),
 
 
@@ -86,9 +88,10 @@ class SettingResource extends Resource
                                 ->schema([
                                     Forms\Components\Card::make()->schema([
 
-                                        Forms\Components\TextInput::make('name_en')->nullable()->label('اسم الموقع EN'),
-                                        Forms\Components\Textarea::make('address_en')->nullable()->label('عنوان الموقع EN'),
-                                        Forms\Components\RichEditor::make('description_en')->nullable()->label('سياسة الخصوصية EN'),
+//                                        Forms\Components\TextInput::make('name_en')->nullable()->label('اسم الموقع EN'),
+                                       TinyEditor::make('address_en')->nullable()->label('معلومات التواصل EN'),
+                                        TinyEditor::make('description_en')->nullable()->label('سياسة الخصوصية EN'),
+                                        TinyEditor::make('about_en')->nullable()->label('حول الشركة EN'),
 
                                     ]),
 
@@ -96,11 +99,12 @@ class SettingResource extends Resource
                             Tabs\Tab::make('TR')
                                 ->schema([
                                     Forms\Components\Card::make()->schema([
-                                        Forms\Components\Textarea::make('name_tr')->nullable()->label('اسم الموقع TR'),
-                                        Forms\Components\Textarea::make('address_tr')->nullable()->label('عنوان الموقع TR'),
-                                        Forms\Components\Textarea::make('description_tr')->nullable()->label('سياسة الخصوصية TR'),
+//                                        Forms\Components\TextInput::make('name_tr')->nullable()->label('اسم الموقع TR'),
+                                       TinyEditor::make('address_tr')->nullable()->label('معلومات التواصل TR'),
+                                   TinyEditor::make('description_tr')->nullable()->label('سياسة الخصوصية TR'),
+                                   TinyEditor::make('about_tr')->nullable()->label('حول الشركة  TR'),
 
-                                    ])->columns(3),
+                                    ]),
 
                                 ]),
 

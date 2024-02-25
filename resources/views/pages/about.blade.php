@@ -46,50 +46,54 @@
 
     <section class="contact-page-sec mt-5" @if($style) style="background-color:{{$style->primary}}" @endif>
         <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="contact-info">
-                        <div class="contact-info-item">
-                            <div class="contact-info-icon">
-                                <i class="fas fa-map-marked"></i>
-                            </div>
-                            <div class="contact-info-text">
-                                <h2>{{lang('address')}}</h2>
-                                <span>{!!getTrans($settings,'address')!!} </span>
-                                <span>{!!getTrans($settings,'phone')!!}</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="contact-info">
-                        <div class="contact-info-item">
-                            <div class="contact-info-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-info-text">
-                                <h2>{{lang('email')}}</h2>
-                                <span>{{$settings->email}}</span>
-                                <span>{{$settings->email2}}</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="contact-info">
-                        <div class="contact-info-item">
-                            <div class="contact-info-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="contact-info-text">
-                                <h2>{{lang('openTime')}}</h2>
-                                <span>Mon - Thu  9:00 am - 4.00 pm</span>
-                                <span>Thu - Mon  10.00 pm - 5.00 pm</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+
+
+            {!!getTrans($settings,'about') !!}
+{{--            <div class="row">--}}
+{{--                <div class="col-md-4">--}}
+{{--                    <div class="contact-info">--}}
+{{--                        <div class="contact-info-item">--}}
+{{--                            <div class="contact-info-icon">--}}
+{{--                                <i class="fas fa-map-marked"></i>--}}
+{{--                            </div>--}}
+{{--                            <div class="contact-info-text">--}}
+{{--                                <h2>{{lang('address')}}</h2>--}}
+{{--                                <span>{!!getTrans($settings,'address')!!} </span>--}}
+{{--                                <span>{!!getTrans($settings,'phone')!!}</span>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-4">--}}
+{{--                    <div class="contact-info">--}}
+{{--                        <div class="contact-info-item">--}}
+{{--                            <div class="contact-info-icon">--}}
+{{--                                <i class="fas fa-envelope"></i>--}}
+{{--                            </div>--}}
+{{--                            <div class="contact-info-text">--}}
+{{--                                <h2>{{lang('email')}}</h2>--}}
+{{--                                <span>{{$settings->email}}</span>--}}
+{{--                                <span>{{$settings->email2}}</span>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-4">--}}
+{{--                    <div class="contact-info">--}}
+{{--                        <div class="contact-info-item">--}}
+{{--                            <div class="contact-info-icon">--}}
+{{--                                <i class="fas fa-clock"></i>--}}
+{{--                            </div>--}}
+{{--                            <div class="contact-info-text">--}}
+{{--                                <h2>{{lang('openTime')}}</h2>--}}
+{{--                                <span>Mon - Thu  9:00 am - 4.00 pm</span>--}}
+{{--                                <span>Thu - Mon  10.00 pm - 5.00 pm</span>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
             <div class="row">
                 <div class="col-12">
                     <div class="contact-page-form" method="post">
@@ -137,6 +141,47 @@
             </div>
         </div>
     </section>
+{{--    <section class="info pb-4 pt-5">--}}
+{{--        <div class="container-fluid">--}}
+{{--            <div class="row no-gutters">--}}
+{{--                <div class="col-12 col-lg-6">--}}
+{{--                    <div class="d-md-none">--}}
+{{--                        <iframe allowfullscreen="" frameborder="0"--}}
+{{--                                src="https://cdn.bootstrapstudio.io/placeholders/map.html" width="100%"--}}
+{{--                                height="100%"></iframe>--}}
+{{--                    </div>--}}
+{{--                    <div class="d-none d-md-block position-absolute" style="top: 0;left: 0;right: 0;bottom: 0;">--}}
+{{--                        <iframe src="{{$settings->map}}" width="600" height="450" style="border:0;"--}}
+{{--                                allowfullscreen="" loading="lazy"--}}
+{{--                                referrerpolicy="no-referrer-when-downgrade"></iframe>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-12 col-lg-6">--}}
+{{--                    <div>--}}
+{{--                        <form class="bg-white border rounded shadow p-3 p-sm-4 p-lg-5" method="post"--}}
+{{--                              style="background: var(--bs-body-bg);" action="{{route('sub')}}">--}}
+{{--                            @csrf--}}
+{{--                            <h3 class="font-weight-bold text-center text-black-50 mb-3">{{lang('call_us')}}</h3>--}}
+{{--                            <div class="mb-3"><input class="form-control" type="text" name="name"--}}
+{{--                                                     placeholder="{{lang('name')}}">--}}
+{{--                            </div>--}}
+{{--                            <div class="mb-3"><input class="form-control" type="email" name="email"--}}
+{{--                                                     placeholder="{{lang('email')}}"></div>--}}
+{{--                            <div class="mb-3"><textarea class="form-control" name="message"--}}
+{{--                                                        placeholder="{{lang('message')}}"--}}
+{{--                                                        rows="6"></textarea></div>--}}
+{{--                            <div class="mb-3">--}}
+{{--                                <button class="btn btn-primary btn-sign" type="submit">{{lang('send')}}</button>--}}
+{{--                            </div>--}}
+{{--                            <div>{!!htmlFormSnippet()!!}</div>--}}
+
+{{--                        </form>--}}
+
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
 
 
 @endsection

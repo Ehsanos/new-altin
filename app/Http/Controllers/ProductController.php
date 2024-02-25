@@ -131,10 +131,10 @@ class ProductController extends Controller
         $departments = Department::when($catId, fn($q) => $q->whereCategoryId($catId))->whereIsActive(true)->get();
 
         if ($request->search != " ") {
-            $products = Product::where('name', 'LIKE', '%' . $request->search . '%')
+            $products = Product::where('name', 'LIKE', '%'. $request->search . '%')
                 ->orWhere('name_en', 'LIKE', '%' . $request->search . '%')
                 ->orWhere('name_tr', 'LIKE', '%' . $request->search . '%')
-                ->orWhere('name_du', 'LIKE', '%' . $request->search . '%')
+                ->orWhere('code', 'LIKE', '%' . $request->search . '%')
                 ->orWhere('name_es', 'LIKE', '%' . $request->search . '%')
                 ->orWhere('description', 'LIKE', '%' . $request->search . '%')
                 ->orWhere('description_en', 'LIKE', '%' . $request->search . '%')

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use App\Models\Category;
+use App\Models\Department;
 use App\Models\Post;
 use App\Models\Product;
 use App\Models\Setting;
@@ -29,6 +30,7 @@ class IndexController extends Controller
         $slider = Slider::where('type', '=', 'main')->get();
 
         $settings = Setting::first();
+        $departments=Department::all();
         $catigories = Category::where('is_active', true)->latest()->limit(10)->get();
         $prodcuts = Product::where('is_active', true)->latest()->limit(50)->get();
         $statics = Statics::all();
@@ -36,7 +38,7 @@ class IndexController extends Controller
         $style=Themes::where('key','main')->first();
 
 //        dd($slider);
-        return view('pages.index', compact('slider', 'settings', 'prodcuts', 'catigories', 'statics', 'news','style'));
+        return view('pages.index', compact('slider', 'settings', 'prodcuts', 'catigories', 'statics','departments', 'news','style'));
     }
 
     public function change_lang($lang)
