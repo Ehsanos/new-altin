@@ -61,7 +61,7 @@
 
                     <div class="product-price">
                         <a href="{{route('langs.products',[$product->department->category->id ?? 1,
-                        $product->department->id])}}">
+                        $product->department->id??1])}}">
                             <p>{{lang('dep_name')}}:
                                 <span class="new-price">{{$product->department->name??"
                         no"}}</span></p>
@@ -89,7 +89,7 @@
                     <div class="social-links">
                         <p>{{lang('share')}}: </p>
 
-                        {!! $social=Share::page(null,$product->name)->facebook()!!}
+                        {!! $social=Share::page(null,"testttt")->facebook('test')!!}
                         {!! $social=Share::page(null,$product->name)->whatsapp()!!}
                         {!! $social=Share::page(null,$product->name)->telegram()!!}
                         {!! $social=Share::page(null,$product->name)->twitter()!!}

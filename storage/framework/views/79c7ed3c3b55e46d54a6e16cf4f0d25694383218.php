@@ -107,8 +107,8 @@
                             <div class="list-group">
                                 <?php $__currentLoopData = $departments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dep): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <a class="list-group-item list-group-item-action font-weight-bolder"
-                                       href="<?php echo e(route("langs.products",["catId"=>$dep->category_id,
-                                       "depId"=>"$dep->id"])); ?>"><?php echo e(getTrans($dep,'name')); ?></a>
+                                       href="<?php echo e(route("langs.products",["catId"=>$dep->category_id ?? 1,
+                                       "depId"=>"$dep->id" ??1])); ?>"><?php echo e(getTrans($dep,'name')); ?></a>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                             </div>

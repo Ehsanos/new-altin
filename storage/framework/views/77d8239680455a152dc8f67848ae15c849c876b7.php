@@ -64,8 +64,12 @@
 <main>
     <nav class="navbar navbar-light navbar-expand-lg sticky-top navbar-shrink py-3 border-bottom "
          id="mainNav">
-        <div class="container-fluid"><a href="<?php echo e(route('langs.index')); ?>"
+        <div class="container-fluid">
+            <a href="<?php echo e(route('langs.index')); ?>"
                                         class="navbar-brand d-flex align-items-center"></a>
+            <a href="<?php echo e(route('langs.index')); ?>" class="text-decoration-none">
+            <h1 class="head-altn d-block d-lg-none">AltinMix 34</h1>
+            </a>
             <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
                     class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
@@ -138,15 +142,15 @@
                                     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('counter', [])->html();
-} elseif ($_instance->childHasBeenRendered('yiiAgDQ')) {
-    $componentId = $_instance->getRenderedChildComponentId('yiiAgDQ');
-    $componentTag = $_instance->getRenderedChildComponentTagName('yiiAgDQ');
+} elseif ($_instance->childHasBeenRendered('xR1ZNTs')) {
+    $componentId = $_instance->getRenderedChildComponentId('xR1ZNTs');
+    $componentTag = $_instance->getRenderedChildComponentTagName('xR1ZNTs');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('yiiAgDQ');
+    $_instance->preserveRenderedChild('xR1ZNTs');
 } else {
     $response = \Livewire\Livewire::mount('counter', []);
     $html = $response->html();
-    $_instance->logRenderedChild('yiiAgDQ', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('xR1ZNTs', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

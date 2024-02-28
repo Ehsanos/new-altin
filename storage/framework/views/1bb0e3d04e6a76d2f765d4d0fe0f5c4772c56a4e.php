@@ -61,7 +61,7 @@
 
                     <div class="product-price">
                         <a href="<?php echo e(route('langs.products',[$product->department->category->id ?? 1,
-                        $product->department->id])); ?>">
+                        $product->department->id??1])); ?>">
                             <p><?php echo e(lang('dep_name')); ?>:
                                 <span class="new-price"><?php echo e($product->department->name??"
                         no"); ?></span></p>
@@ -89,7 +89,7 @@
                     <div class="social-links">
                         <p><?php echo e(lang('share')); ?>: </p>
 
-                        <?php echo $social=Share::page(null,$product->name)->facebook(); ?>
+                        <?php echo $social=Share::page(null,"testttt")->facebook('test'); ?>
 
                         <?php echo $social=Share::page(null,$product->name)->whatsapp(); ?>
 
