@@ -105,7 +105,8 @@
                                                                           src="<?php echo e($product->getFirstMediaUrl('products')); ?>">
                                             </div>
                                             <div class="card-body after">
-                                                <p class="card-text sub-text-color"><?php echo e(getTrans($product,'name')); ?></p>
+                                                <p class="card-text sub-text-color d-none d-md-block"><?php echo e(getTrans($product,
+                                                'name')); ?></p>
                                                 <span class="card-text sub-text-color"><?php echo e($product->code); ?> </span>
                                                 <?php if(app()->getLocale()=="ar"): ?>
                                                 <p class="card-text sub-text-color"><?php echo e($product->department->name ??
@@ -158,7 +159,8 @@
                                                                           src="<?php echo e($product->getFirstMediaUrl('products')); ?>">
                                             </div>
                                             <div class="card-body after">
-                                                <p class="card-text sub-text-color"><?php echo e(getTrans($product,'name')); ?></p>
+                                                <p class="card-text sub-text-color d-none d-md-block"><?php echo e(getTrans($product,
+                                                'name')); ?></p>
                                                 <span class="card-text sub-text-color"><?php echo e($product->code); ?> </span>
                                                 <?php if(app()->getLocale()=="ar"): ?>
                                                     <p class="card-text sub-text-color"><?php echo e($product->department->name ??

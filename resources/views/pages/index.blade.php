@@ -106,7 +106,9 @@
                                                                           src="{{$product->getFirstMediaUrl('products')}}">
                                             </div>
                                             <div class="card-body after">
-                                                <p class="card-text sub-text-color">{{getTrans($product,'name')}}</p>
+                                                <p class="card-text sub-text-color d-none d-md-block">{{getTrans($product,
+                                                'name')
+                                                }}</p>
                                                 <span class="card-text sub-text-color">{{$product->code}} </span>
                                                 @if(app()->getLocale()=="ar")
                                                 <p class="card-text sub-text-color">{{$product->department->name ??
@@ -159,7 +161,8 @@
                                                                           src="{{$product->getFirstMediaUrl('products')}}">
                                             </div>
                                             <div class="card-body after">
-                                                <p class="card-text sub-text-color">{{getTrans($product,'name')}}</p>
+                                                <p class="card-text sub-text-color d-none d-md-block">{{getTrans($product,
+                                                'name')}}</p>
                                                 <span class="card-text sub-text-color">{{$product->code}} </span>
                                                 @if(app()->getLocale()=="ar")
                                                     <p class="card-text sub-text-color">{{$product->department->name ??
