@@ -24,7 +24,14 @@
   line-height: 1;
 }
 
-.sup {
+@media only screen and (max-width: 350px){
+
+    .count, .countup i {
+        font-size: 35px;
+    }
+}
+
+    .sup {
   font-size: 20px;
   vertical-align: top;
   display: inline-block;

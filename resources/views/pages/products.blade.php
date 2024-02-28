@@ -108,7 +108,8 @@
                             <div class="list-group">
                                 @foreach($departments as $dep )
                                     <a class="list-group-item list-group-item-action font-weight-bolder"
-                                       href="{{route("langs.products",["catId"=>$dep->category_id,"depId"=>"$dep->id"])}}">{{$dep->name}}</a>
+                                       href="{{route("langs.products",["catId"=>$dep->category_id,
+                                       "depId"=>"$dep->id"])}}">{{getTrans($dep,'name')}}</a>
                                 @endforeach
 
                             </div>
@@ -161,7 +162,25 @@
 
                                         </div>
                                         <div class="px-3">
-                                            <p class="text-dark font-weight-bold">{{$product->department->name ?? 'None'}}</p>
+                                            <p class="text-dark font-weight-bold">{{$product->code ??
+                                            'Code'}}</p>
+
+                                        @if(app()->getLocale()=='ar')
+
+                                            <p class="text-dark font-weight-bold">{{$product->department->name ??
+                                            'Depatment'}}</p>
+
+                                            @elseif(app()->getLocale()=='en')
+                                                <p class="text-dark font-weight-bold">{{$product->department->name_en
+                                                 ??
+                                            'Depatment'}}</p>
+
+                                            @elseif(app()->getLocale()=='tr')
+                                                <p class="text-dark font-weight-bold">{{$product->department->name_tr
+                                                 ??
+                                            'Depatment'}}</p>
+                                            @endif
+
                                         </div>
                                     </div>
                                 </div>

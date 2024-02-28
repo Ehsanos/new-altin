@@ -93,7 +93,9 @@
                                     </div>
                                     <div class="product-btn px-3 py-2"><a type="button"
                                                                           class="text-decoration-none products-details"
-                                                                          href="<?php echo e(Storage::url($catalog->file)); ?>"><?php echo e(lang('download')); ?> </a>
+                                                                          href="<?php echo e(Storage::url($catalog->file)); ?>"
+                                                                          target="_blank"
+                                        ><?php echo e(lang('download')); ?> </a>
                                     </div>
                                 </div>
                             </div>

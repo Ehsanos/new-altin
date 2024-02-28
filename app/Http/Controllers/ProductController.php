@@ -12,6 +12,8 @@ use App\Models\Themes;
 use http\Env\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Jorenvh\Share\Share;
+//use const Jorenvh\Share\;
 
 class ProductController extends Controller
 {
@@ -93,6 +95,8 @@ class ProductController extends Controller
     {
         $product = Product::with('media')->findOrfail($id);
         $imgs = Product::with('media')->findOrfail($id)->getMedia("*");
+
+
 
         //     dd($imgs);
 

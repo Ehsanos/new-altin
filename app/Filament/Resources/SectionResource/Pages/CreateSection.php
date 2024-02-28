@@ -12,16 +12,4 @@ class CreateSection extends CreateRecord
 {
     protected static string $resource = SectionResource::class;
 
-    protected function handleRecordCreation(array $data): Model
-    {
-
-        foreach ($data['tags'] as $tag) {
-            $data->tags()->create([
-                'name'=>$tag
-
-            ]);
-        }
-        return $data;
-    }
-
 }

@@ -104,7 +104,7 @@ class CatalogResource extends Resource
                 Tables\Columns\TextColumn::make('name')->searchable(),
                 SpatieMediaLibraryImageColumn::make('الصورة')->collection('catalogs'),
                 Tables\Columns\TextColumn::make('year')->label('عام'),
-                Tables\Columns\TextColumn::make('description')->label('الوصف')->searchable(),
+//                Tables\Columns\TextColumn::make('description')->label('الوصف')->searchable(),
                 Tables\Columns\TagsColumn::make('tags.name')->label('كلمات مفتاحية')
 
 

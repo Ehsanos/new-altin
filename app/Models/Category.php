@@ -19,9 +19,9 @@ class Category extends Model implements HasMedia
 
     protected $guarded=[];
 
-    protected $casts=[
-        'tags'=>'array',
-    ];
+//    protected $casts=[
+//        'tags'=>'array',
+//    ];
 
     public function departments():HasMany
     {

@@ -25,10 +25,10 @@
                         @foreach($slider as $slide)
                             <div class="carousel-item @if($loop->first)active @endif">
                                 <a @if($slide->cats) href="{{route('langs.fofo',$slide->cats)}}" @else href="{{$slide->url}}" @endif >
-                                    <div class="h-50 w-100"
+                                    <div class="h-75 w-100"
                                          style="background: url('{{$slide->getFirstMediaUrl('slider')}}') center / cover no-repeat;">
 
-                                <div class="h-50 w-100 ">
+                                <div class="h-75 w-100 ">
 
                                     @if(app()->getLocale()=='ar')
                                         <div class="slide_style_left">
@@ -63,9 +63,9 @@
                     @endforeach
 
                 </div>
-                <a class="carousel-control-prev h-50" href="#myCarousel" role="button" data-slide="prev"><span
+                <a class="carousel-control-prev h-75" href="#myCarousel" role="button" data-slide="prev"><span
                         class="carousel-control-prev-icon" aria-hidden="true"></span><span
-                        class="sr-only">Previous</span></a><a class="carousel-control-next h-50" href="#myCarousel"
+                        class="sr-only">Previous</span></a><a class="carousel-control-next h-75" href="#myCarousel"
                                                               role="button" data-slide="next"><span
                         class="carousel-control-next-icon" aria-hidden="true"></span><span
                         class="sr-only">Next</span></a>
@@ -77,12 +77,13 @@
         {{--Products slider section--}}
         <section class="d-flex flex-column justify-content-center align-items-center mt-5   sections-s">
             <div class="container-fluid">
-                <div class="row justify-content-center  py-0">
+                <div class="row justify-content-center py-0 m-0">
                     <div class="col-12 col-lg-10">
-                        <div id="sections" class="owl-carousel">
+                        <div id="sections" class="owl-carousel owl-theme">
 
                             @foreach($prodcuts as $product)
-                                <div class="px-3 product-item" onmouseover="show(this)" onmouseleave="hide(this)">
+                                <div class="px-0 item" onmouseover="show(this)" onmouseleave="hide
+                                (this)">
                                     <div class="adding-hidden" id="add">
                                         <form action="{{route('langs.addToCart')}}" method="post">
                                             @csrf
@@ -106,6 +107,20 @@
                                             </div>
                                             <div class="card-body after">
                                                 <p class="card-text sub-text-color">{{getTrans($product,'name')}}</p>
+                                                <span class="card-text sub-text-color">{{$product->code}} </span>
+                                                @if(app()->getLocale()=="ar")
+                                                <p class="card-text sub-text-color">{{$product->department->name ??
+                                                ""}}</p>
+
+                                                    @elseif(app()->getLocale()=="en")
+                                                    <p class="card-text
+                                                    sub-text-color">{{$product->department->name_en ??
+                                                ""}}</p>
+                                                        @elseif(app()->getLocale()=="tr")
+                                                    <p class="card-text
+                                                    sub-text-color">{{$product->department->name_tr ??
+                                                ""}}</p>
+                                                @endif
                                                 {{--                                            <p class="card-text cardbody-sub-text">{!!getTrans($product,'description')!!}</p>--}}
                                             </div>
                                         </div>
@@ -116,12 +131,12 @@
                     </div>
                 </div>
 
-                <div class="row justify-content-center  py-0">
+                <div class="row justify-content-center py-0">
                     <div class="col-12 col-lg-10">
                         <div id="sections-2" class="owl-carousel">
 
                             @foreach($prodcuts->sortBy('name') as $product)
-                                <div class="px-2 product-item my-3" onmouseover="show(this)" onmouseleave="hide(this)">
+                                <div class="px-2 product-item " onmouseover="show(this)" onmouseleave="hide(this)">
                                     <div class="adding-hidden" id="add">
                                         <form action="{{route('langs.addToCart')}}" method="post">
                                             @csrf
@@ -145,8 +160,23 @@
                                             </div>
                                             <div class="card-body after">
                                                 <p class="card-text sub-text-color">{{getTrans($product,'name')}}</p>
+                                                <span class="card-text sub-text-color">{{$product->code}} </span>
+                                                @if(app()->getLocale()=="ar")
+                                                    <p class="card-text sub-text-color">{{$product->department->name ??
+                                                ""}}</p>
+
+                                                @elseif(app()->getLocale()=="en")
+                                                    <p class="card-text
+                                                    sub-text-color">{{$product->department->name_en ??
+                                                ""}}</p>
+                                                @elseif(app()->getLocale()=="tr")
+                                                    <p class="card-text
+                                                    sub-text-color">{{$product->department->name_tr ??
+                                                ""}}</p>
+                                                @endif
                                                 {{--                                            <p class="card-text cardbody-sub-text">{!!getTrans($product,'description')!!}</p>--}}
                                             </div>
+
                                         </div>
                                     </a></div>
                             @endforeach
@@ -195,25 +225,25 @@
 
             <div class="container">
                 <div class="row countup text-center">
-                    <div class="col-sm-6 col-md-3 column">
+                    <div class="col-3 column">
                         <p><i class="fas fa-box-open" aria-hidden="true"></i></p>
                         <p><span class="count replay">{{$statics[1]->number}}</span></p>
-                        <h2>{{$statics[1]->discrption}}</h2>
+                        <h3>{{getTrans($statics[1],'discrption')}}</h3>
                     </div>
-                    <div class="col-sm-6 col-md-3 column">
+                    <div class="col-3 column">
                         <p><i class="fas fa-th" aria-hidden="true"></i></p>
                         <p><span class="count replay">{{$statics[3]->number}}</span></p>
-                        <h2>{{$statics[3]->discrption}}</h2>
+                        <h3>{{getTrans($statics[3],'discrption')}}</h3>
                     </div>
-                    <div class="col-sm-6 col-md-3 column">
+                    <div class="col-3 column">
                         <p><i class="fas fa-bookmark" aria-hidden="true"></i></p>
                         <p><span class="count replay">{{$statics[2]->number}}</span></p>
-                        <h2>{{$statics[2]->discrption}}</h2>
+                        <h3>{{getTrans($statics[2],'discrption')}}</h3>
                     </div>
-                    <div class="col-sm-6 col-md-3 column">
+                    <div class="col-3 column">
                         <p><i class="fa fa-user" aria-hidden="true"></i></p>
                         <p><span class="count replay">{{$statics[0]->number}}</span></p>
-                        <h2>{{$statics[0]->discrption}}</h2>
+                        <h3>{{getTrans($statics[0],'discrption')}}</h3>
                     </div>
                 </div>
             </div>
@@ -227,7 +257,7 @@
                         <div id="sections-slider" class="owl-carousel">
 
                             @foreach($departments as $product)
-                                <div class="px-3 product-item" onmouseover="show(this)" onmouseleave="hide(this)">
+                                <div class="product-item " onmouseover="show(this)" onmouseleave="hide(this)">
                                     <div class="adding-hidden" id="add">
                                     </div>
 
@@ -292,7 +322,44 @@
         </section>
 
 
-{{--Commenction Section--}}
+        {{--                News Section --}}
+
+        <section class="d-flex flex-column justify-content-center align-items-center pt-5 sec-news">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-8">
+                        <div id="news" class="owl-carousel">
+
+                            @foreach($news as $new)
+                                <div class="px-3 product-item"><a class="text-decoration-none"
+                                                                  href="{{route('langs.showPost',['post'=>$new])}}">
+                                        <div class="card cards-shadown cards-hover w-100" data-aos="flip-left"
+                                             data-aos-duration="950">
+                                            <div class="card-header"><img class="img-fluid rounded-img"
+                                                                          src="{{$new->getFirstMediaUrl('posts')}}">
+                                            </div>
+                                            <div class="card-body">
+                                                <p class="card-text sub-text-color">{!!getTrans($new,'tilte')!!}</p>
+{{--                                                <p class="card-text cardbody-sub-text">{{getTrans($new,'body')}}</p>--}}
+                                            </div>
+                                        </div>
+                                    </a></div>
+                            @endforeach
+
+                        </div>
+                    </div>
+                    <div class="col-12 py-4">
+                        <div class="text-center"><a class="more-news py-3 px-5 text-decoration-none"
+                                                    href="{{route('langs.news')}}">{{lang('more_news')}}</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        {{--Commenction Section--}}
         <section class="wrapper-numbers">
 
             <div class="container">
@@ -304,38 +371,6 @@
             </div>
         </section>
 
-        {{--        News Section --}}
-{{--        <section class="d-flex flex-column justify-content-center align-items-center pt-5 sec-news">--}}
-{{--            <div class="container-fluid">--}}
-{{--                <div class="row justify-content-center">--}}
-{{--                    <div class="col-12 col-lg-8">--}}
-{{--                        <div id="news" class="owl-carousel py-4">--}}
-
-{{--                            @foreach($news as $new)--}}
-{{--                                <div class="px-3 product-item"><a class="text-decoration-none"--}}
-{{--                                                                  href="{{route('langs.showPost',['post'=>$new])}}">--}}
-{{--                                        <div class="card cards-shadown cards-hover my-5 w-100" data-aos="flip-left"--}}
-{{--                                             data-aos-duration="950">--}}
-{{--                                            <div class="card-header"><img class="img-fluid rounded-img"--}}
-{{--                                                                          src="{{$new->getFirstMediaUrl('posts')}}">--}}
-{{--                                            </div>--}}
-{{--                                            <div class="card-body">--}}
-{{--                                                <p class="card-text sub-text-color">{!!getTrans($new,'tilte')!!}</p>--}}
-{{--                                                --}}{{--                                        <p class="card-text cardbody-sub-text">{{getTrans($new,'body')}}</p>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </a></div>--}}
-{{--                            @endforeach--}}
-
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="col-12 py-4">--}}
-{{--                        <div class="text-center"><a class="more-news py-3 px-5 text-decoration-none"--}}
-{{--                                                    href="{{route('langs.news')}}">{{lang('more_news')}}</a></div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </section>--}}
 
     </main>
 

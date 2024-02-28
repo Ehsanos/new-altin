@@ -39,10 +39,8 @@ $('#sections-slider').owlCarousel({
     center: false,
     autoplayTimeout: 7000,
     loop: true,
-    margin: 0,
     autoplay: true,
     rtl: true,
-    dots: true,
     mouseDrag: true,
     responsive: {
         0: {
@@ -65,25 +63,21 @@ $('#sections').owlCarousel({
     center: false,
     autoplayTimeout: 7000,
 
+    dots: false,
     loop: true,
-    margin: 10,
     autoplay: true,
     rtl: true,
     mouseDrag: true,
     responsive: {
         0: {
             items: 2,
-            center: false,
-            dots: true,
 
         },
         600: {
             items: 3,
-            dots: true,
         },
         1024: {
             items: 4,
-            dots: true,
         },
 
     }
@@ -94,7 +88,6 @@ $('#sections-2').owlCarousel({
     autoplayTimeout: 6000,
 
     loop: true,
-    margin: 10,
     autoplay: true,
     rtl: true,
     mouseDrag: true,
@@ -102,16 +95,13 @@ $('#sections-2').owlCarousel({
         0: {
             items: 2,
             center: false,
-            dots: true,
 
         },
         600: {
             items: 3,
-            dots: true,
         },
         1024: {
             items: 4,
-            dots: true,
         },
 
     }
@@ -119,27 +109,23 @@ $('#sections-2').owlCarousel({
 
 $('#relative_products').owlCarousel({
     center: false,
-
     loop: true,
-    margin: 10,
     autoplay: true,
     rtl: true,
+    dots:false,
     autoplayTimeout: 7000,
     mouseDrag: true,
     responsive: {
         0: {
             items: 2,
             center: false,
-            dots: true,
 
         },
         600: {
             items: 4,
-            dots: true,
         },
         1024: {
-            items: 4,
-            dots: true,
+            items: 5,
         },
 
     }
@@ -154,7 +140,6 @@ $('#news').owlCarousel({
     margin: 3,
     autoplay: true,
     rtl: true,
-    dots: true,
     mouseDrag: true,
     responsive: {
         0: {
@@ -194,25 +179,25 @@ const nav = document.querySelector('#nav-product');
 const products_div = document.querySelector('#products_div');
 const close = document.querySelector('#close');
 
-const nav1=document.querySelector('#nav1');
-const nav2=document.querySelector('#nav2');
-const nav3=document.querySelector('#nav3');
-const nav4=document.querySelector('#nav4');
-const nav5=document.querySelector('#nav5');
+const nav1 = document.querySelector('#nav1');
+const nav2 = document.querySelector('#nav2');
+const nav3 = document.querySelector('#nav3');
+const nav4 = document.querySelector('#nav4');
+const nav5 = document.querySelector('#nav5');
 
-nav1.addEventListener('mousemove',()=>{
+nav1.addEventListener('mousemove', () => {
     products_div.classList.remove("products-show")
     products_div.classList.add("products-div")
 })
-nav2.addEventListener('mousemove',()=>{
+nav2.addEventListener('mousemove', () => {
     products_div.classList.remove("products-show")
     products_div.classList.add("products-div")
 })
-nav3.addEventListener('mousemove',()=>{
+nav3.addEventListener('mousemove', () => {
     products_div.classList.remove("products-show")
     products_div.classList.add("products-div")
 })
-nav4.addEventListener('mousemove',()=>{
+nav4.addEventListener('mousemove', () => {
     products_div.classList.remove("products-show")
     products_div.classList.add("products-div")
 })
@@ -229,33 +214,33 @@ nav.addEventListener('mouseleave', () => {
 })
 
 
-
-products_div.addEventListener('mouseleave',()=>{
+products_div.addEventListener('mouseleave', () => {
     products_div.classList.remove("products-show")
     products_div.classList.add("products-div")
 })
 
 
-function  show(x){
+function show(x) {
 
     x.firstElementChild.classList.add('adding-show')
     x.firstElementChild.classList.remove('adding-hidden')
-    x.firstElementChild.load=fadeTime
+    x.firstElementChild.load = fadeTime
 }
 
-function  showsmall(x){
+function showsmall(x) {
 
     x.firstElementChild.classList.add('adding-show-small')
     x.firstElementChild.classList.remove('adding-hidden')
-    x.firstElementChild.load=fadeTime
+    x.firstElementChild.load = fadeTime
 }
 
-function hide(x){
+function hide(x) {
     x.firstElementChild.classList.add('adding-hidden')
     x.firstElementChild.classList.remove('adding-show')
 
 }
-function hide2(x){
+
+function hide2(x) {
     x.firstElementChild.classList.add('adding-hidden')
     x.firstElementChild.classList.remove('adding-show-small')
 

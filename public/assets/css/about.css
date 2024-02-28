@@ -47,7 +47,6 @@
 .contact-info-text span {
     color: #999999;
     font-size: 16px;
-    font-weight: ;
     display: inline-block;
     width: 100%;
 }
@@ -108,7 +107,7 @@
     color:darkgoldenrod;
     background-color: #dec8ab;
     /*height: 150px;*/
-    width: 95%;
+    /*width: 95%;*/
     margin: auto;
 }
 .tags-div{

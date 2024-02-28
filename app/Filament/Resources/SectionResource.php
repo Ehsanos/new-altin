@@ -50,14 +50,14 @@ class SectionResource extends Resource
                             Forms\Components\TextInput::make('description_tr')->nullable()->label('وصف القسمTR'),
 
                         ]),
-                        Forms\Components\Wizard\Step::make('ES')->schema([Forms\Components\TextInput::make('title_es')->nullable()->label('عنوان القسمES'),
-                            Forms\Components\TextInput::make('description_es')->nullable()->label('وصف القسمES'),
-
-                        ]),
-                        Forms\Components\Wizard\Step::make('DU')->schema([Forms\Components\TextInput::make('title_du')->nullable()->label('عنوان القسمDU'),
-                            Forms\Components\TextInput::make('description_du')->nullable()->label('DU وصف القسم'),
-
-                        ]),
+//                        Forms\Components\Wizard\Step::make('ES')->schema([Forms\Components\TextInput::make('title_es')->nullable()->label('عنوان القسمES'),
+//                            Forms\Components\TextInput::make('description_es')->nullable()->label('وصف القسمES'),
+//
+//                        ]),
+//                        Forms\Components\Wizard\Step::make('DU')->schema([Forms\Components\TextInput::make('title_du')->nullable()->label('عنوان القسمDU'),
+//                            Forms\Components\TextInput::make('description_du')->nullable()->label('DU وصف القسم'),
+//
+//                        ]),
 
                     ])->skippable(),
 

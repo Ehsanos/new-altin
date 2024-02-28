@@ -167,6 +167,7 @@ return [
         Elibyy\TCPDF\ServiceProvider::class,
         Biscolab\ReCaptcha\ReCaptchaServiceProvider::class,
         Jorenvh\Share\Providers\ShareServiceProvider::class,
+//        Jorenvh\Share\Providers\ShareServiceProvider::class,
 
 
 

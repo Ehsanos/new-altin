@@ -94,7 +94,9 @@
                                     </div>
                                     <div class="product-btn px-3 py-2"><a type="button"
                                                                           class="text-decoration-none products-details"
-                                                                          href="{{Storage::url($catalog->file)}}">{{lang('download')}} </a>
+                                                                          href="{{Storage::url($catalog->file)}}"
+                                                                          target="_blank"
+                                        >{{lang('download')}} </a>
                                     </div>
                                 </div>
                             </div>

@@ -24,10 +24,10 @@
                         <?php $__currentLoopData = $slider; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $slide): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <div class="carousel-item <?php if($loop->first): ?>active <?php endif; ?>">
                                 <a <?php if($slide->cats): ?> href="<?php echo e(route('langs.fofo',$slide->cats)); ?>" <?php else: ?> href="<?php echo e($slide->url); ?>" <?php endif; ?> >
-                                    <div class="h-50 w-100"
+                                    <div class="h-75 w-100"
                                          style="background: url('<?php echo e($slide->getFirstMediaUrl('slider')); ?>') center / cover no-repeat;">
 
-                                <div class="h-50 w-100 ">
+                                <div class="h-75 w-100 ">
 
                                     <?php if(app()->getLocale()=='ar'): ?>
                                         <div class="slide_style_left">
@@ -62,9 +62,9 @@
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                 </div>
-                <a class="carousel-control-prev h-50" href="#myCarousel" role="button" data-slide="prev"><span
+                <a class="carousel-control-prev h-75" href="#myCarousel" role="button" data-slide="prev"><span
                         class="carousel-control-prev-icon" aria-hidden="true"></span><span
-                        class="sr-only">Previous</span></a><a class="carousel-control-next h-50" href="#myCarousel"
+                        class="sr-only">Previous</span></a><a class="carousel-control-next h-75" href="#myCarousel"
                                                               role="button" data-slide="next"><span
                         class="carousel-control-next-icon" aria-hidden="true"></span><span
                         class="sr-only">Next</span></a>
@@ -76,12 +76,13 @@
         
         <section class="d-flex flex-column justify-content-center align-items-center mt-5   sections-s">
             <div class="container-fluid">
-                <div class="row justify-content-center  py-0">
+                <div class="row justify-content-center py-0 m-0">
                     <div class="col-12 col-lg-10">
-                        <div id="sections" class="owl-carousel">
+                        <div id="sections" class="owl-carousel owl-theme">
 
                             <?php $__currentLoopData = $prodcuts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <div class="px-3 product-item" onmouseover="show(this)" onmouseleave="hide(this)">
+                                <div class="px-0 item" onmouseover="show(this)" onmouseleave="hide
+                                (this)">
                                     <div class="adding-hidden" id="add">
                                         <form action="<?php echo e(route('langs.addToCart')); ?>" method="post">
                                             <?php echo csrf_field(); ?>
@@ -105,6 +106,20 @@
                                             </div>
                                             <div class="card-body after">
                                                 <p class="card-text sub-text-color"><?php echo e(getTrans($product,'name')); ?></p>
+                                                <span class="card-text sub-text-color"><?php echo e($product->code); ?> </span>
+                                                <?php if(app()->getLocale()=="ar"): ?>
+                                                <p class="card-text sub-text-color"><?php echo e($product->department->name ??
+                                                ""); ?></p>
+
+                                                    <?php elseif(app()->getLocale()=="en"): ?>
+                                                    <p class="card-text
+                                                    sub-text-color"><?php echo e($product->department->name_en ??
+                                                ""); ?></p>
+                                                        <?php elseif(app()->getLocale()=="tr"): ?>
+                                                    <p class="card-text
+                                                    sub-text-color"><?php echo e($product->department->name_tr ??
+                                                ""); ?></p>
+                                                <?php endif; ?>
                                                 
                                             </div>
                                         </div>
@@ -115,12 +130,12 @@
                     </div>
                 </div>
 
-                <div class="row justify-content-center  py-0">
+                <div class="row justify-content-center py-0">
                     <div class="col-12 col-lg-10">
                         <div id="sections-2" class="owl-carousel">
 
                             <?php $__currentLoopData = $prodcuts->sortBy('name'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <div class="px-2 product-item my-3" onmouseover="show(this)" onmouseleave="hide(this)">
+                                <div class="px-2 product-item " onmouseover="show(this)" onmouseleave="hide(this)">
                                     <div class="adding-hidden" id="add">
                                         <form action="<?php echo e(route('langs.addToCart')); ?>" method="post">
                                             <?php echo csrf_field(); ?>
@@ -144,8 +159,23 @@
                                             </div>
                                             <div class="card-body after">
                                                 <p class="card-text sub-text-color"><?php echo e(getTrans($product,'name')); ?></p>
+                                                <span class="card-text sub-text-color"><?php echo e($product->code); ?> </span>
+                                                <?php if(app()->getLocale()=="ar"): ?>
+                                                    <p class="card-text sub-text-color"><?php echo e($product->department->name ??
+                                                ""); ?></p>
+
+                                                <?php elseif(app()->getLocale()=="en"): ?>
+                                                    <p class="card-text
+                                                    sub-text-color"><?php echo e($product->department->name_en ??
+                                                ""); ?></p>
+                                                <?php elseif(app()->getLocale()=="tr"): ?>
+                                                    <p class="card-text
+                                                    sub-text-color"><?php echo e($product->department->name_tr ??
+                                                ""); ?></p>
+                                                <?php endif; ?>
                                                 
                                             </div>
+
                                         </div>
                                     </a></div>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -194,25 +224,25 @@
 
             <div class="container">
                 <div class="row countup text-center">
-                    <div class="col-sm-6 col-md-3 column">
+                    <div class="col-3 column">
                         <p><i class="fas fa-box-open" aria-hidden="true"></i></p>
                         <p><span class="count replay"><?php echo e($statics[1]->number); ?></span></p>
-                        <h2><?php echo e($statics[1]->discrption); ?></h2>
+                        <h3><?php echo e(getTrans($statics[1],'discrption')); ?></h3>
                     </div>
-                    <div class="col-sm-6 col-md-3 column">
+                    <div class="col-3 column">
                         <p><i class="fas fa-th" aria-hidden="true"></i></p>
                         <p><span class="count replay"><?php echo e($statics[3]->number); ?></span></p>
-                        <h2><?php echo e($statics[3]->discrption); ?></h2>
+                        <h3><?php echo e(getTrans($statics[3],'discrption')); ?></h3>
                     </div>
-                    <div class="col-sm-6 col-md-3 column">
+                    <div class="col-3 column">
                         <p><i class="fas fa-bookmark" aria-hidden="true"></i></p>
                         <p><span class="count replay"><?php echo e($statics[2]->number); ?></span></p>
-                        <h2><?php echo e($statics[2]->discrption); ?></h2>
+                        <h3><?php echo e(getTrans($statics[2],'discrption')); ?></h3>
                     </div>
-                    <div class="col-sm-6 col-md-3 column">
+                    <div class="col-3 column">
                         <p><i class="fa fa-user" aria-hidden="true"></i></p>
                         <p><span class="count replay"><?php echo e($statics[0]->number); ?></span></p>
-                        <h2><?php echo e($statics[0]->discrption); ?></h2>
+                        <h3><?php echo e(getTrans($statics[0],'discrption')); ?></h3>
                     </div>
                 </div>
             </div>
@@ -226,7 +256,7 @@
                         <div id="sections-slider" class="owl-carousel">
 
                             <?php $__currentLoopData = $departments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <div class="px-3 product-item" onmouseover="show(this)" onmouseleave="hide(this)">
+                                <div class="product-item " onmouseover="show(this)" onmouseleave="hide(this)">
                                     <div class="adding-hidden" id="add">
                                     </div>
 
@@ -291,7 +321,44 @@
         </section>
 
 
+        
 
+        <section class="d-flex flex-column justify-content-center align-items-center pt-5 sec-news">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-8">
+                        <div id="news" class="owl-carousel">
+
+                            <?php $__currentLoopData = $news; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $new): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <div class="px-3 product-item"><a class="text-decoration-none"
+                                                                  href="<?php echo e(route('langs.showPost',['post'=>$new])); ?>">
+                                        <div class="card cards-shadown cards-hover w-100" data-aos="flip-left"
+                                             data-aos-duration="950">
+                                            <div class="card-header"><img class="img-fluid rounded-img"
+                                                                          src="<?php echo e($new->getFirstMediaUrl('posts')); ?>">
+                                            </div>
+                                            <div class="card-body">
+                                                <p class="card-text sub-text-color"><?php echo getTrans($new,'tilte'); ?></p>
+
+                                            </div>
+                                        </div>
+                                    </a></div>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+                        </div>
+                    </div>
+                    <div class="col-12 py-4">
+                        <div class="text-center"><a class="more-news py-3 px-5 text-decoration-none"
+                                                    href="<?php echo e(route('langs.news')); ?>"><?php echo e(lang('more_news')); ?></a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        
         <section class="wrapper-numbers">
 
             <div class="container">
@@ -303,38 +370,6 @@
                 </div>
             </div>
         </section>
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     </main>

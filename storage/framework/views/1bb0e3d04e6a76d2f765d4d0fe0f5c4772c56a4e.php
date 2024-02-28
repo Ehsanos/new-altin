@@ -1,8 +1,13 @@
 <?php $__env->startSection('content'); ?>
 
     <link rel="stylesheet" href="<?php echo e(asset('assets/css/details.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('assets/css/main.css')); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <script src="<?php echo e(asset('js/share.js')); ?>"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@2.8.2/dist/alpine.min.js"></script>
+    <script src="<?php echo e(asset('asset/js/main.js')); ?>"></script>
 
 
     <?php echo \Livewire\Livewire::styles(); ?>
@@ -54,6 +59,15 @@
                         <p><?php echo e(lang('code')); ?> <span class="new-price"><?php echo e($product->code); ?></span></p>
                     </div>
 
+                    <div class="product-price">
+                        <a href="<?php echo e(route('langs.products',[$product->department->category->id ?? 1,
+                        $product->department->id])); ?>">
+                            <p><?php echo e(lang('dep_name')); ?>:
+                                <span class="new-price"><?php echo e($product->department->name??"
+                        no"); ?></span></p>
+                        </a>
+                    </div>
+
                     <div class="product-detail">
                         <h2><?php echo e(lang('details')); ?></h2>
                         <p class="product-detail"><?php echo getTrans($product,'description'); ?></p>
@@ -74,66 +88,141 @@
 
                     <div class="social-links">
                         <p><?php echo e(lang('share')); ?>: </p>
-                        <a href="https://www.facebook.com/sharer/sharer.php?u=http://127.0.0.1:8000/details/<?php echo e($id); ?>}">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://twitter.com/intent/tweet?text=Share+title&url=http://127.0.0.1:8000/details/<?php echo e($id); ?>">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://t.me/share/url?url=http://127.0.0.1:8000/details/<?php echo e($id); ?>">
-                            <i class="fab fa-telegram"></i>
-                        </a>
-                        <a href="https://wa.me/?text=http://127.0.0.1:8000/details/<?php echo e($id); ?>">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
+
+                        <?php echo $social=Share::page(null,$product->name)->facebook(); ?>
+
+                        <?php echo $social=Share::page(null,$product->name)->whatsapp(); ?>
+
+                        <?php echo $social=Share::page(null,$product->name)->telegram(); ?>
+
+                        <?php echo $social=Share::page(null,$product->name)->twitter(); ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
                     </div>
                 </div>
             </div>
         </div>
+
         
 
 
         <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-12">
-                    <div id="relative_products" class="owl-carousel tag-div " >
+            
 
-                        <?php $__currentLoopData = $allproducts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <div class="product-item" >
+            
+            
 
-                                <a class="text-decoration-none"
-                                                              href="<?php echo e(route('langs.product_details',[$product])); ?>">
-                                    <div class="card cards-shadown cards-hover  d-flex flex-column w-75" data-aos="flip-left"
-                                         data-aos-duration="950" onmouseover="showsmall(this)" onmouseleave="hide2(this)">
-                                        <div class="adding-hidden" id="add">
-                                            <form action="<?php echo e(route('langs.addToCart')); ?>" method="post">
-                                                <?php echo csrf_field(); ?>
+            
+            
+            
+            
+            
+            
 
 
-                                                <input hidden value="<?php echo e($product->id); ?>" name="product">
-                                                <input hidden type="number" min="0" value="1" name="num">
-                                                <button type="submit" class="btn">
-                                                    <i class="fas fa-plus-circle icn"></i>
-                                                </button>
-                                            </form>
+            
+            
+            
+            
+            
+            
 
-                                        </div>
+            
 
-                                        <div class="card-header"><img class="img-fluid rounded-img"
-                                                                      src="<?php echo e($product->getFirstMediaUrl('products')); ?>">
-                                        </div>
-                                        <div class="card-body">
-                                            <p class="card-text sub-text-color"><?php echo e(getTrans($product,'name')); ?></p>
-                                            
-                                        </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+
+
+            <div id="relative_products" class="owl-carousel tag-div">
+
+                <?php $__currentLoopData = $allproducts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <div class="item product-item">
+
+
+                        <a class="text-decoration-none"
+                           href="<?php echo e(route('langs.product_details',[$product])); ?>">
+                            <div class="card cards-shadown cards-hover w-100 d-flex flex-column align-items-center"
+                                 data-aos="flip-left"
+                                 data-aos-duration="950">
+                                <div class="card-header " onmouseover="show(this)" onmouseleave="hide
+                                (this)">
+                                    <div class="adding-hidden " id="add">
+                                        <form action="<?php echo e(route('langs.addToCart')); ?>" method="post">
+                                            <?php echo csrf_field(); ?>
+
+
+                                            <input hidden value="<?php echo e($product->id); ?>" name="product">
+                                            <input hidden type="number" min="0" value="1" name="num">
+                                            <button type="submit" class="btn">
+                                                <i class="fas fa-plus-circle icn"></i>
+                                            </button>
+                                        </form>
+
                                     </div>
-                                </a>
-                            </div>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                    <img class="img-fluid rounded-img"
+                                         src="<?php echo e($product->getFirstMediaUrl('products')); ?>">
+                                </div>
+                                <div class="card-body after">
+                                    <p class="card-text sub-text-color"><?php echo e(getTrans($product,'name')); ?></p>
+                                    <span class="card-text sub-text-color"><?php echo e($product->code); ?> </span>
+                                    <?php if(app()->getLocale()=="ar"): ?>
+                                        <p class="card-text sub-text-color"><?php echo e($product->department->name ??
+                                                ""); ?></p>
 
-                    </div>
-                </div>
+                                    <?php elseif(app()->getLocale()=="en"): ?>
+                                        <p class="card-text
+                                                    sub-text-color"><?php echo e($product->department->name_en ??
+                                                ""); ?></p>
+                                    <?php elseif(app()->getLocale()=="tr"): ?>
+                                        <p class="card-text
+                                                    sub-text-color"><?php echo e($product->department->name_tr ??
+                                                ""); ?></p>
+                                    <?php endif; ?>
+                                    
+                                </div>
+                            </div>
+                        </a></div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
             </div>
+
+
         </div>
 
 

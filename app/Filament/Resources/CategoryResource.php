@@ -85,22 +85,22 @@ class CategoryResource extends Resource
                             ])->columns(2),
 
                         ]),
-                        Forms\Components\Wizard\Step::make('ES')->schema([
-                            Forms\Components\Card::make()->schema([
-                                Forms\Components\TextInput::make('name_es')->label('اسم الفئة ES'),
-                                Textarea::make('description_es')->nullable()->label('وصف الفئة ES'),
-
-                            ])->columns(2),
-
-                        ]),
-                        Forms\Components\Wizard\Step::make('DU')->schema([
-                            Forms\Components\Card::make()->schema([
-                                Forms\Components\TextInput::make('name_du')->label('اسم الفئة DU'),
-                                Textarea::make('description_du')->nullable()->label('وصف الفئة DU'),
-
-                            ])->columns(2),
-
-                        ])
+//                        Forms\Components\Wizard\Step::make('ES')->schema([
+//                            Forms\Components\Card::make()->schema([
+//                                Forms\Components\TextInput::make('name_es')->label('اسم الفئة ES'),
+//                                Textarea::make('description_es')->nullable()->label('وصف الفئة ES'),
+//
+//                            ])->columns(2),
+//
+//                        ]),
+//                        Forms\Components\Wizard\Step::make('DU')->schema([
+//                            Forms\Components\Card::make()->schema([
+//                                Forms\Components\TextInput::make('name_du')->label('اسم الفئة DU'),
+//                                Textarea::make('description_du')->nullable()->label('وصف الفئة DU'),
+//
+//                            ])->columns(2),
+//
+//                        ])
 
                     ])->skippable(),
 
@@ -108,6 +108,7 @@ class CategoryResource extends Resource
 
 
                 Forms\Components\TagsInput::make('tags')->label('كلمات مفتاحية'),
+                Forms\Components\TagsInput::make('tagsen')->label('كلمات مفتاحية'),
 
 
             ]);

@@ -14,6 +14,7 @@ class CreateCategory extends CreateRecord
 
     protected function handleRecordCreation(array $data): Model
     {
+//        dd($data['tagsen']);
         $category = Category::create(collect($data)->except('tags')->toArray());
         foreach ($data['tags'] as $tag) {
             $category->tags()->create([
@@ -23,4 +24,6 @@ class CreateCategory extends CreateRecord
         }
         return $category;
     }
+
+
 }

@@ -147,6 +147,14 @@ img{
 .social-links{
     display: flex;
     align-items: center;
+
+}
+#social-links >ul{
+
+padding: 2px;
+    list-style: none;
+
+
 }
 .social-links p {
 color: black;

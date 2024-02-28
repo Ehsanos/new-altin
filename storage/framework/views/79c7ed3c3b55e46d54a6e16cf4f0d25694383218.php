@@ -107,7 +107,8 @@
                             <div class="list-group">
                                 <?php $__currentLoopData = $departments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dep): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <a class="list-group-item list-group-item-action font-weight-bolder"
-                                       href="<?php echo e(route("langs.products",["catId"=>$dep->category_id,"depId"=>"$dep->id"])); ?>"><?php echo e($dep->name); ?></a>
+                                       href="<?php echo e(route("langs.products",["catId"=>$dep->category_id,
+                                       "depId"=>"$dep->id"])); ?>"><?php echo e(getTrans($dep,'name')); ?></a>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                             </div>
@@ -160,7 +161,25 @@
 
                                         </div>
                                         <div class="px-3">
-                                            <p class="text-dark font-weight-bold"><?php echo e($product->department->name ?? 'None'); ?></p>
+                                            <p class="text-dark font-weight-bold"><?php echo e($product->code ??
+                                            'Code'); ?></p>
+
+                                        <?php if(app()->getLocale()=='ar'): ?>
+
+                                            <p class="text-dark font-weight-bold"><?php echo e($product->department->name ??
+                                            'Depatment'); ?></p>
+
+                                            <?php elseif(app()->getLocale()=='en'): ?>
+                                                <p class="text-dark font-weight-bold"><?php echo e($product->department->name_en
+                                                 ??
+                                            'Depatment'); ?></p>
+
+                                            <?php elseif(app()->getLocale()=='tr'): ?>
+                                                <p class="text-dark font-weight-bold"><?php echo e($product->department->name_tr
+                                                 ??
+                                            'Depatment'); ?></p>
+                                            <?php endif; ?>
+
                                         </div>
                                     </div>
                                 </div>

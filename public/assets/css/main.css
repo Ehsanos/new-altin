@@ -188,7 +188,7 @@ body {
 }
 
 .card-text:last-child {
-    font-size: 30px;
+    font-size: 20px;
     color: #595959;
 }
 
@@ -221,7 +221,7 @@ body {
 }
 
 .sec-news {
-    height: 90vh;
+    height:auto;
 }
 
 .card-header {
