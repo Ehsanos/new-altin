@@ -6,7 +6,7 @@
             <div class="row">
                 @foreach($products as $product )
 
-                    <div class="col-12 col-md-6 col-lg-4 mb-2">
+                    <div class="col-12 col-md-6 col-lg-3 mb-2">
                         <a class="text-decoration-none" href="{{route('langs.product_details',[$product->id])}}">
                             <div class="p-2 card product-main">
                                 <div class="text-center">
