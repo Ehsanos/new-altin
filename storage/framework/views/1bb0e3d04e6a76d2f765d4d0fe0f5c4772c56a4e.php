@@ -89,13 +89,13 @@
                     <div class="social-links">
                         <p><?php echo e(lang('share')); ?>: </p>
 
-                        <?php echo $social=Share::page(null,"testttt")->facebook('test'); ?>
+                        <?php echo $social=Share::page(url('/details/'.$product->id))->facebook(); ?>
 
-                        <?php echo $social=Share::page(null,$product->name)->whatsapp(); ?>
+                        <?php echo $social=Share::page(url('/details/'.$product->id))->whatsapp(); ?>
 
-                        <?php echo $social=Share::page(null,$product->name)->telegram(); ?>
+                        <?php echo $social=Share::page(url('/details/'.$product->id))->telegram(); ?>
 
-                        <?php echo $social=Share::page(null,$product->name)->twitter(); ?>
+                        <?php echo $social=Share::page(url('product_details/details'.$product->id))->twitter(); ?>
 
 
 

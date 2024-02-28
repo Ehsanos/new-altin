@@ -89,10 +89,10 @@
                     <div class="social-links">
                         <p>{{lang('share')}}: </p>
 
-                        {!! $social=Share::page(null,"testttt")->facebook('test')!!}
-                        {!! $social=Share::page(null,$product->name)->whatsapp()!!}
-                        {!! $social=Share::page(null,$product->name)->telegram()!!}
-                        {!! $social=Share::page(null,$product->name)->twitter()!!}
+                        {!! $social=Share::page(url('/details/'.$product->id))->facebook()!!}
+                        {!! $social=Share::page(url('/details/'.$product->id))->whatsapp()!!}
+                        {!! $social=Share::page(url('/details/'.$product->id))->telegram()!!}
+                        {!! $social=Share::page(url('/details/'.$product->id))->twitter()!!}
 {{--                        <a href="https://www.facebook.com/sharer/sharer.php?u=http://127.0.0.1:8000/details/{{$id}}}">--}}
 {{--                            <i class="fab fa-facebook-f"></i>--}}
 {{--                        </a>--}}
