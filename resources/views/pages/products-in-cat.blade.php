@@ -17,11 +17,10 @@
                                     <div class="text-center card-img p-2"><img class="img-fluid" src="{{$product->getFirstMediaUrl('products')}}">
                                     </div>
                                     <div class="px-3">
-                                        <p class="text-dark font-weight-bold">{{getTrans($product->department,'name')
+                                        <p class="text-dark font-weight-bold">{{getTrans($product,'name')
                                          ??
                                         'None'}}</p>
-                                        <p class="text-dark font-weight-bold">{{getTrans($product->department,
-                                        'name') ??
+                                        <p class="text-dark font-weight-bold">{{$product->department->name  ??
                                         'None'}}</p>
                                     </div>
                                 </div>

@@ -42,8 +42,7 @@
                         <div class="list-group">
                             @foreach($cats as $cat)
                                 <a class="list-group-item list-group-item-action font-weight-bolder"
-                                   href="{{route('langs.products', ["catId"=>$cat->id])}}">{{getTrans($cat,'name')
-                                   ??'CatName'}}</a>
+                                   href="{{route('langs.products', ["catId"=>$cat->id])}}">{{getTrans($cat,'name')}}</a>
                             @endforeach
 
                         </div>
@@ -58,8 +57,7 @@
                             <div class="list-group">
                                 @foreach($departments as $dep )
                                     <a class="list-group-item list-group-item-action font-weight-bolder"
-                                       href="{{route("langs.products",["catId"=>$dep->category_id,
-                                       "depId"=>"$dep->id"])}}">{{getTrans($dep,'name')??'name'}}</a>
+                                       href="{{route("langs.products",["catId"=>$dep->category_id,"depId"=>"$dep->id"])}}">{{$dep->name}}</a>
                                 @endforeach
 
                             </div>
@@ -99,7 +97,7 @@
                             <a class="text-decoration-none" href="{{route('langs.product_details',[$product])}}">
                                 <div class="p-2 card product-main">
                                     <div class="text-center">
-                                        <h5 class="text-truncate font-weight-bolder">{{$product->code??'code'}}</h5>
+                                        <h5 class="text-truncate font-weight-bolder">{{$product->code}}</h5>
                                     </div>
                                     <div class="div-hr-w"></div>
                                     <div>
@@ -107,11 +105,9 @@
                                                                                    src="{{$product->getFirstMediaUrl('products')}}">
                                         </div>
                                         <div class="px-3">
-                                            <p class="text-dark font-weight-bold">{{getTrans($product,'name')
-                                            ??'name'}}</p>
-                                            <p class="text-dark font-weight-bold">{{getTrans($product->department,
-                                            'name') ??
+                                            <p class="text-dark font-weight-bold">{{getTrans($product,'name') ??
                                             'None'}}</p>
+                                            <p class="text-dark font-weight-bold">{{$product->department->name ?? 'None'}}</p>
                                         </div>
                                     </div>
                                 </div>
