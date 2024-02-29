@@ -41,11 +41,11 @@ $('#sections-slider').owlCarousel({
     loop: true,
     autoplay: true,
     rtl: true,
+    dots:false,
     mouseDrag: true,
     responsive: {
         0: {
             items: 2,
-            center: false,
         },
         600: {
             items: 3

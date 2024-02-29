@@ -256,7 +256,7 @@
 {{--Section Slider in main page--}}
         <section class="d-flex flex-column justify-content-center align-items-center mt-5   sections-s">
             <div class="container-fluid">
-                <div class="row justify-content-center  py-0">
+                <div class="row justify-content-center  py-2">
                     <div class="col-12 col-lg-10">
                         <div id="sections-slider" class="owl-carousel">
 
@@ -269,7 +269,7 @@
                                        href="{{route('langs.products',[$product->category->id,$product->id])}}">
                                         <div class="card cards-shadown cards-hover w-100" data-aos="flip-left"
                                              data-aos-duration="950">
-                                            <div class="card-header"><img class="img-fluid rounded-img"
+                                            <div class="card-header p-1 p-md-2"><img class="img-fluid rounded-img"
                                                                           src="{{$product->getFirstMediaUrl('departments')}}">
                                             </div>
                                             <div class="card-body after">

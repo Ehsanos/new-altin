@@ -175,12 +175,12 @@
             <div id="relative_products" class="owl-carousel tag-div">
 
                 <?php $__currentLoopData = $allproducts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <div class="item product-item">
+                    <div class="item product-item bg-primary px-1">
 
 
                         <a class="text-decoration-none"
                            href="<?php echo e(route('langs.product_details',[$product])); ?>">
-                            <div class="card cards-shadown cards-hover w-100 d-flex flex-column align-items-center"
+                            <div class="card cards-shadown cards-hover w-100 d-flex px-2 flex-column align-items-center"
                                  data-aos="flip-left"
                                  data-aos-duration="950">
                                 <div class="card-header " onmouseover="show(this)" onmouseleave="hide
@@ -201,7 +201,7 @@
                                     <img class="img-fluid rounded-img"
                                          src="<?php echo e($product->getFirstMediaUrl('products')); ?>">
                                 </div>
-                                <div class="card-body after">
+                                <div class="card-body  after">
                                     <p class="card-text sub-text-color"><?php echo e(getTrans($product,'name')); ?></p>
                                     <span class="card-text sub-text-color"><?php echo e($product->code); ?> </span>
                                     <?php if(app()->getLocale()=="ar"): ?>
