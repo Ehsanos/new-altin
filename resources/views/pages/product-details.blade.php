@@ -179,7 +179,7 @@
                             <div class="card cards-shadown cards-hover w-100 d-flex flex-column align-items-center"
                                  data-aos="flip-left"
                                  data-aos-duration="950">
-                                <div class="card-header px-0 px-md-1 " onmouseover="show(this)" onmouseleave="hide
+                                <div class="card-header px-1 px-md-2 " onmouseover="show(this)" onmouseleave="hide
                                 (this)">
                                     <div class="adding-hidden " id="add">
                                         <form action="{{route('langs.addToCart')}}" method="post">
