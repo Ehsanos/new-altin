@@ -58,12 +58,13 @@ class OrderResource extends Resource
                 Forms\Components\TextInput::make('result')->label('القيمة بعد الحسم'),
             Forms\Components\Section::make('محتويات الطلب')->schema([
                 Forms\Components\Repeater::make('products')->relationship('items')->schema([
-                    Forms\Components\TextInput::make('product_name')->label('المنتج'),
+                    Forms\Components\TextInput::make('product_name')->label('كود المنتج'),
                     Forms\Components\TextInput::make('price')->label('سعر  الواحدة'),
                     Forms\Components\TextInput::make('quantity')->label('عدد القطع'),
                     Forms\Components\TextInput::make('total')->label('السعر'),
 
-                ])->columns(4)
+                ])->columns(4),
+                Forms\Components\TextInput::make('notes')->nullable()->label('ملاحظات')
             ])->columns(1)
                 ]);
     }
