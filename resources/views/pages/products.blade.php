@@ -109,7 +109,7 @@
                                 @foreach($departments as $dep )
                                     <a class="list-group-item list-group-item-action font-weight-bolder"
                                        href="{{route("langs.products",["catId"=>$dep->category_id ?? 1,
-                                       "depId"=>"$dep->id" ??1])}}">{{getTrans($dep,'name')}}</a>
+                                       "depId"=>"$dep->id" ??1])}}">{{getTrans($dep,'name')?? 'department'}}</a>
                                 @endforeach
 
                             </div>
