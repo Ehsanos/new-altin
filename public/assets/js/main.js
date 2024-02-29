@@ -109,7 +109,6 @@ $('#sections-2').owlCarousel({
 });
 
 $('#relative_products').owlCarousel({
-    center: false,
     loop: true,
     autoplay: true,
     rtl: true,
@@ -119,7 +118,6 @@ $('#relative_products').owlCarousel({
     responsive: {
         0: {
             items: 2,
-            center: false,
 
         },
         600: {
