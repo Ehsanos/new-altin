@@ -148,7 +148,8 @@
                             <a class="text-decoration-none" href="<?php echo e(route('langs.product_details',[$product])); ?>">
                                 <div class="p-2 card product-main position-relative">
                                     <div class="text-center">
-                                        <h5 class="text-truncate font-weight-bolder"><?php echo e(getTrans($product,'name')); ?></h5>
+                                        <h5 class="text-truncate font-weight-bolder"> <?php echo e($product->code ??
+                                            'Code'); ?></h5>
                                     </div>
                                     <div class="div-hr-w"></div>
                                     <div>
@@ -161,8 +162,9 @@
 
                                         </div>
                                         <div class="px-3">
-                                            <p class="text-dark font-weight-bold"><?php echo e($product->code ??
-                                            'Code'); ?></p>
+                                            <p class="text-dark font-weight-bold">
+
+                                                <?php echo e(getTrans($product,'name')); ?></p>
 
                                         <?php if(app()->getLocale()=='ar'): ?>
 

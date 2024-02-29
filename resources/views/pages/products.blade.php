@@ -149,7 +149,8 @@
                             <a class="text-decoration-none" href="{{route('langs.product_details',[$product])}}">
                                 <div class="p-2 card product-main position-relative">
                                     <div class="text-center">
-                                        <h5 class="text-truncate font-weight-bolder">{{getTrans($product,'name')}}</h5>
+                                        <h5 class="text-truncate font-weight-bolder"> {{$product->code ??
+                                            'Code'}}</h5>
                                     </div>
                                     <div class="div-hr-w"></div>
                                     <div>
@@ -162,8 +163,9 @@
 
                                         </div>
                                         <div class="px-3">
-                                            <p class="text-dark font-weight-bold">{{$product->code ??
-                                            'Code'}}</p>
+                                            <p class="text-dark font-weight-bold">
+
+                                                {{getTrans($product,'name')}}</p>
 
                                         @if(app()->getLocale()=='ar')
 

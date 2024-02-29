@@ -18,6 +18,7 @@ return new class extends Migration {
             $table->enum('status', [OrderStatusEnum::Wait->value, OrderStatusEnum::Success->value, OrderStatusEnum::Cancelled->value])->nullable();
             $table->decimal('result')->nullable();
             $table->float('total')->nullable();
+            $table->longText('notes')->nullable();
 
             $table->timestamps();
         });
