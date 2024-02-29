@@ -68,6 +68,7 @@
                                         class="navbar-brand d-flex align-items-center"></a>
             <a href="{{route('langs.index')}}" class="text-decoration-none">
             <h1 class="head-altn d-block d-lg-none">AltinMix 34</h1>
+
             </a>
             <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
                     class="navbar-toggler-icon"></span></button>
@@ -100,7 +101,7 @@
                             class="nav-link text-nowrap font-weight-bolder @if (\Request::route()->getName() =='langs.about') active @endif"
                             href="{{route('langs.about')}}">{{lang('we_are')}}</a></li>
                     <li class="nav-item d-none d-lg-block mx-2">
-                        <div class="center d-sm-block" mt-3="">
+                        <div class="center d-sm-block">
 
                             <form class="form-inline srch-form" action="{{route('langs.search')}}">
                                 <div class="srch-wrapper">
@@ -117,7 +118,7 @@
                             <form action="{{route('langs.search')}}">
                                 <i class="fas fa-search float-left search-icon"></i>
                                 <input class="float-left float-sm-right custom-search-input" type="search" name=""
-                                       placeholder="">
+                                       placeholder="{{lang('search')}}.....">
                             </form>
                         </div>
                     </li>
@@ -189,6 +190,18 @@
             </div>
         </div>
     </nav>
+
+    <div class="d-md-none mb-5 mt-2 bg-danger">
+
+        <form class="form-inline position-relative" action="{{route('langs.search')}}">
+            <div class="srch-wrapper w-100 px-5">
+                <input type="text" class="srch-input" name="search" placeholder="Search...">
+                <button class="srch-button" type="submit">
+                    <em class="icon-search"></em>
+                    <i class="fas fa-search"></i></button>
+            </div>
+        </form>
+    </div>
 
     <div class="products-div p-3" id="products_div">
         {{--<span><i class="fas fa-window-close" id="close"></i></span>--}}

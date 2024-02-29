@@ -69,6 +69,7 @@
                                         class="navbar-brand d-flex align-items-center"></a>
             <a href="<?php echo e(route('langs.index')); ?>" class="text-decoration-none">
             <h1 class="head-altn d-block d-lg-none">AltinMix 34</h1>
+
             </a>
             <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
                     class="navbar-toggler-icon"></span></button>
@@ -101,7 +102,7 @@
                             class="nav-link text-nowrap font-weight-bolder <?php if(\Request::route()->getName() =='langs.about'): ?> active <?php endif; ?>"
                             href="<?php echo e(route('langs.about')); ?>"><?php echo e(lang('we_are')); ?></a></li>
                     <li class="nav-item d-none d-lg-block mx-2">
-                        <div class="center d-sm-block" mt-3="">
+                        <div class="center d-sm-block">
 
                             <form class="form-inline srch-form" action="<?php echo e(route('langs.search')); ?>">
                                 <div class="srch-wrapper">
@@ -118,7 +119,7 @@
                             <form action="<?php echo e(route('langs.search')); ?>">
                                 <i class="fas fa-search float-left search-icon"></i>
                                 <input class="float-left float-sm-right custom-search-input" type="search" name=""
-                                       placeholder="">
+                                       placeholder="<?php echo e(lang('search')); ?>.....">
                             </form>
                         </div>
                     </li>
@@ -142,15 +143,15 @@
                                     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('counter', [])->html();
-} elseif ($_instance->childHasBeenRendered('xR1ZNTs')) {
-    $componentId = $_instance->getRenderedChildComponentId('xR1ZNTs');
-    $componentTag = $_instance->getRenderedChildComponentTagName('xR1ZNTs');
+} elseif ($_instance->childHasBeenRendered('7TqQkc9')) {
+    $componentId = $_instance->getRenderedChildComponentId('7TqQkc9');
+    $componentTag = $_instance->getRenderedChildComponentTagName('7TqQkc9');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('xR1ZNTs');
+    $_instance->preserveRenderedChild('7TqQkc9');
 } else {
     $response = \Livewire\Livewire::mount('counter', []);
     $html = $response->html();
-    $_instance->logRenderedChild('xR1ZNTs', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('7TqQkc9', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
@@ -204,6 +205,18 @@ echo $html;
             </div>
         </div>
     </nav>
+
+    <div class="d-md-none mb-5 mt-2 bg-danger">
+
+        <form class="form-inline position-relative" action="<?php echo e(route('langs.search')); ?>">
+            <div class="srch-wrapper w-100 px-5">
+                <input type="text" class="srch-input" name="search" placeholder="Search...">
+                <button class="srch-button" type="submit">
+                    <em class="icon-search"></em>
+                    <i class="fas fa-search"></i></button>
+            </div>
+        </form>
+    </div>
 
     <div class="products-div p-3" id="products_div">
         

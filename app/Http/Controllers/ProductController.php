@@ -13,6 +13,7 @@ use http\Env\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Jorenvh\Share\Share;
+
 //use const Jorenvh\Share\;
 
 class ProductController extends Controller
@@ -97,7 +98,6 @@ class ProductController extends Controller
         $imgs = Product::with('media')->findOrfail($id)->getMedia("*");
 
 
-
         //     dd($imgs);
 
 //        $allproducts=Product::with('media')->get();
@@ -129,24 +129,33 @@ class ProductController extends Controller
     }
 
 
-    public function search(Request $request ,$catId = null, $depId = null)
+    public function search(Request $request, $catId = null, $depId = null)
     {
         $cats = Category::where('is_active', true)->get();
         $departments = Department::when($catId, fn($q) => $q->whereCategoryId($catId))->whereIsActive(true)->get();
-
+        $temp = $request->search;
         if ($request->search != " ") {
-            $products = Product::where('name', 'LIKE', '%'. $request->search . '%')
-                ->orWhere('name_en', 'LIKE', '%' . $request->search . '%')
-                ->orWhere('name_tr', 'LIKE', '%' . $request->search . '%')
-                ->orWhere('code', 'LIKE', '%' . $request->search . '%')
-                ->orWhere('name_es', 'LIKE', '%' . $request->search . '%')
-                ->orWhere('description', 'LIKE', '%' . $request->search . '%')
-                ->orWhere('description_en', 'LIKE', '%' . $request->search . '%')
-                ->orWhere('description_tr', 'LIKE', '%' . $request->search . '%')
-                ->orWhere('description_du', 'LIKE', '%' . $request->search . '%')
-                ->orWhere('description_es', 'LIKE', '%' . $request->search . '%')
-                ->where('is_active', 'true')->get();
-            return view('pages.product-search2', compact('products','departments','cats'));
+            $products = Product::where(function ($q) use ($temp) {
+                $q->where('name','LIKE', '%' . $temp . '%')
+                    ->orWhere('name_en', 'LIKE', '%' . $temp . '%')
+                    ->orWhere('name_tr', 'LIKE', '%' . $temp . '%')
+                    ->orWhere('code', 'LIKE', '%' . $temp . '%')
+                    ->orWhere('name_es', 'LIKE', '%' . $temp . '%')
+                    ->orWhere('description', 'LIKE', '%' . $temp . '%')
+                    ->orWhere('description_en', 'LIKE', '%' . $temp . '%')
+                    ->orWhere('description_tr', 'LIKE', '%' . $temp . '%');
+            })->orWhereHas('department', function ($q) use ($temp) {
+                $q->where('name','LIKE', '%' . $temp . '%')
+                    ->orWhere('name_en', 'LIKE', '%' . $temp . '%')
+                    ->orWhere('name_tr', 'LIKE', '%' . $temp . '%')
+                    ->orWhere('code', 'LIKE', '%' . $temp . '%')
+                    ->orWhere('name_es', 'LIKE', '%' . $temp . '%')
+                    ->orWhere('description', 'LIKE', '%' . $temp . '%')
+                    ->orWhere('description_en', 'LIKE', '%' . $temp . '%')
+                    ->orWhere('description_tr', 'LIKE', '%' . $temp . '%');
+            })
+               ->where('is_active',true) ->get();
+            return view('pages.product-search2', compact('products', 'departments', 'cats'));
 
         } else {
             $products = Product::where('is_active', true)->get();
