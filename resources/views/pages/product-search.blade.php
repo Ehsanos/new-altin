@@ -10,7 +10,7 @@
                         <a class="text-decoration-none" href="{{route('langs.product_details',[$product->id])}}">
                             <div class="p-2 card product-main">
                                 <div class="text-center">
-                                    <h5 class="text-truncate font-weight-bolder">{{$product->code}}</h5>
+                                    <h5 class="text-truncate font-weight-bolder">{{$product->code ?? 'code'}}</h5>
                                 </div>
                                 <div class="div-hr-w"></div>
                                 <div>

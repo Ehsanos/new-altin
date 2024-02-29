@@ -98,7 +98,7 @@
                             <a class="text-decoration-none" href="{{route('langs.product_details',[$product])}}">
                                 <div class="p-2 card product-main">
                                     <div class="text-center">
-                                        <h5 class="text-truncate font-weight-bolder">{{$product->code}}</h5>
+                                        <h5 class="text-truncate font-weight-bolder">{{$product->code}}??'code'</h5>
                                     </div>
                                     <div class="div-hr-w"></div>
                                     <div>
@@ -106,7 +106,8 @@
                                                                                    src="{{$product->getFirstMediaUrl('products')}}">
                                         </div>
                                         <div class="px-3">
-                                            <p class="text-dark font-weight-bold">{{getTrans($product,'name')}}</p>
+                                            <p class="text-dark font-weight-bold">{{getTrans($product,'name')
+                                            ??'name'}}</p>
                                             <p class="text-dark font-weight-bold">{{getTrans($product->department,
                                             'name') ??
                                             'None'}}</p>
