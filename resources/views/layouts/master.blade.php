@@ -191,7 +191,7 @@
         </div>
     </nav>
 
-    <div class="d-md-none mb-5 mt-2 bg-danger">
+    <div class="d-md-none mb-5 mt-2">
 
         <form class="form-inline position-relative px-3" action="{{route('langs.search')}}">
             <div class="srch-wrapper ">
