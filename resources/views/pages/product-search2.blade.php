@@ -42,7 +42,8 @@
                         <div class="list-group">
                             @foreach($cats as $cat)
                                 <a class="list-group-item list-group-item-action font-weight-bolder"
-                                   href="{{route('langs.products', ["catId"=>$cat->id])}}">{{getTrans($cat,'name')}}</a>
+                                   href="{{route('langs.products', ["catId"=>$cat->id])}}">{{getTrans($cat,'name')
+                                   ??'CatName'}}</a>
                             @endforeach
 
                         </div>
@@ -58,7 +59,7 @@
                                 @foreach($departments as $dep )
                                     <a class="list-group-item list-group-item-action font-weight-bolder"
                                        href="{{route("langs.products",["catId"=>$dep->category_id,
-                                       "depId"=>"$dep->id"])}}">{{getTrans($dep,'name')}}</a>
+                                       "depId"=>"$dep->id"])}}">{{getTrans($dep,'name')??'name'}}</a>
                                 @endforeach
 
                             </div>
