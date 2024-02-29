@@ -143,15 +143,15 @@
                                     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('counter', [])->html();
-} elseif ($_instance->childHasBeenRendered('7TqQkc9')) {
-    $componentId = $_instance->getRenderedChildComponentId('7TqQkc9');
-    $componentTag = $_instance->getRenderedChildComponentTagName('7TqQkc9');
+} elseif ($_instance->childHasBeenRendered('Lfu6hdN')) {
+    $componentId = $_instance->getRenderedChildComponentId('Lfu6hdN');
+    $componentTag = $_instance->getRenderedChildComponentTagName('Lfu6hdN');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('7TqQkc9');
+    $_instance->preserveRenderedChild('Lfu6hdN');
 } else {
     $response = \Livewire\Livewire::mount('counter', []);
     $html = $response->html();
-    $_instance->logRenderedChild('7TqQkc9', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('Lfu6hdN', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
@@ -208,8 +208,8 @@ echo $html;
 
     <div class="d-md-none mb-5 mt-2 bg-danger">
 
-        <form class="form-inline position-relative" action="<?php echo e(route('langs.search')); ?>">
-            <div class="srch-wrapper w-100 px-5">
+        <form class="form-inline position-relative px-3" action="<?php echo e(route('langs.search')); ?>">
+            <div class="srch-wrapper ">
                 <input type="text" class="srch-input" name="search" placeholder="Search...">
                 <button class="srch-button" type="submit">
                     <em class="icon-search"></em>

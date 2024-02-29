@@ -193,8 +193,8 @@
 
     <div class="d-md-none mb-5 mt-2 bg-danger">
 
-        <form class="form-inline position-relative" action="{{route('langs.search')}}">
-            <div class="srch-wrapper w-100 px-5">
+        <form class="form-inline position-relative px-3" action="{{route('langs.search')}}">
+            <div class="srch-wrapper ">
                 <input type="text" class="srch-input" name="search" placeholder="Search...">
                 <button class="srch-button" type="submit">
                     <em class="icon-search"></em>
