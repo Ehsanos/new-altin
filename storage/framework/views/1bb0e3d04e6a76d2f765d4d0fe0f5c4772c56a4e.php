@@ -8,7 +8,8 @@
     <script src="<?php echo e(asset('js/share.js')); ?>"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@2.8.2/dist/alpine.min.js"></script>
     <script src="<?php echo e(asset('asset/js/main.js')); ?>"></script>
-
+<meta property="og:title" content="<?php echo e($product->code); ?>">
+<meta property="og:image" content="<?php echo e($product->getFirstMediaUrl('products')); ?>">
 
     <?php echo \Livewire\Livewire::styles(); ?>
 
@@ -45,7 +46,7 @@
                                 <a href="#" data-id="<?php echo e($loop->index+1); ?>">
                                     <img
                                         src="<?php echo e($imgs[$loop->index]->getUrl()); ?>"
-                                        alt="shoe image">
+                                        alt=" image">
                                 </a>
                             </div>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -89,13 +90,15 @@
                     <div class="social-links">
                         <p><?php echo e(lang('share')); ?>: </p>
 
-                        <?php echo $social=Share::page(url('/details/'.$product->id))->facebook(); ?>
+                        <?php echo $social=Share::page(url('/details/'.$product->id),$product->getFirstMediaUrl('products'))
+                        ->facebook
+                        (); ?>
 
                         <?php echo $social=Share::page(url('/details/'.$product->id))->whatsapp(); ?>
 
                         <?php echo $social=Share::page(url('/details/'.$product->id))->telegram(); ?>
 
-                        <?php echo $social=Share::page(url('product_details/details'.$product->id))->twitter(); ?>
+                        <?php echo $social=Share::page(url('/details/'.$product->id))->twitter(); ?>
 
 
 

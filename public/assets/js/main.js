@@ -62,7 +62,6 @@ $('#sections-slider').owlCarousel({
 $('#sections').owlCarousel({
     center: false,
     autoplayTimeout: 7000,
-
     dots: false,
     loop: true,
     autoplay: true,
@@ -71,6 +70,8 @@ $('#sections').owlCarousel({
     responsive: {
         0: {
             items: 2,
+padding:0,
+            margin:0
 
         },
         600: {

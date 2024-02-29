@@ -81,7 +81,7 @@
                         <div id="sections" class="owl-carousel owl-theme">
 
                             <?php $__currentLoopData = $prodcuts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <div class="px-0 item" onmouseover="show(this)" onmouseleave="hide
+                                <div class="px-0 item " onmouseover="show(this)" onmouseleave="hide
                                 (this)">
                                     <div class="adding-hidden" id="add">
                                         <form action="<?php echo e(route('langs.addToCart')); ?>" method="post">
@@ -97,14 +97,15 @@
 
                                     </div>
 
-                                    <a class="text-decoration-none"
+                                    <a class="text-decoration-none p-0"
                                                                   href="<?php echo e(route('langs.product_details',[$product])); ?>">
-                                        <div class="card cards-shadown cards-hover w-100" data-aos="flip-left"
+                                        <div class="card  cards-shadown cards-hover  w-100"
+                                             data-aos="flip-left"
                                              data-aos-duration="950">
-                                            <div class="card-header"><img class="img-fluid rounded-img"
+                                            <div class="card-header p-1 p-md-3"><img class="img-fluid rounded-img"
                                                                           src="<?php echo e($product->getFirstMediaUrl('products')); ?>">
                                             </div>
-                                            <div class="card-body after">
+                                            <div class="card-body  after">
                                                 <p class="card-text sub-text-color d-none d-md-block"><?php echo e(getTrans($product,
                                                 'name')); ?></p>
                                                 <span class="card-text sub-text-color"><?php echo e($product->code); ?> </span>
@@ -136,7 +137,7 @@
                         <div id="sections-2" class="owl-carousel">
 
                             <?php $__currentLoopData = $prodcuts->sortBy('name'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <div class="px-2 product-item " onmouseover="show(this)" onmouseleave="hide(this)">
+                                <div class="px-1 product-item " onmouseover="show(this)" onmouseleave="hide(this)">
                                     <div class="adding-hidden" id="add">
                                         <form action="<?php echo e(route('langs.addToCart')); ?>" method="post">
                                             <?php echo csrf_field(); ?>
@@ -153,9 +154,9 @@
 
                                     <a class="text-decoration-none"
                                                                   href="<?php echo e(route('langs.product_details',[$product])); ?>">
-                                        <div class="card cards-shadown cards-hover my-3 w-100" data-aos="flip-left"
+                                        <div class="card cards-shadown cards-hover w-100" data-aos="flip-left"
                                              data-aos-duration="950">
-                                            <div class="card-header"><img class="img-fluid rounded-img"
+                                            <div class="card-header p-1 p-md-2"><img class="img-fluid rounded-img"
                                                                           src="<?php echo e($product->getFirstMediaUrl('products')); ?>">
                                             </div>
                                             <div class="card-body after">
@@ -198,11 +199,11 @@
 
 
                             <?php $__currentLoopData = $catigories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <div class="px-3 product-item"><a class="text-decoration-none"
+                                <div class="px-1 product-item"><a class="text-decoration-none"
                                                                   href="<?php echo e(route('langs.fofo',$cat)); ?>">
                                         <div class="card cards-shadown cards-hover  w-100" data-aos="flip-left"
                                              data-aos-duration="950">
-                                            <div class="card-header"><img class="rounded-img"
+                                            <div class="card-header p-1 p-md-2"><img class="rounded-img"
                                                                           src="<?php echo e($cat->getFirstMediaUrl('categories')); ?>">
                                             </div>
                                             <div class="card-body">
@@ -228,23 +229,23 @@
                 <div class="row countup text-center">
                     <div class="col-3 column">
                         <p><i class="fas fa-box-open" aria-hidden="true"></i></p>
-                        <p><span class="count replay"><?php echo e($statics[1]->number); ?></span></p>
-                        <h3><?php echo e(getTrans($statics[1],'discrption')); ?></h3>
+                        <p><span class="count replay statitics"><?php echo e($statics[1]->number); ?></span></p>
+                        <h3 class="statitics"><?php echo e(getTrans($statics[1],'discrption')); ?></h3>
                     </div>
                     <div class="col-3 column">
                         <p><i class="fas fa-th" aria-hidden="true"></i></p>
-                        <p><span class="count replay"><?php echo e($statics[3]->number); ?></span></p>
-                        <h3><?php echo e(getTrans($statics[3],'discrption')); ?></h3>
+                        <p><span class="count replay statitics"><?php echo e($statics[3]->number); ?></span></p>
+                        <h3 class="statitics"><?php echo e(getTrans($statics[3],'discrption')); ?></h3>
                     </div>
                     <div class="col-3 column">
                         <p><i class="fas fa-bookmark" aria-hidden="true"></i></p>
-                        <p><span class="count replay"><?php echo e($statics[2]->number); ?></span></p>
-                        <h3><?php echo e(getTrans($statics[2],'discrption')); ?></h3>
+                        <p><span class="count replay statitics"><?php echo e($statics[2]->number); ?></span></p>
+                        <h3 class="statitics"><?php echo e(getTrans($statics[2],'discrption')); ?></h3>
                     </div>
                     <div class="col-3 column">
                         <p><i class="fa fa-user" aria-hidden="true"></i></p>
-                        <p><span class="count replay"><?php echo e($statics[0]->number); ?></span></p>
-                        <h3><?php echo e(getTrans($statics[0],'discrption')); ?></h3>
+                        <p><span class="count replay statitics"><?php echo e($statics[0]->number); ?></span></p>
+                        <h3 class="statitics"><?php echo e(getTrans($statics[0],'discrption')); ?></h3>
                     </div>
                 </div>
             </div>

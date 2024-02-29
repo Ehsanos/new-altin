@@ -237,7 +237,16 @@ body {
     background-color: transparent;
     border: none;
 }
+.statitics{
+    font-size: 30px;
+}
 
+@media (max-width: 650px){
+    .statitics{
+        font-size: 20px;
+
+    }
+}
 .rounded-img {
     border-radius: 12px;
 }

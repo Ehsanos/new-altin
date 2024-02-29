@@ -9,7 +9,8 @@
     <script src="{{ asset('js/share.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@2.8.2/dist/alpine.min.js"></script>
     <script src="{{asset('asset/js/main.js')}}"></script>
-
+<meta property="og:title" content="{{$product->code}}">
+<meta property="og:image" content="{{$product->getFirstMediaUrl('products')}}">
 
     @livewireStyles
 
@@ -45,7 +46,7 @@
                                 <a href="#" data-id="{{$loop->index+1}}">
                                     <img
                                         src="{{$imgs[$loop->index]->getUrl()}}"
-                                        alt="shoe image">
+                                        alt=" image">
                                 </a>
                             </div>
                         @endforeach
@@ -89,7 +90,9 @@
                     <div class="social-links">
                         <p>{{lang('share')}}: </p>
 
-                        {!! $social=Share::page(url('/details/'.$product->id))->facebook()!!}
+                        {!! $social=Share::page(url('/details/'.$product->id),$product->getFirstMediaUrl('products'))
+                        ->facebook
+                        ()!!}
                         {!! $social=Share::page(url('/details/'.$product->id))->whatsapp()!!}
                         {!! $social=Share::page(url('/details/'.$product->id))->telegram()!!}
                         {!! $social=Share::page(url('/details/'.$product->id))->twitter()!!}
