@@ -61,7 +61,12 @@
 ?>
 
 <body class="p-0">
-<main>
+<div id="loader">
+    <img src="<?php echo e(asset('assets/img/loader.gif')); ?>">
+    <h5> تضيفALTINMIX  لمسة الفخامة إلى حياتك </h5>
+</div>
+
+<main id="cnt">
     <nav class="navbar navbar-light navbar-expand-lg sticky-top navbar-shrink py-3 border-bottom "
          id="mainNav">
         <div class="container-fluid">
@@ -143,15 +148,15 @@
                                     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('counter', [])->html();
-} elseif ($_instance->childHasBeenRendered('JsWbc6O')) {
-    $componentId = $_instance->getRenderedChildComponentId('JsWbc6O');
-    $componentTag = $_instance->getRenderedChildComponentTagName('JsWbc6O');
+} elseif ($_instance->childHasBeenRendered('C7FRfAF')) {
+    $componentId = $_instance->getRenderedChildComponentId('C7FRfAF');
+    $componentTag = $_instance->getRenderedChildComponentTagName('C7FRfAF');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('JsWbc6O');
+    $_instance->preserveRenderedChild('C7FRfAF');
 } else {
     $response = \Livewire\Livewire::mount('counter', []);
     $html = $response->html();
-    $_instance->logRenderedChild('JsWbc6O', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('C7FRfAF', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

@@ -244,3 +244,18 @@ function hide2(x) {
     x.firstElementChild.classList.remove('adding-show-small')
 
 }
+
+const cnt=document.getElementById('cnt')
+const loader=document.getElementById('loader')
+
+window.onload=function (){
+
+    setTimeout(function (){
+        cnt.style.display='block';
+        loader.style.display='none';
+    },1000)
+
+
+
+}
+

@@ -1,6 +1,6 @@
 <?php $__env->startSection('content'); ?>
 
-    <main <?php if($style): ?> style="background-color:<?php echo e($style->primary); ?>" <?php endif; ?>>
+    <main  <?php if($style): ?> style="background-color:<?php echo e($style->primary); ?>" <?php endif; ?>>
         
         <?php if(Session::has('message')): ?>
 

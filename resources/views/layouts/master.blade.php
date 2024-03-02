@@ -60,7 +60,12 @@
 @endphp
 
 <body class="p-0">
-<main>
+<div id="loader">
+    <img src="{{asset('assets/img/loader.gif')}}">
+{{--    <h5> تضيفALTINMIX  لمسة الفخامة إلى حياتك </h5>--}}
+</div>
+
+<main id="cnt">
     <nav class="navbar navbar-light navbar-expand-lg sticky-top navbar-shrink py-3 border-bottom "
          id="mainNav">
         <div class="container-fluid">

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
 
-    <main @if($style) style="background-color:{{$style->primary}}" @endif>
+    <main  @if($style) style="background-color:{{$style->primary}}" @endif>
         {{--   <h1 class="bg-danger">{{Auth()->user()->name ?? 'none'}} </h1>--}}
         @if(Session::has('message'))
 
