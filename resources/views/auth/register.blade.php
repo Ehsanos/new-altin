@@ -12,7 +12,6 @@
 
         <form method="POST" action="{{ route('register') }}">
         @csrf
-        {{__('words.have')}}
         <!-- Name -->
             <div>
                 <x-label for="name" :value="__('words.name')"/>
