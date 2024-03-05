@@ -49,9 +49,9 @@
         <div class="container policy mt-2 mt-md-4 mt-lg-5" @if($style) style="background-color:{{$style->primary}}" @endif>
             <h1 class="title-policy ">{{lang('policy')}}</h1>
 
-            <p >
+            <div >
              {!!getTrans($setting,'description')!!}
-            </p>
+            </div>
         </div>
     </header>
 

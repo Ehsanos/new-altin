@@ -90,11 +90,9 @@
                     <div class="social-links">
                         <p><?php echo e(lang('share')); ?>: </p>
 
-                        <?php echo $social=Share::page(url('/details/'.$product->id),$product->getFirstMediaUrl('products'))
-                        ->facebook
-                        (); ?>
+                        <?php echo $social=Share::page(url('/details/'.$product->id))->facebook(); ?>
 
-                        <?php echo $social=Share::page(url('/details/'.$product->id))->whatsapp(); ?>
+                        <?php echo $social=Share::page('https://altinmix.com/storage/174/4AzFGHSfpaIqltpgZAgYIpkifLKVSB-metaTUEtMjAxLnBuZw==-.png')->whatsapp(); ?>
 
                         <?php echo $social=Share::page(url('/details/'.$product->id))->telegram(); ?>
 

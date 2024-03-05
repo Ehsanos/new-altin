@@ -90,9 +90,7 @@
                     <div class="social-links">
                         <p>{{lang('share')}}: </p>
 
-                        {!! $social=Share::page(url('/details/'.$product->id),$product->getFirstMediaUrl('products'))
-                        ->facebook
-                        ()!!}
+                        {!! $social=Share::page(url('/details/'.$product->id),$product->getFirstMediaUrl('products'))->facebook()!!}
                         {!! $social=Share::page(url('/details/'.$product->id))->whatsapp()!!}
                         {!! $social=Share::page(url('/details/'.$product->id))->telegram()!!}
                         {!! $social=Share::page(url('/details/'.$product->id))->twitter()!!}

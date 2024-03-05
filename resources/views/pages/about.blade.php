@@ -45,7 +45,7 @@
     </div>
 
     <section class="contact-page-sec mt-5" @if($style) style="background-color:{{$style->primary}}" @endif>
-        <div class="container">
+        <div class="container d-flex flex-column">
 
 
 

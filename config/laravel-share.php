@@ -26,8 +26,8 @@ return [
             'extra' => ['mini' => 'true'],
         ],
         'whatsapp' => [
-            'uri' => 'https://wa.me/?text=',
-            'extra' => ['mini' => 'true'],
+            'uri' => 'https://web.whatsapp.com/send?text=',
+            'extra' => ['mini' => 'false'],
         ],
         'pinterest' => [
             'uri' => 'https://pinterest.com/pin/create/button/?url=',

@@ -387,11 +387,13 @@ body {
 
 .policy {
 
-    height: 75vh;
+    height: auto;
     width: 98%;
     margin: auto;
     /*background-color: #ecd96b;*/
 }
+
+
 
 .title-policy {
     color: #33270f;
@@ -463,6 +465,17 @@ body {
     }
 }
 
+@media (max-width: 650px){
+     tr{
+        display: flex;
+        flex-direction: column;
+
+    }
+    td{
+        width: 100% !important;
+    }
+
+}
 
 @keyframes show {
     0% {

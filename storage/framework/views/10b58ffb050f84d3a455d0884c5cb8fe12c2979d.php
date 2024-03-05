@@ -44,7 +44,7 @@
     </div>
 
     <section class="contact-page-sec mt-5" <?php if($style): ?> style="background-color:<?php echo e($style->primary); ?>" <?php endif; ?>>
-        <div class="container">
+        <div class="container d-flex flex-column">
 
 
 
