@@ -259,3 +259,11 @@ window.onload=function (){
 
 }
 
+let icon=document.getElementById('serach-top-icon');
+var under=document.getElementById('under-nav')
+
+icon.addEventListener('click',()=>{
+    under.classList.toggle('top-div-under-nav')
+})
+
+

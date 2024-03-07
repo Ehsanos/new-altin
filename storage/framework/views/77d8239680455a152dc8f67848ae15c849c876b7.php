@@ -72,10 +72,12 @@
         <div class="container-fluid">
             <a href="<?php echo e(route('langs.index')); ?>"
                                         class="navbar-brand d-flex align-items-center"></a>
+<div class="top-div d-flex align-items-center justify-content-center d-md-none">
             <a href="<?php echo e(route('langs.index')); ?>" class="text-decoration-none">
             <h1 class="head-altn d-block d-lg-none">AltinMix 34</h1>
-
             </a>
+            <i class="fa fa-search icon-top px-2" id="serach-top-icon" aria-hidden="true"></i>
+</div>
             <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
                     class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
@@ -148,15 +150,15 @@
                                     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('counter', [])->html();
-} elseif ($_instance->childHasBeenRendered('jENKJuA')) {
-    $componentId = $_instance->getRenderedChildComponentId('jENKJuA');
-    $componentTag = $_instance->getRenderedChildComponentTagName('jENKJuA');
+} elseif ($_instance->childHasBeenRendered('mLaoQy3')) {
+    $componentId = $_instance->getRenderedChildComponentId('mLaoQy3');
+    $componentTag = $_instance->getRenderedChildComponentTagName('mLaoQy3');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('jENKJuA');
+    $_instance->preserveRenderedChild('mLaoQy3');
 } else {
     $response = \Livewire\Livewire::mount('counter', []);
     $html = $response->html();
-    $_instance->logRenderedChild('jENKJuA', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('mLaoQy3', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
@@ -211,17 +213,20 @@ echo $html;
         </div>
     </nav>
 
-    <div class="d-md-none mb-5 mt-2">
+
+    <div class="mb-5 mt-2 top-div-under-nav-hidden d-md-none" id="under-nav">
 
         <form class="form-inline position-relative px-3" action="<?php echo e(route('langs.search')); ?>">
-            <div class="srch-wrapper ">
-                <input type="text" class="srch-input" name="search" placeholder="Search...">
-                <button class="srch-button" type="submit">
+            <div class="srch-wrapper-sm">
+                <input type="text" class="srch-input-sm" name="search" placeholder="Search...">
+                <button class="srch-button-sm" type="submit">
                     <em class="icon-search"></em>
                     <i class="fas fa-search"></i></button>
             </div>
         </form>
     </div>
+
+
 
     <div class="products-div p-3" id="products_div">
         

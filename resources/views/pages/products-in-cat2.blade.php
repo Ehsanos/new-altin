@@ -126,13 +126,24 @@
                                                                                    src="{{$product->getFirstMediaUrl('products')}}">
                                         </div>
                                         <div class="px-3">
-                                            <p class="text-dark font-weight-bold">{{getTrans($product->department,
-                                            'name') ??
-                                            'None'}}</p>
-                                            <p class="text-dark font-weight-bold">{{getTrans($product->department,'name')
-                                             ??
-                                            'None'}}</p>
+                                            <p class="text-dark font-weight-bold">{{getTrans($product,'name')
+                                         ??
+                                        'None'}}</p>
+                                            @if(app()->getLocale()=='ar')
+                                                <p class="text-dark font-weight-bold">{{$product->department->name  ??
+                                        'None'}}</p>
+                                            @elseif(app()->getLocale()=='en')
+                                                <p class="text-dark font-weight-bold">{{$product->department->name_en  ??
+                                        'None'}}</p>
+
+                                            @elseif(app()->getLocale()=='tr')
+                                                <p class="text-dark font-weight-bold">{{$product->department->name_tr  ??
+                                        'None'}}</p>
+
+                                            @endif
+
                                         </div>
+
                                     </div>
                                 </div>
                             </a>

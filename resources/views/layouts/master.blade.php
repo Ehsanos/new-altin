@@ -71,10 +71,12 @@
         <div class="container-fluid">
             <a href="{{route('langs.index')}}"
                                         class="navbar-brand d-flex align-items-center"></a>
+<div class="top-div d-flex align-items-center justify-content-center d-md-none">
             <a href="{{route('langs.index')}}" class="text-decoration-none">
             <h1 class="head-altn d-block d-lg-none">AltinMix 34</h1>
-
             </a>
+            <i class="fa fa-search icon-top px-2" id="serach-top-icon" aria-hidden="true"></i>
+</div>
             <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
                     class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
@@ -196,17 +198,20 @@
         </div>
     </nav>
 
-    <div class="d-md-none mb-5 mt-2">
+{{--Div of search input in sm size--}}
+    <div class="mb-5 mt-2 top-div-under-nav-hidden d-md-none" id="under-nav">
 
         <form class="form-inline position-relative px-3" action="{{route('langs.search')}}">
-            <div class="srch-wrapper ">
-                <input type="text" class="srch-input" name="search" placeholder="Search...">
-                <button class="srch-button" type="submit">
+            <div class="srch-wrapper-sm">
+                <input type="text" class="srch-input-sm" name="search" placeholder="Search...">
+                <button class="srch-button-sm" type="submit">
                     <em class="icon-search"></em>
                     <i class="fas fa-search"></i></button>
             </div>
         </form>
     </div>
+
+
 
     <div class="products-div p-3" id="products_div">
         {{--<span><i class="fas fa-window-close" id="close"></i></span>--}}

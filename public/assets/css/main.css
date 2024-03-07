@@ -131,6 +131,21 @@ body {
     transition: all 0.3s linear;
 }
 
+.srch-wrapper-sm {
+    position: fixed;
+    top: 90px;
+    right: 0;
+    left: 0;
+    z-index: 11111;
+    width: 90%;
+    margin: auto;
+    height: 40px;
+    -moz-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+
 .srch-wrapper.open {
     width: 200px;
 }
@@ -147,6 +162,18 @@ body {
     margin: 0;
     width: 100%;
 }
+.srch-input-sm{
+    position: relative;
+    background-color: transparent;
+    height: 44px;
+    line-height: 26px;
+    padding: 5px 10px 5px 32px;
+    box-sizing: border-box;
+    border: 2px solid #635a5a;
+    border-radius: 100px;
+    margin: auto;
+    width: 100%;
+}
 
 .srch-input:focus {
     outline: none;
@@ -154,6 +181,19 @@ body {
 }
 
 .srch-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    color: #ddd;
+    width: 44px;
+    height: 44px;
+    text-align: center;
+}
+.srch-button-sm {
     position: absolute;
     top: 0;
     left: 0;
@@ -621,3 +661,24 @@ body {
 .product-show-div:hover {
     text-decoration: none;
 }
+
+
+.icon-top{
+
+    font-size: 50px;
+
+    color: #2a2121;
+}
+
+.top-div{
+    display: flex;
+    align-items: center;
+}
+
+.top-div-under-nav-hidden{
+    display: none;
+}
+.top-div-under-nav{
+    display: block;
+}
+

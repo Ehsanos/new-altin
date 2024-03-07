@@ -132,7 +132,7 @@
                     @foreach($products as $product )
 
 
-                        <div class="col-12 col-md-6 col-lg-3 mb-2 " onmouseover="show(this)" onmouseleave="hide(this)">
+                        <div class=" col-6 col-lg-3 mb-2 " onmouseover="show(this)" onmouseleave="hide(this)">
                             <div class="adding-hidden" id="add">
                                 <form action="{{route('langs.addToCart')}}" method="post">
                                     @csrf

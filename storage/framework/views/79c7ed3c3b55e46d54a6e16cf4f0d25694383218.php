@@ -131,7 +131,7 @@
                     <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
 
-                        <div class="col-12 col-md-6 col-lg-3 mb-2 " onmouseover="show(this)" onmouseleave="hide(this)">
+                        <div class=" col-6 col-lg-3 mb-2 " onmouseover="show(this)" onmouseleave="hide(this)">
                             <div class="adding-hidden" id="add">
                                 <form action="<?php echo e(route('langs.addToCart')); ?>" method="post">
                                     <?php echo csrf_field(); ?>
