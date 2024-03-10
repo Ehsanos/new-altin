@@ -6,6 +6,7 @@ return [
     'resource' => [
         'group' => 'المراسلات',
         'sort' => null,
+        'edit'=>true
     ],
 
     /**

@@ -19,6 +19,7 @@ class DelegteResource extends Resource
 {
     protected static ?string $model = Delegte::class;
 
+
     protected static ?string $pluralModelLabel="المندوبون";
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 

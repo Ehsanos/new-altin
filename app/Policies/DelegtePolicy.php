@@ -18,7 +18,8 @@ class DelegtePolicy
      */
     public function viewAny(User $user): bool
     {
-        return $user->can('view_any_delegte');
+//        return $user->can('view_any_delegte');
+        return 0 ;
     }
 
     /**
