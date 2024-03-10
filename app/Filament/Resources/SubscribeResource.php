@@ -25,7 +25,8 @@ class SubscribeResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('message')
+                Forms\Components\TextInput::make('message')->disabled(),
+                Forms\Components\TextInput::make('email')->disabled()
             ]);
     }
 
@@ -33,14 +34,15 @@ class SubscribeResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('email'),
-                Tables\Columns\TextColumn::make('message')
+                Tables\Columns\TextColumn::make('email')->label('البريد الالكتروني'),
+                Tables\Columns\TextColumn::make('message')->words(5)->label('الرسالة'),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\DeleteAction::make(),
+//                Tables\Actions\EditAction::make(),
                 Tables\Actions\ViewAction::make()
             ])
             ->bulkActions([

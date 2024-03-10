@@ -112,7 +112,8 @@
 
                             <form class="form-inline srch-form" action="{{route('langs.search')}}">
                                 <div class="srch-wrapper">
-                                    <input type="text" class="srch-input" name="search" placeholder="Search...">
+                                    <input type="text" class="srch-input" name="search" placeholder="{{lang('search')
+                                    }}.....">
                                     <button class="srch-button" type="submit">
                                         <em class="icon-search"></em>
                                         <i class="fas fa-search"></i></button>
@@ -203,7 +204,7 @@
 
         <form class="form-inline position-relative px-3" action="{{route('langs.search')}}">
             <div class="srch-wrapper-sm">
-                <input type="text" class="srch-input-sm" name="search" placeholder="Search...">
+                <input type="text" class="srch-input-sm" name="search" placeholder="{{lang('search')}}.....">
                 <button class="srch-button-sm" type="submit">
                     <em class="icon-search"></em>
                     <i class="fas fa-search"></i></button>
