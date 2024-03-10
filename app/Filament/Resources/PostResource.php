@@ -84,7 +84,7 @@ class PostResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('tilte')->label('عنوان المنشور')->searchable()->html(),
-                Tables\Columns\TextColumn::make('body')->words(5)->label('المنشور')->searchable()->html(),
+//                Tables\Columns\TextColumn::make('body')->words(5)->label('المنشور')->searchable()->html(),
                 SpatieMediaLibraryImageColumn::make('الصورة')->collection('posts')->label('صورة المنشور'),
                 Tables\Columns\TagsColumn::make('tags.name')->label('كلمات مفتاحية')->searchable()
             ])

@@ -38,7 +38,7 @@ class OrderResource extends Resource
 
         return $form
             ->schema([
-                Forms\Components\TextInput::make('order_code')->label('كود الطلب'),
+                Forms\Components\TextInput::make('order_code')->label('كود الطلب')->disabled(),
                 Forms\Components\Select::make('user_id')->relationship('user', 'name')->label('الزبون')->disabled(),
                 Forms\Components\Select::make("status")->label('حالة الطلب')->options([
                     OrderStatusEnum::Cancelled->value => OrderStatusEnum::Cancelled->getValue(),
@@ -58,10 +58,10 @@ class OrderResource extends Resource
                 Forms\Components\TextInput::make('result')->label('القيمة بعد الحسم'),
             Forms\Components\Section::make('محتويات الطلب')->schema([
                 Forms\Components\Repeater::make('products')->relationship('items')->schema([
-                    Forms\Components\TextInput::make('product_name')->label('كود المنتج'),
-                    Forms\Components\TextInput::make('price')->label('سعر  الواحدة'),
-                    Forms\Components\TextInput::make('quantity')->label('عدد القطع'),
-                    Forms\Components\TextInput::make('total')->label('السعر'),
+                    Forms\Components\TextInput::make('product_name')->label('كود المنتج')->disabled(),
+                    Forms\Components\TextInput::make('price')->label('سعر  الواحدة')  ->extraInputAttributes(['readonly'=>'readonly']),
+                    Forms\Components\TextInput::make('quantity')->label('عدد القطع')  ->extraInputAttributes(['readonly'=>'readonly']),
+                    Forms\Components\TextInput::make('total')->label('السعر')  ->extraInputAttributes(['readonly'=>'readonly']),
 
                 ])->columns(4),
                 Forms\Components\Textarea::make('notes')->nullable()->label('ملاحظات')
@@ -84,7 +84,9 @@ class OrderResource extends Resource
 
 
                 ])->icon(fn($record) => OrderStatusEnum::tryFrom($record->status)?->getIcon())->color(fn($record) => OrderStatusEnum::tryFrom($record->status)?->getColor())->label('حالة الطلب'),
-                Tables\Columns\TextColumn::make('total')->label('إجمالي الفاتورة'),
+                Tables\Columns\TextColumn::make('total')->label('السعر قبل الحسم'),
+                Tables\Columns\TextColumn::make('discount')->label('حسم%'),
+                Tables\Columns\TextColumn::make('result')->label('السعر بعد الحسم'),
 
             ])
             ->filters([

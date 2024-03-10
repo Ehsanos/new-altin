@@ -3,6 +3,10 @@
     <main>
 
         <div class="container w-100 py-0 py-md-3 py-lg-5 mt-1 mt-md-5" >
+            <i class="fas fa-folder-plus open-cats d-lg-none mt-2 " id="open-cats">
+                <span class="words-cat">{{lang('cats').' + '.lang('sections')}}</span>
+            </i>
+
             <div class="row">
                 @foreach($products as $product )
 

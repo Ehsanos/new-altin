@@ -684,12 +684,21 @@ body {
 }
 
 .open-cats{
-    font-size: 40px;
+    font-size: 35px;
     color: #33270f;
 }
-
+.words-cat{
+    font-size: 25px;
+    cursor: pointer;
+    color: #33270f;
+}
 @media (max-width: 770px) {
     .show-cats {
         display: none;
     }
+}
+
+.lista-cats{
+    max-height:50vh;
+    overflow-y: auto;
 }

@@ -51,10 +51,11 @@
             </div>
         </div>
     </header>
-
     <section class="d-flex flex-column justify-content-center align-items-center products-1 py-2"@if($style) style="background-color:{{$style->primary}}" @endif >
         <div class="container-fluid" >
-            <i class="fas fa-folder-plus open-cats d-lg-none mt-2 " id="open-cats"></i>
+            <i class="fas fa-folder-plus open-cats d-lg-none mt-2 " id="open-cats">
+                <span class="words-cat">{{lang('cats').' + '.lang('sections')}}</span>
+            </i>
             <div class="row ">
                 <div class="col-12 col-lg-2 show-cats" id="cats-div">
                     <div class="row">
@@ -91,7 +92,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="list-group">
+                        <div class="list-group lista-cats">
                             @foreach($cats as $cat)
                                 <a class="list-group-item list-group-item-action font-weight-bolder"
                                    href="{{route('langs.products', ["catId"=>$cat->id])}}">{{getTrans($cat,'name')}}</a>
@@ -106,7 +107,7 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="list-group">
+                            <div class="list-group lista-cats">
                                 @foreach($departments as $dep )
                                     <a class="list-group-item list-group-item-action font-weight-bolder"
                                        href="{{route("langs.products",["catId"=>$dep->category_id ?? 1,
