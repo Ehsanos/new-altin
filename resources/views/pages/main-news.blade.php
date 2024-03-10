@@ -66,7 +66,7 @@
 {{--                                    </div>--}}
 {{--                                </div>--}}
 {{--                            </a></div>--}}
-                        <div class="col-3"><a class="text-decoration-none"
+                        <div class="col-lg-3 col-6"><a class="text-decoration-none"
                                                           href="{{route('langs.showPost',['post'=>$new])}}">
                                 <div class="card cards-shadown cards-hover w-100" data-aos="flip-left"
                                      data-aos-duration="950">
