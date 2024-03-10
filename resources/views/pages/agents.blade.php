@@ -55,18 +55,23 @@
         <div class="col-lg-3 col-md-6 col-sm-12">
             <div class="card agent">
                 <div class="agent-avatar">
-                    <a class="agent-name " href="agent-profile.html">
+
                         <img src="{{$agent->getFirstMediaUrl('users')}}" class="img-fluid " alt="">
-                    </a>
+
                 </div>
                 <div class="agent-content">
                     <div class="agent-name agent-color">
-                        <h4><a class="agent-color" href="agent-profile.html">{{$agent->name}}</a></h4>
-                        <span class="agent-color">{{getTrans($agent,'name')}}</span>
+                        <h4>{{$agent->name}}</h4>
+{{--                        <span class="agent-color">{{getTrans($agent,'name')}}</span>--}}
                     </div>
                     <ul class="agent-contact-details">
                         <li><i class="zmdi zmdi-phone"></i><span>{{$agent->phone}}</span></li>
                         <li><i class="zmdi zmdi-email"></i>{{$agent->email}}</li>
+                        <li><i class="zmdi zmdi-pin"></i> @if(app()->getLocale()=='ar')
+                                {{$agent->country->name}}@elseif(app()->getLocale()=='en')
+                                {{$agent->country->name_en}}
+                            @endif
+                        </li>
                     </ul>
                     <ul class="social-icons">
                         <li><a class="facebook agent-color" href="{{$agent->facebook}}"><i class="zmdi zmdi-facebook"></i></a></li>

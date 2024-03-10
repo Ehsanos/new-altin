@@ -267,3 +267,11 @@ icon.addEventListener('click',()=>{
 })
 
 
+const open_cats=document.getElementById('open-cats');
+const cats_div=document.getElementById('cats-div');
+
+open_cats.addEventListener('click',()=>{
+    cats_div.classList.toggle('show-cats')
+})
+
+

@@ -64,7 +64,7 @@ class OrderResource extends Resource
                     Forms\Components\TextInput::make('total')->label('السعر'),
 
                 ])->columns(4),
-                Forms\Components\TextInput::make('notes')->nullable()->label('ملاحظات')
+                Forms\Components\Textarea::make('notes')->nullable()->label('ملاحظات')
             ])->columns(1)
                 ]);
     }

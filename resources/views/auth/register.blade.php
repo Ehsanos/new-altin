@@ -37,14 +37,14 @@
                          required autocomplete="new-password"/>
             </div>
 
-{{--            <!-- Confirm Password -->--}}
-{{--            <div class="mt-3">--}}
-{{--                <x-label for="password_confirmation" :value="__('Confirm Password')"/>--}}
+            <!-- Confirm Password -->
+            <div class="mt-3">
+                <x-label for="password_confirmation" :value="__('words.confirm')"/>
 
-{{--                <x-input id="password_confirmation" class="block mt-1 w-full"--}}
-{{--                         type="password"--}}
-{{--                         name="password_confirmation" required/>--}}
-{{--            </div>--}}
+                <x-input id="password_confirmation" class="block mt-1 w-full"
+                         type="password"
+                         name="password_confirmation" required/>
+            </div>
 
             {{--phone--}}
 

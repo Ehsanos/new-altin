@@ -2,6 +2,8 @@
 return [
     'name' => 'Name',
     'country' => 'Country',
+    'confirm' => 'Confirm Password',
+
     'email' => 'Email',
     'phone' => 'Phone',
     'password' => 'Password',

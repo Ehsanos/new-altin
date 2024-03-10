@@ -59,8 +59,8 @@
                                                                                                 alt="image">
                                     <div class="hover-overlay"></div>
                                     <div class="hover-1-content px-5 py-4">
-                                        <h2 class="text-uppercase hover-2-title mb-0"
-                                            style="font-weight: bold;">{!!getTrans($post,'tilte')!!}</h2>
+                                        <span class="text-uppercase hover-2-title mb-0"
+                                            style="font-weight: bold;">{!!getTrans($post,'tilte')!!}</span>
 {{--                                        <p class="hover-2-description font-weight-light mb-0">{!!getTrans($post,'body')!!}</p>--}}
                                     </div>
                                 </div>
