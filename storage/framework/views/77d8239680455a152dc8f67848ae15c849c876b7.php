@@ -113,7 +113,7 @@
 
                             <form class="form-inline srch-form" action="<?php echo e(route('langs.search')); ?>">
                                 <div class="srch-wrapper">
-                                    <input type="text" class="srch-input" name="search" placeholder="Search...">
+                                    <input type="text" class="srch-input" name="search" placeholder="<?php echo e(lang('search')); ?>.....">
                                     <button class="srch-button" type="submit">
                                         <em class="icon-search"></em>
                                         <i class="fas fa-search"></i></button>
@@ -150,15 +150,15 @@
                                     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('counter', [])->html();
-} elseif ($_instance->childHasBeenRendered('mLaoQy3')) {
-    $componentId = $_instance->getRenderedChildComponentId('mLaoQy3');
-    $componentTag = $_instance->getRenderedChildComponentTagName('mLaoQy3');
+} elseif ($_instance->childHasBeenRendered('QERtTA3')) {
+    $componentId = $_instance->getRenderedChildComponentId('QERtTA3');
+    $componentTag = $_instance->getRenderedChildComponentTagName('QERtTA3');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('mLaoQy3');
+    $_instance->preserveRenderedChild('QERtTA3');
 } else {
     $response = \Livewire\Livewire::mount('counter', []);
     $html = $response->html();
-    $_instance->logRenderedChild('mLaoQy3', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('QERtTA3', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
@@ -218,7 +218,7 @@ echo $html;
 
         <form class="form-inline position-relative px-3" action="<?php echo e(route('langs.search')); ?>">
             <div class="srch-wrapper-sm">
-                <input type="text" class="srch-input-sm" name="search" placeholder="Search...">
+                <input type="text" class="srch-input-sm" name="search" placeholder="<?php echo e(lang('search')); ?>.....">
                 <button class="srch-button-sm" type="submit">
                     <em class="icon-search"></em>
                     <i class="fas fa-search"></i></button>
