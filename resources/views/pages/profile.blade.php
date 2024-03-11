@@ -15,7 +15,11 @@
 
         <link rel="stylesheet" href="{{asset('assets/css/profile.css')}}">
     </head>
-
+<style>
+    .head-altn{
+        font-size: 25px;
+    }
+</style>
     <body>
 
     {{--@dd(auth()->user()->getMedia('users'))--}}
