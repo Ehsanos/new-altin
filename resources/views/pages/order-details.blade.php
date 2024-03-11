@@ -24,8 +24,8 @@
 <div class="shopping-cart ">
 
     <div class="product">
-        <label class="product-image">{{lang('img_product')}}</label>
-        <label class="product-details">{{lang('name')}}</label>
+        <label class="product-details">{{lang('code')}}</label>
+{{--        <label class="product-image">{{lang('img_product')}}</label>--}}
         <label class="product-details">{{lang('price_one')}}</label>
         <label class="product-details">{{lang('quantity')}}</label>
 
@@ -35,14 +35,14 @@
 
     @foreach($items as $item)
         <div class="product ">
-            <div class="product-image">
-                <a href="{{route('langs.product_details',$item->product->id)}}">
-                    <img src="{{$item->product->getFirstMediaUrl('products')}}">
-                </a>
-            </div>
+{{--            <div class="product-image">--}}
+{{--                <a href="{{route('langs.product_details',$item->product->id)}}">--}}
+{{--                    <img src="{{$item->product->getFirstMediaUrl('products')}}">--}}
+{{--                </a>--}}
+{{--            </div>--}}
             <div class="product-details">
-                <div class="product-title">{{getTrans($item->product,'name')}}</div>
-                <p class="product-description">{{getTrans($item->product,'discrption')}}</p>
+                <div class="product-title">{{$item->product_name}}</div>
+{{--                <p class="product-description">{{getTrans($item->product,'discrption')}}</p>--}}
             </div>
             <div class="product-details">{{$item->price}}</div>
             <div class="product-details">{{$item->quantity}}</div>
